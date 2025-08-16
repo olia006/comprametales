@@ -1,0 +1,69 @@
+.backToTopContainer {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6) 0;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.backToTop {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(0, 123, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 18px;
+  transition-duration: 0.3s;
+  color: white;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.backToTop:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: var(--color-primary);
+  align-items: center;
+}
+
+.backToTop:hover .svgIcon {
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.backToTop::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Volver arriba";
+  color: white;
+  font-size: 0px;
+}
+
+.backToTop:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  transition-duration: 0.3s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .backToTopContainer {
+    padding: var(--space-4) 0;
+  }
+}

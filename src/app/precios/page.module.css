@@ -1,0 +1,35 @@
+/* Prices Page Spacing Module */
+
+.pricesPage {
+  /* Remove all Tailwind spacing dependencies */
+}
+
+.pageContainer {
+  padding: var(--page-padding-mobile) 0;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.priceTablesGrid {
+  display: grid;
+  gap: var(--section-gap-small);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .pageContainer {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageContainer {
+    padding-top: var(--page-padding-desktop);
+    padding-bottom: var(--page-padding-desktop);
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}

@@ -1,0 +1,306 @@
+/* Base skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeletonWrapper {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Base skeleton element */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-0);
+}
+
+/* Preview Section Skeleton */
+.previewSectionSkeleton {
+  padding: var(--space-16) 0;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.textContent {
+  text-align: center;
+}
+
+.skeletonSubtitle {
+  @extend .skeleton;
+  height: 24px;
+  width: 150px;
+  margin: 0 auto var(--space-4) auto;
+  border-radius: var(--radius-full);
+}
+
+.skeletonTitle {
+  @extend .skeleton;
+  height: 48px;
+  width: 300px;
+  margin: 0 auto var(--space-4) auto;
+}
+
+.skeletonDescription {
+  @extend .skeleton;
+  height: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto var(--space-2) auto;
+}
+
+.skeletonDescription:last-of-type {
+  width: 80%;
+  margin-bottom: var(--space-8);
+}
+
+.skeletonButton {
+  @extend .skeleton;
+  height: 48px;
+  width: 180px;
+  margin: 0 auto;
+  border-radius: var(--radius-0);
+}
+
+/* Visual Content */
+.visualContent {
+  display: flex;
+  justify-content: center;
+}
+
+.skeletonImageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  max-width: 600px;
+  width: 100%;
+}
+
+.skeletonCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-0);
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.skeletonImage {
+  @extend .skeleton;
+  flex: 1;
+  min-height: 200px;
+}
+
+.skeletonLabel {
+  @extend .skeleton;
+  height: 20px;
+  margin: var(--space-4);
+}
+
+/* Material Card Skeleton */
+.materialCardSkeleton {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-0);
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.materialCardSkeleton .skeletonImage {
+  flex: 1;
+  min-height: 200px;
+}
+
+.materialCardSkeleton .skeletonLabel {
+  height: 20px;
+  margin: var(--space-4);
+}
+
+/* Price Card Skeleton */
+.priceCardSkeleton {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-gray-200);
+  max-width: 400px;
+  width: 100%;
+}
+
+.priceCardSkeleton .skeletonTitle {
+  height: 24px;
+  width: 200px;
+  margin: 0 auto var(--space-4) auto;
+}
+
+.skeletonPriceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.skeletonMaterialInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.skeletonMaterialName {
+  @extend .skeleton;
+  height: 16px;
+  width: 120px;
+}
+
+.skeletonMaterialCategory {
+  @extend .skeleton;
+  height: 12px;
+  width: 80px;
+}
+
+.skeletonPrice {
+  @extend .skeleton;
+  height: 20px;
+  width: 80px;
+}
+
+.skeletonNote {
+  @extend .skeleton;
+  height: 14px;
+  width: 180px;
+  margin: var(--space-3) auto 0 auto;
+}
+
+/* CTA Section Skeleton */
+.ctaSectionSkeleton {
+  padding: var(--space-16) 0;
+  background: linear-gradient(135deg, var(--color-primary-subtle) 0%, var(--color-secondary-subtle) 100%);
+  text-align: center;
+}
+
+.ctaSectionSkeleton .skeletonSubtitle {
+  width: 180px;
+}
+
+.ctaSectionSkeleton .skeletonTitle {
+  width: 350px;
+  height: 56px;
+}
+
+.ctaSectionSkeleton .skeletonDescription {
+  width: 500px;
+  margin-bottom: var(--space-8);
+}
+
+.skeletonActions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skeletonActions .skeletonButton {
+  width: 160px;
+  margin: 0;
+}
+
+/* Default Skeleton */
+.defaultSkeleton {
+  @extend .skeleton;
+  height: 200px;
+  width: 100%;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+  
+  .textContent {
+    text-align: left;
+  }
+  
+  .skeletonSubtitle,
+  .skeletonTitle,
+  .skeletonDescription {
+    margin-left: 0;
+  }
+  
+  .skeletonButton {
+    margin-left: 0;
+  }
+  
+  .skeletonImageGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+  }
+  
+  .skeletonActions {
+    justify-content: flex-start;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .skeletonTitle {
+    height: 56px;
+    width: 400px;
+  }
+  
+  .skeletonDescription {
+    height: 24px;
+  }
+}
+
+/* Apply skeleton styles using CSS custom properties */
+.skeleton,
+.skeletonSubtitle,
+.skeletonTitle,
+.skeletonDescription,
+.skeletonButton,
+.skeletonImage,
+.skeletonLabel,
+.skeletonMaterialName,
+.skeletonMaterialCategory,
+.skeletonPrice,
+.skeletonNote {
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-0);
+}

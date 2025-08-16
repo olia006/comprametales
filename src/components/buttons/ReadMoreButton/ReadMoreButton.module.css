@@ -1,0 +1,141 @@
+.readMoreButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: transparent;
+  color: var(--color-primary);
+  position: relative;
+  padding: var(--space-2) var(--space-3);
+}
+
+.readMoreButton:hover {
+  color: var(--color-primary-dark);
+  background: var(--color-primary-subtle);
+  text-decoration: none;
+}
+
+.readMoreButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+.readMoreButton:active {
+  transform: scale(0.98);
+}
+
+.readMoreButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-subtle);
+}
+
+/* Arrow Animation */
+.arrow {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+/* Size Variations */
+.sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+  gap: var(--space-1);
+}
+
+.sm .arrow {
+  width: 14px;
+  height: 14px;
+}
+
+.md {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-base);
+  gap: var(--space-2);
+}
+
+.md .arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.lg {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-lg);
+  gap: var(--space-2);
+}
+
+.lg .arrow {
+  width: 18px;
+  height: 18px;
+}
+
+/* Disabled State */
+.disabled {
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.disabled:hover {
+  color: var(--color-gray-400);
+  background: transparent;
+}
+
+.disabled .arrow {
+  transform: none;
+}
+
+/* Underline Effect */
+.readMoreButton::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: var(--space-3);
+  right: calc(var(--space-3) + 20px); /* Account for arrow space */
+  height: 1px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.readMoreButton:hover::after {
+  transform: scaleX(1);
+}
+
+.sm::after {
+  left: var(--space-2);
+  right: calc(var(--space-2) + 16px);
+}
+
+.lg::after {
+  left: var(--space-4);
+  right: calc(var(--space-4) + 22px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .readMoreButton {
+    padding: var(--space-3) var(--space-4);
+    min-height: 44px; /* Better touch target */
+    font-size: var(--font-size-base);
+  }
+  
+  .sm {
+    padding: var(--space-2) var(--space-3);
+    min-height: 40px;
+    font-size: var(--font-size-sm);
+  }
+  
+  .lg {
+    padding: var(--space-4) var(--space-5);
+    min-height: 48px;
+    font-size: var(--font-size-lg);
+  }
+}

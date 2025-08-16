@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Important pages for crawling
+Allow: /precios
+Allow: /materiales-aceptamos
+Allow: /materiales-vendemos
+Allow: /nosotros
+Allow: /contacto
+
+# Block admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow images for better SEO
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://konstander.cl/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1

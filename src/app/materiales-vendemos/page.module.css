@@ -1,0 +1,168 @@
+/* Materials for Sale Page Spacing Module */
+
+.materialsPage {
+  /* Remove all Tailwind spacing dependencies */
+}
+
+.pageContainer {
+  padding: var(--page-padding-mobile) 0;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.materialsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap-small);
+}
+
+.galleryCard {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-8);
+}
+
+.galleryTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--component-gap);
+  text-align: center;
+}
+
+.galleryDescription {
+  color: var(--color-gray-700);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--component-gap);
+}
+
+.imageCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  height: 12rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.imageCard:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imageCard:hover img {
+  transform: scale(1.05);
+}
+
+.imageContent {
+  position: absolute;
+  bottom: var(--element-gap);
+  left: var(--element-gap);
+  color: var(--color-white);
+}
+
+.imageTitle {
+  font-weight: var(--font-weight-semibold);
+}
+
+.imageDescription {
+  font-size: var(--font-size-sm);
+}
+
+.advantagesGrid {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.advantageCard {
+  background: var(--color-primary-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--component-gap);
+}
+
+.serviceCard {
+  background: var(--color-secondary-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--component-gap);
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--element-gap);
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.primaryBullet {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.secondaryBullet {
+  color: var(--color-secondary-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .pageContainer {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+  
+  .imageGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .advantagesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageContainer {
+    padding-top: var(--page-padding-desktop);
+    padding-bottom: var(--page-padding-desktop);
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+  
+  .imageGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
