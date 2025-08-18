@@ -57,11 +57,14 @@ function getEnvironmentVariable(key: string, fallback?: string): string {
   return value || ''
 }
 
-function getBooleanEnvironmentVariable(key: string, fallback = false): boolean {
-  const value = process.env[key]
-  if (!value) return fallback
-  return value.toLowerCase() === 'true'
-}
+// Currently not used but kept for future use
+// function getBooleanEnvironmentVariable(key: string, fallback = false): boolean {
+//   const value = process.env[key]
+//   if (!value) {
+//     return fallback
+//   }
+//   return value.toLowerCase() === 'true'
+// }
 
 export const env: EnvironmentConfig = {
   // App Configuration

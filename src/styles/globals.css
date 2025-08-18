@@ -28,6 +28,12 @@ html {
   color: var(--color-white);
 }
 
+/* GTM noscript iframe styling */
+.gtm-noscript {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
@@ -38,6 +44,8 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Safari-specific fixes */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Typography */

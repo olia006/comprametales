@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { Phone } from 'lucide-react';
+
 import { FaWhatsapp } from 'react-icons/fa';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
-import { SecondaryButton } from '@/components/buttons/SecondaryButton/SecondaryButton';
+
 import { COMPANY_INFO } from '@/config/pricing';
 import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 import styles from './HeroSection.module.css';

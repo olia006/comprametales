@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, ExternalLink, Award, Scale, Target, Truck, Instagram, Facebook, Home, DollarSign, Package, ShoppingCart, Users, Contact } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ExternalLink, Instagram, Facebook, Home, DollarSign, Package, ShoppingCart, Users, Contact } from 'lucide-react';
 import { COMPANY_INFO } from '@/config/pricing';
 import styles from './Footer.module.css';
 

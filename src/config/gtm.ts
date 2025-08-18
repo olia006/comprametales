@@ -68,6 +68,7 @@ export const trackPriceView = (materialName: string, price: number) => {
 
 // Declare global dataLayer type
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     dataLayer: any[];
   }

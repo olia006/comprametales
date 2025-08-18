@@ -118,21 +118,40 @@ export const PriceTable: React.FC<PriceTableProps> = ({
 
       <div className={styles.tableContainer}>
         <div className={styles.tableWrapper}>
-          <table className={styles.table}>
+          <table 
+            className={styles.table}
+            role="table"
+            aria-label={`Tabla de precios: ${title}`}
+            aria-describedby="table-summary"
+          >
+            <caption className={styles.tableCaption}>
+              {title} - Lista de precios de materiales y metales. 
+              {filteredMaterials.length > 0 ? 
+                `Mostrando ${filteredMaterials.length} de ${materials.length} materiales.` : 
+                'No hay materiales que coincidan con la búsqueda.'
+              }
+            </caption>
             <thead className={styles.tableHead}>
               <tr>
-                <th className={styles.headerCell}>Material</th>
-                <th className={styles.headerCell}>Categoría</th>
-                <th className={styles.headerCell}>Precio por Kg</th>
+                <th className={styles.headerCell} scope="col">Material</th>
+                <th className={styles.headerCell} scope="col">Categoría</th>
+                <th className={styles.headerCell} scope="col">Precio por Kg</th>
                 {showLastUpdated && (
-                  <th className={styles.headerCell}>Actualizado</th>
+                  <th className={styles.headerCell} scope="col">Actualizado</th>
                 )}
               </tr>
             </thead>
             <tbody className={styles.tableBody}>
               {filteredMaterials.map((material) => (
-                <tr key={material.name} className={styles.tableRow}>
-                  <td className={styles.materialCell}>
+                <tr 
+                  key={material.name} 
+                  className={styles.tableRow}
+                >
+                  <th 
+                    className={styles.materialCell}
+                    scope="row"
+                    aria-label={`Material: ${material.nameEs}`}
+                  >
                     <div className={styles.materialInfo}>
                       <span className={styles.materialName}>{material.nameEs}</span>
                       {material.description && (
@@ -141,21 +160,30 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                         </span>
                       )}
                     </div>
-                  </td>
-                  <td className={styles.categoryCell}>
+                  </th>
+                  <td 
+                    className={styles.categoryCell}
+                    aria-label={`Categoría: ${material.category === 'ferrosos' ? 'Ferroso' : material.category === 'no-ferrosos' ? 'No Ferroso' : 'Especial'}`}
+                  >
                     <span className={styles.categoryBadge}>
                       {material.category === 'ferrosos' ? 'Ferroso' :
                        material.category === 'no-ferrosos' ? 'No Ferroso' : 'Especial'}
                     </span>
                   </td>
-                  <td className={styles.priceCell}>
+                  <td 
+                    className={styles.priceCell}
+                    aria-label={`Precio: ${material.pricePerKg === 0 ? 'Consultar precio' : formatPrice(material.pricePerKg) + ' por kilogramo'}`}
+                  >
                     <span className={styles.price}>
                       {material.pricePerKg === 0 ? 'Consultar' : formatPrice(material.pricePerKg)}
                     </span>
                   </td>
 
                   {showLastUpdated && (
-                    <td className={styles.dateCell}>
+                    <td 
+                      className={styles.dateCell}
+                      aria-label={`Última actualización: ${material.lastUpdated}`}
+                    >
                       <span className={styles.updateDate}>
                         {material.lastUpdated}
                       </span>
@@ -178,7 +206,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         </div>
       )}
 
-      <div className={styles.summary}>
+      <div className={styles.summary} id="table-summary">
         <div className={styles.summaryGrid}>
           <div className={styles.summaryCard}>
             <span className={styles.summaryLabel}>Total Materiales</span>

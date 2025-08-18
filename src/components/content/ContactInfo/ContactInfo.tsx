@@ -24,7 +24,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({
 
   return (
     <div className={containerClasses}>
-      <h3 className={styles.title}>Información de Contacto</h3>
+      <h2 className={styles.title}>Información de Contacto</h2>
       
       <div className={styles.contactList}>
         {showPhone && (

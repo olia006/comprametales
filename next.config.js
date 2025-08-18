@@ -25,6 +25,103 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  
+  // Optimize JavaScript compilation for modern browsers
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
+  // Configure SWC for modern compilation
+  swcMinify: true,
+  
+  // Security Headers including Content Security Policy
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          // Content Security Policy - Comprehensive protection against XSS
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              // Default source: only allow same origin
+              "default-src 'self'",
+              
+              // Scripts: Allow required external services for analytics and functionality
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://vercel.live https://maps.googleapis.com https://maps.google.com https://www.google.com",
+              
+              // Styles: Allow inline styles (required for CSS-in-JS) and Google Fonts
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              
+              // Fonts: Allow Google Fonts
+              "font-src 'self' https://fonts.gstatic.com",
+              
+              // Images: Allow data URIs, blob, and required external services
+              "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.google.com https://www.google.com",
+              
+              // Connect: Allow analytics and performance monitoring
+              "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+              
+              // Frames: Allow Google services (Maps, GTM)
+              "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
+              
+              // Objects: Block all object embeds
+              "object-src 'none'",
+              
+              // Base URI: Restrict to same origin
+              "base-uri 'self'",
+              
+              // Form actions: Allow self and communication protocols
+              "form-action 'self' https://wa.me tel: mailto:",
+              
+              // Frame ancestors: Prevent clickjacking
+              "frame-ancestors 'none'",
+              
+              // Upgrade insecure requests to HTTPS
+              "upgrade-insecure-requests"
+            ].join('; ')
+          },
+          
+          // Prevent clickjacking attacks
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          
+          // Prevent MIME type sniffing
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          
+          // Control referrer information
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          
+          // Enable XSS filtering
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          
+          // Control browser features
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(self), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()'
+          },
+          
+          // Enforce HTTPS (disabled in development)
+          ...(process.env.NODE_ENV === 'production' ? [{
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload'
+          }] : [])
+        ]
+      }
+    ]
+  },
 }
 
 module.exports = nextConfig

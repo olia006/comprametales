@@ -42,13 +42,13 @@ export default function ContactoPage() {
           
           <div className={styles.rightColumn}>
             <div className={styles.whatToBringCard}>
-              <h3 className={styles.whatToBringTitle}>Qué Traer</h3>
+              <h2 className={styles.whatToBringTitle}>Qué Traer</h2>
               <div className={styles.whatToBringSections}>
                 <div className={styles.documentSection}>
-                  <h4 className={styles.sectionTitle}>
+                  <h3 className={styles.sectionTitle}>
                     <span className={`${styles.sectionDot} ${styles.primaryDot}`}></span>
                     Documentos Requeridos
-                  </h4>
+                  </h3>
                   <ul className={styles.sectionList}>
                     <li className={styles.listItem}>
                       <span className={`${styles.listBullet} ${styles.primaryBullet}`}>•</span>
@@ -62,10 +62,10 @@ export default function ContactoPage() {
                 </div>
                 
                 <div className={styles.materialSection}>
-                  <h4 className={styles.sectionTitle}>
+                  <h3 className={styles.sectionTitle}>
                     <span className={`${styles.sectionDot} ${styles.secondaryDot}`}></span>
                     Materiales Aceptados
-                  </h4>
+                  </h3>
                   <ul className={styles.sectionList}>
                     <li className={styles.listItem}>
                       <span className={`${styles.listBullet} ${styles.secondaryBullet}`}>•</span>

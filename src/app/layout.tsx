@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
@@ -41,11 +41,16 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: '#1e88e5',
   other: {
     'msapplication-TileColor': '#1e88e5',
     'msapplication-config': '/browserconfig.xml',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#1e88e5',
+  width: 'device-width',
+  initialScale: 1
 };
 
 export default function RootLayout({
@@ -57,7 +62,7 @@ export default function RootLayout({
     <html lang="es-CL">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
         <link rel="canonical" href="https://konstander.cl" />
         
         {/* Google Tag Manager */}
@@ -76,6 +81,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

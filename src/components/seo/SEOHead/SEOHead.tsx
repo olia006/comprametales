@@ -113,24 +113,62 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
       
-      {/* Open Graph */}
+      {/* Open Graph - Complete Implementation */}
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="KONSTANDER" />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={`https://konstander.cl${ogImage}`} />
+      <meta property="og:image:secure_url" content={`https://konstander.cl${ogImage}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
+      <meta property="og:image:type" content="image/webp" />
       <meta property="og:locale" content="es_CL" />
+      <meta property="og:locale:alternate" content="es_ES" />
+      <meta property="og:updated_time" content={new Date().toISOString()} />
       
-      {/* Twitter Card */}
+      {/* Article specific Open Graph (when applicable) */}
+      {ogType === 'article' && (
+        <>
+          <meta property="article:author" content="KONSTANDER" />
+          <meta property="article:publisher" content="https://konstander.cl" />
+          <meta property="article:section" content="Metales y Chatarra" />
+          <meta property="article:tag" content="chatarra" />
+          <meta property="article:tag" content="metales" />
+          <meta property="article:tag" content="reciclaje" />
+        </>
+      )}
+      
+      {/* Business specific Open Graph */}
+      {ogType === 'business.business' && (
+        <>
+          <meta property="business:contact_data:street_address" content="Panamericana Norte 17110" />
+          <meta property="business:contact_data:locality" content="Lampa" />
+          <meta property="business:contact_data:region" content="Región Metropolitana" />
+          <meta property="business:contact_data:country_name" content="Chile" />
+          <meta property="place:location:latitude" content={COMPANY_INFO.coordinates.lat.toString()} />
+          <meta property="place:location:longitude" content={COMPANY_INFO.coordinates.lng.toString()} />
+        </>
+      )}
+      
+      {/* Twitter Card - Complete Implementation */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@konstander_spa" />
+      <meta name="twitter:creator" content="@konstander_spa" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={`https://konstander.cl${ogImage}`} />
       <meta name="twitter:image:alt" content={title} />
+      <meta name="twitter:domain" content="konstander.cl" />
+      <meta name="twitter:url" content={canonical} />
+      
+      {/* Additional Twitter metadata */}
+      <meta name="twitter:label1" content="Ubicación" />
+      <meta name="twitter:data1" content="Lampa, Región Metropolitana" />
+      <meta name="twitter:label2" content="Horarios" />
+      <meta name="twitter:data2" content="Lun-Dom 8:00-18:00" />
       
       {/* Business Specific */}
       <meta name="geo.region" content="CL-RM" />

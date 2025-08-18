@@ -4,10 +4,11 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { LazySection } from '@/components/ui/LazySection/LazySection';
 import { Layout } from '@/components/layout/Layout/Layout';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
+
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
 import { getHighestPrices } from '@/config/pricing';
 import styles from './page.module.css';
+import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
 export default function HomePage() {
   const topPrices = getHighestPrices(3);
@@ -20,6 +21,7 @@ export default function HomePage() {
         canonical="https://konstander.cl"
         keywords="compra chatarra, metales, cobre precio hoy, hierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios"
       />
+
       
       <PerformanceMonitor pageName="Homepage" pageType="landing" />
       

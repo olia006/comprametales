@@ -1,0 +1,17 @@
+# Modern browsers that support ES2020+ features
+# This targets browsers with >0.2% market share that support modern JavaScript
+
+# Production environment (default)
+>0.2%
+not dead
+not op_mini all
+Chrome >= 85
+Firefox >= 79
+Safari >= 14
+Edge >= 85
+
+# Development environment
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version

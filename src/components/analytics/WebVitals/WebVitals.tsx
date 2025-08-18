@@ -72,8 +72,12 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
 
       const [good, poor] = thresholds[name] || [0, 0];
       
-      if (value <= good) return 'good';
-      if (value <= poor) return 'needs-improvement';
+      if (value <= good) {
+        return 'good';
+      }
+      if (value <= poor) {
+        return 'needs-improvement';
+      }
       return 'poor';
     };
 
@@ -106,9 +110,12 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
 };
 
 // Hook for manual Web Vitals reporting
+// eslint-disable-next-line no-unused-vars
 export const useWebVitals = (callback?: (metric: any) => void) => {
   useEffect(() => {
-    if (!callback) return;
+    if (!callback) {
+      return;
+    }
 
     const initHook = async () => {
       try {

@@ -141,6 +141,19 @@
   font-size: var(--font-size-sm);
 }
 
+/* Table Caption for Accessibility */
+.tableCaption {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+  font-weight: var(--font-weight-medium);
+  caption-side: top;
+  margin-bottom: var(--space-2);
+}
+
 .tableHead {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white);

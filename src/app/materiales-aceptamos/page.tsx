@@ -95,7 +95,7 @@ export default function MaterialesAceptamosPage() {
             <h2 className={styles.requirementsTitle}>Requisitos Generales</h2>
             <div className={styles.requirementsGrid}>
               <div>
-                <h3>Aceptamos:</h3>
+                <h3>Materiales que Aceptamos:</h3>
                 <div className={styles.requirementsList}>
                   <div>✓ Materiales limpios y separados</div>
                   <div>✓ Chatarra doméstica e industrial</div>
@@ -106,7 +106,7 @@ export default function MaterialesAceptamosPage() {
                 </div>
               </div>
               <div>
-                <h3>No Aceptamos:</h3>
+                <h3>Materiales que No Aceptamos:</h3>
                 <div className={styles.requirementsList}>
                   <div>✗ Materiales contaminados con químicos</div>
                   <div>✗ Recipientes que contenían combustible</div>

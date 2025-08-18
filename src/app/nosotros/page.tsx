@@ -2,9 +2,10 @@ import { Layout } from '@/components/layout/Layout/Layout';
 import { PageHero } from '@/components/sections/PageHero/PageHero';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
+
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
-import { Star, DollarSign, Shield, Clock, MapPin, Recycle, Leaf, Globe } from 'lucide-react';
+import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
+import { DollarSign, Shield, Clock, MapPin, Recycle, Leaf, Globe } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function NosotrosPage() {
@@ -15,6 +16,7 @@ export default function NosotrosPage() {
         description="Conoce la historia de KONSTANDER, empresa líder en compra y venta de metales en Lampa. Experiencia, confianza y los mejores precios del mercado."
         canonical="https://konstander.cl/nosotros"
       />
+
       
       <BreadcrumbNav 
         items={[

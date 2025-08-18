@@ -34,7 +34,8 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
     className
   ].filter(Boolean).join(' ');
 
-  const getCategoryIcon = (category: string) => {
+  // Commented out for now, not currently used
+  /* const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'ferrosos':
         return (
@@ -62,7 +63,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
           </svg>
         );
     }
-  };
+  }; */
 
   const getCategoryName = (category: string) => {
     switch (category) {
@@ -107,7 +108,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
                 )}
                 <div className={styles.materialHeader}>
                   <div className={styles.materialInfo}>
-                    <h3 className={styles.materialName}>{material.nameEs}</h3>
+                    <h4 className={styles.materialName}>{material.nameEs}</h4>
                   </div>
                 </div>
                 
@@ -141,9 +142,9 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
 
       {examples.length > 0 && (
         <div className={styles.examplesSection}>
-          <h3 className={styles.sectionTitle}>
+          <h4 className={styles.sectionTitle}>
             {isForSale ? 'Productos Disponibles' : 'Ejemplos de Materiales'}
-          </h3>
+          </h4>
           <div className={styles.examplesGrid}>
             {examples.map((example, index) => (
               <div key={index} className={styles.exampleCard}>

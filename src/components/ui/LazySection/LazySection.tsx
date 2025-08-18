@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { SkeletonLoader } from '@/components/ui/SkeletonLoader/SkeletonLoader';
-import styles from './LazySection.module.css';
+// import styles from './LazySection.module.css';
 
 interface LazySectionProps {
   children: React.ReactNode;

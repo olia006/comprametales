@@ -151,9 +151,12 @@ export const errorApi = {
 }
 
 // Utility function for handling API responses
+// eslint-disable-next-line no-unused-vars
 export function handleApiResponse<T>(
   response: ApiResponse<T>,
+  // eslint-disable-next-line no-unused-vars
   onSuccess?: (data: T) => void,
+  // eslint-disable-next-line no-unused-vars
   onError?: (error: string) => void
 ): void {
   if (response.success && response.data) {
@@ -166,11 +169,14 @@ export function handleApiResponse<T>(
 }
 
 // React hook for API calls (if you want to add React Query later)
+// eslint-disable-next-line no-unused-vars
 export function useApiCall<T>(
   apiCall: () => Promise<ApiResponse<T>>,
   dependencies: any[] = []
 ) {
   // This is a placeholder for future React Query integration
+  // eslint-disable-next-line no-unused-vars
+  const _unused = { apiCall, dependencies }; // Acknowledge parameters
   // For now, you can use this pattern in components:
   // 
   // const [data, setData] = useState<T | null>(null)

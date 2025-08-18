@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { COMPANY_INFO } from '@/config/pricing';
-import { MapPin, Navigation, Car, Truck, Scale, Users, Phone, Mail } from 'lucide-react';
+import { MapPin, Navigation, Car, Truck, Scale, Users } from 'lucide-react';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton/SecondaryButton';
 import styles from './Map.module.css';
@@ -41,7 +41,7 @@ export const Map: React.FC<MapProps> = ({
   const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1234567890123!2d-70.7276479!3d-33.3122341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662bf731aa77e4f%3A0x1c4f941e1ff7c2a6!2sPanamericana%20Norte%2017110%2C%20Lampa%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1234567890123";
   
   // Fallback to OpenStreetMap if Google Maps fails
-  const openStreetMapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=-70.7766,-33.3248,-70.6966,-33.2648&layer=mapnik&marker=${COMPANY_INFO.coordinates.lat},${COMPANY_INFO.coordinates.lng}`;
+  // const openStreetMapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=-70.7766,-33.3248,-70.6966,-33.2648&layer=mapnik&marker=${COMPANY_INFO.coordinates.lat},${COMPANY_INFO.coordinates.lng}`;
 
   const handleMapLoad = () => {
     setMapLoaded(true);

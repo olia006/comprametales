@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+
 import { MaterialPreviewCard } from '@/components/content/MaterialPreviewCard/MaterialPreviewCard';
 import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
 import { formatPrice, MaterialPrice } from '@/config/pricing';

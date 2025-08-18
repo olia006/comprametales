@@ -1,0 +1,101 @@
+.pageContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-4);
+}
+
+.content {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  margin: var(--space-4) 0 var(--space-2) 0;
+}
+
+.section p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-3);
+}
+
+.section ul {
+  margin: var(--space-3) 0;
+  padding-left: var(--space-6);
+}
+
+.section li {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.contactInfo {
+  background: var(--color-gray-50);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+  margin: var(--space-4) 0;
+}
+
+.contactInfo p {
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-weight-medium);
+}
+
+.contactInfo p:last-child {
+  margin-bottom: 0;
+}
+
+.lastUpdated {
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  text-align: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .content {
+    padding: var(--space-6);
+  }
+  
+  .section h2 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .section h3 {
+    font-size: var(--font-size-base);
+  }
+}

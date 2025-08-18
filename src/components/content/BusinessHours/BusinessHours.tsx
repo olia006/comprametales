@@ -23,7 +23,7 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
   const getCurrentStatus = () => {
     const now = new Date();
     const currentHour = now.getHours();
-    const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    // const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
     
     // Business is open Monday-Sunday 8:00-18:00 (Chilean time)
     const isOpen = currentHour >= 8 && currentHour < 18;
@@ -56,7 +56,7 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
   return (
     <div className={containerClasses}>
       <div className={styles.header}>
-        <h3 className={styles.title}>Horarios de Atención</h3>
+        <h2 className={styles.title}>Horarios de Atención</h2>
         {showStatus && (
           <div className={`${styles.statusBadge} ${status.isOpen ? styles.open : styles.closed}`}>
             <span className={styles.statusDot}></span>

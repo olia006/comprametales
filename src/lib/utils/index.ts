@@ -236,9 +236,11 @@ export const performanceUtils = {
   /**
    * Debounce function calls
    */
+  // eslint-disable-next-line no-unused-vars
   debounce: <T extends (...args: any[]) => any>(
     func: T,
     wait: number
+  // eslint-disable-next-line no-unused-vars
   ): ((...funcArgs: Parameters<T>) => void) => {
     let timeout: NodeJS.Timeout
     return (...funcArgs: Parameters<T>) => {
@@ -250,9 +252,11 @@ export const performanceUtils = {
   /**
    * Throttle function calls
    */
+  // eslint-disable-next-line no-unused-vars
   throttle: <T extends (...args: any[]) => any>(
     func: T,
     limit: number
+  // eslint-disable-next-line no-unused-vars
   ): ((...funcArgs: Parameters<T>) => void) => {
     let inThrottle: boolean
     return (...funcArgs: Parameters<T>) => {
