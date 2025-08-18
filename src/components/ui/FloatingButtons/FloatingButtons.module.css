@@ -67,7 +67,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .floatingButtons {
-    bottom: var(--space-4);
+    bottom: var(--space-20);
     right: var(--space-4);
     gap: var(--space-2);
   }

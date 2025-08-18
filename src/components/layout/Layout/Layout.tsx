@@ -12,8 +12,15 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children, className = '' }) => {
   return (
     <div className={`${styles.layout} ${className}`}>
+      <a 
+        href="#main-content" 
+        className={styles.skipLink}
+        tabIndex={0}
+      >
+        Saltar al contenido principal
+      </a>
       <Header />
-      <main className={styles.main} role="main">
+      <main id="main-content" className={styles.main} role="main">
         {children}
       </main>
       <Footer />

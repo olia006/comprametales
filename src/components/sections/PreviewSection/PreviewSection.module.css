@@ -24,16 +24,9 @@
   position: relative;
 }
 
+/* Mobile: No divider on mobile - content stacks naturally */
 .content::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  background: linear-gradient(180deg, transparent 0%, var(--color-primary) 20%, var(--color-primary) 80%, transparent 100%);
-  opacity: 0.3;
+  display: none;
 }
 
 /* Text Content */
@@ -524,16 +517,19 @@
     position: relative;
   }
 
+  /* Tablet+: Vertical divider between text and visual content */
   .content::after {
+    display: block;
     content: '';
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: var(--space-4);
+    bottom: var(--space-4);
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
     background: linear-gradient(180deg, transparent 0%, var(--color-primary) 20%, var(--color-primary) 80%, transparent 100%);
     opacity: 0.3;
+    z-index: 1;
   }
   
   .textContent {

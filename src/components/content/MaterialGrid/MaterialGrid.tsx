@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MaterialPrice, formatPrice } from '@/config/pricing';
 import styles from './MaterialGrid.module.css';
 
@@ -12,6 +13,7 @@ interface MaterialGridProps {
   isForSale?: boolean;
   categoryColor?: 'primary' | 'secondary';
   className?: string;
+  images?: { [key: string]: string };
 }
 
 export const MaterialGrid: React.FC<MaterialGridProps> = ({
@@ -24,6 +26,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
   isForSale = false,
   categoryColor = 'primary',
   className = '',
+  images = {},
 }) => {
   const containerClasses = [
     styles.materialGrid,
@@ -91,17 +94,20 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
           <div className={styles.materialsGrid}>
             {materials.map((material) => (
               <div key={material.name} className={styles.materialCard}>
-                <div className={styles.materialHeader}>
-                  <div className={styles.materialIcon} role="img" aria-label={`${getCategoryName(material.category)} icon`}>
-                    <div className={styles.icon}>
-                      {getCategoryIcon(material.category)}
-                    </div>
+                {images[material.name] && (
+                  <div className={styles.materialImage}>
+                    <Image
+                      src={images[material.name]}
+                      alt={`${material.nameEs} - ${getCategoryName(material.category)}`}
+                      width={300}
+                      height={200}
+                      className={styles.image}
+                    />
                   </div>
+                )}
+                <div className={styles.materialHeader}>
                   <div className={styles.materialInfo}>
                     <h3 className={styles.materialName}>{material.nameEs}</h3>
-                    <span className={styles.materialCategory}>
-                      {getCategoryName(material.category)}
-                    </span>
                   </div>
                 </div>
                 
@@ -114,7 +120,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
                 {showPrices && (
                   <div className={styles.materialPrice}>
                     <span className={styles.priceLabel}>
-                      {isForSale ? 'Precio:' : 'Compramos a:'}
+                      {isForSale ? 'Precio:' : 'Precio:'}
                     </span>
                     <span className={styles.priceValue}>
                       {formatPrice(material.pricePerKg)}<span className={styles.unit}>/kg</span>

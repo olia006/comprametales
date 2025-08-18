@@ -1,0 +1,60 @@
+/* Enhanced Focus Management for Accessibility */
+
+/* Remove default outline for non-keyboard focus */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus indicators for keyboard navigation */
+.navigationLink:focus-visible,
+.desktopNavigationLink:focus-visible,
+.footerLink:focus-visible,
+.socialLink:focus-visible,
+.legalLink:focus-visible,
+.contactLink:focus-visible,
+.creditLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-subtle);
+}
+
+/* Button focus indicators */
+button:focus-visible,
+.button:focus-visible,
+a[role="button"]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--color-primary-subtle);
+}
+
+/* Form element focus indicators */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-subtle);
+}
+
+/* Skip link focus */
+.skipLink:focus {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline-width: 3px;
+    outline-style: solid;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none;
+  }
+}

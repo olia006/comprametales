@@ -3,6 +3,26 @@
   flex-direction: column;
   min-height: 100vh;
   background: var(--color-white);
+  position: relative;
+}
+
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  z-index: 10000;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  transition: top 0.2s ease;
+}
+
+.skipLink:focus {
+  top: 6px;
 }
 
 .main {

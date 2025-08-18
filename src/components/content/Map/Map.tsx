@@ -82,7 +82,6 @@ export const Map: React.FC<MapProps> = ({
             title="Ubicación de KONSTANDER"
             onLoad={handleMapLoad}
             onError={handleMapError}
-            loading="lazy"
           />
         ) : (
           <div className={styles.mapFallback}>

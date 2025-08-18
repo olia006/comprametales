@@ -34,7 +34,7 @@ export default function PreciosPage() {
         title="Precios de Metales y Chatarra"
         subtitle="Cotizaciones Actualizadas"
         description="Consulta nuestros precios competitivos para todos los tipos de metales. Precios actualizados diariamente según el mercado internacional."
-        backgroundImage="/images/pricepage.jpg"
+        backgroundImage="/images/pricepage.webp"
       />
       
       <div className={styles.pageContainer}>

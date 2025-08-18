@@ -67,7 +67,7 @@ export default function MaterialesVendemosPage() {
         title="Materiales Usados en Venta"
         subtitle="Metales Reciclados de Calidad"
         description="Disponemos de materiales metálicos reciclados para construcción, industria y reparaciones, hasta un 50% más económicos que nuevos y con la misma resistencia. Todos son cuidadosamente seleccionados y limpiados para garantizar calidad y rendimiento"
-        backgroundImage="/images/ventapage.jpg"
+        backgroundImage="/images/ventapage.webp"
       />
       
       <div className={styles.pageContainer}>

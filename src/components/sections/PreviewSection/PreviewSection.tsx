@@ -101,12 +101,12 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-aceptamos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesqueAceptamos/fierro.jpg', label: 'Fierro', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Santiago' },
-                    { src: '/images/MaterialesqueAceptamos/cobre.jpg', label: 'Cobre', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria' },
-                    { src: '/images/MaterialesqueAceptamos/aluminio.jpg', label: 'Aluminio', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato' },
-                    { src: '/images/MaterialesqueAceptamos/bronce.jpg', label: 'Bronce', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
-                    { src: '/images/MaterialesqueAceptamos/acero.jpg', label: 'Acero Inoxidable', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
-                    { src: '/images/MaterialesqueAceptamos/electrico.jpg', label: 'Material Eléctrico', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
+                    { src: '/images/MaterialesqueAceptamos/fierro.webp', label: 'Fierro', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Santiago' },
+                    { src: '/images/MaterialesqueAceptamos/cobre.webp', label: 'Cobre', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria' },
+                    { src: '/images/MaterialesqueAceptamos/aluminio.webp', label: 'Aluminio', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato' },
+                    { src: '/images/MaterialesqueAceptamos/bronce.webp', label: 'Bronce', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
+                    { src: '/images/MaterialesqueAceptamos/acero.webp', label: 'Acero Inoxidable', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
+                    { src: '/images/MaterialesqueAceptamos/electrico.webp', label: 'Material Eléctrico', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
                   ].map((item) => (
                     <MaterialPreviewCard
                       key={item.label}

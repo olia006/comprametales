@@ -6,16 +6,18 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
 import { SecondaryButton } from '@/components/buttons/SecondaryButton/SecondaryButton';
 import { COMPANY_INFO } from '@/config/pricing';
+import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 import styles from './HeroSection.module.css';
 
 export const HeroSection: React.FC = () => {
+  const { trackClick } = useInteractionTracking({ pageName: 'Homepage' });
 
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroBackground}>
         <Image
           src="/images/herosection.webp?v=2"
-          alt="KONSTANDER compra de chatarra y metales en Lampa"
+          alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
           sizes="100vw"
@@ -44,17 +46,11 @@ export const HeroSection: React.FC = () => {
                 size="md"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackClick('whatsapp_cta_hero')}
               >
                 Cotizar por WhatsApp
                 <FaWhatsapp className={styles.icon} />
               </PrimaryButton>
-              <SecondaryButton 
-                href="tel:+56937720208" 
-                size="md"
-              >
-                <Phone className={styles.buttonIcon} />
-                Llamar
-              </SecondaryButton>
             </div>
 
             <div className={styles.businessInfo}>

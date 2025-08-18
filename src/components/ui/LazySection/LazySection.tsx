@@ -48,9 +48,15 @@ export const LazySection: React.FC<LazySectionProps> = ({
   }, [threshold, rootMargin, hasLoaded]);
 
   return (
-    <div ref={sectionRef} className={className}>
+    <div 
+      ref={sectionRef} 
+      className={className}
+    >
       {isVisible ? children : (
-        <SkeletonLoader variant={skeletonVariant} />
+        <SkeletonLoader 
+          variant={skeletonVariant} 
+          aria-label="Cargando contenido..."
+        />
       )}
     </div>
   );

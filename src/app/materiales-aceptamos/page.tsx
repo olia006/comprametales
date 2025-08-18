@@ -33,7 +33,7 @@ export default function MaterialesAceptamosPage() {
         title="Materiales que Aceptamos"
         subtitle="Compramos Todo Tipo de Metales"
         description="En KONSTANDER compramos todo tipo de metales: desde chatarra común hasta materiales especializados. Pagamos al tiro y siempre con los mejores precios del mercado para cobre, fierro, aluminio, bronce y más."
-        backgroundImage="/images/aceptamospage.jpg"
+        backgroundImage="/images/aceptamospage.webp"
       />
       
       <div className={styles.pageContainer}>
@@ -43,6 +43,14 @@ export default function MaterialesAceptamosPage() {
             subtitle="Metales que contienen hierro"
             description="Aceptamos todo tipo de materiales ferrosos en cualquier estado. Desde chatarra doméstica hasta estructuras industriales."
             materials={ferrosoMaterials}
+            images={{
+              'Iron Mixed': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-mixto.webp',
+              'Cast Iron': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-fundido.webp',
+              'Iron Long': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-largo.webp',
+              'Iron Short': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-corto.webp',
+              'Iron Turnings': '/images/MaterialesqueAceptamos/MaterialesFerrosos/viruta.webp',
+              'Tinplate Steel': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-lata.webp'
+            }}
             examples={[
               'Vigas y estructuras metálicas',
               'Tubos y cañerías de hierro',
@@ -88,25 +96,25 @@ export default function MaterialesAceptamosPage() {
             <div className={styles.requirementsGrid}>
               <div>
                 <h3>Aceptamos:</h3>
-                <ul className={styles.requirementsList}>
-                  <li>✓ Materiales limpios y separados</li>
-                  <li>✓ Chatarra doméstica e industrial</li>
-                  <li>✓ Estructuras metálicas desmontadas</li>
-                  <li>✓ Cables pelados y sin pelar</li>
-                  <li>✓ Radiadores sin plástico</li>
-                  <li>✓ Mínimo 50kg por transacción</li>
-                </ul>
+                <div className={styles.requirementsList}>
+                  <div>✓ Materiales limpios y separados</div>
+                  <div>✓ Chatarra doméstica e industrial</div>
+                  <div>✓ Estructuras metálicas desmontadas</div>
+                  <div>✓ Cables pelados y sin pelar</div>
+                  <div>✓ Radiadores sin plástico</div>
+                  <div>✓ Mínimo 50kg por transacción</div>
+                </div>
               </div>
               <div>
                 <h3>No Aceptamos:</h3>
-                <ul className={styles.requirementsList}>
-                  <li>✗ Materiales contaminados con químicos</li>
-                  <li>✗ Recipientes que contenían combustible</li>
-                  <li>✗ Materiales radiactivos</li>
-                  <li>✗ Cables con aislación de plomo</li>
-                  <li>✗ Materiales explosivos o peligrosos</li>
-                  <li>✗ Metales de procedencia dudosa</li>
-                </ul>
+                <div className={styles.requirementsList}>
+                  <div>✗ Materiales contaminados con químicos</div>
+                  <div>✗ Recipientes que contenían combustible</div>
+                  <div>✗ Materiales radiactivos</div>
+                  <div>✗ Cables con aislación de plomo</div>
+                  <div>✗ Materiales explosivos o peligrosos</div>
+                  <div>✗ Metales de procedencia dudosa</div>
+                </div>
               </div>
             </div>
           </div>

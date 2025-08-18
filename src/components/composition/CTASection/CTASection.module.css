@@ -174,15 +174,21 @@
   
   .actions {
     flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-3);
+    align-items: center;
+    gap: var(--space-4);
   }
   
   .center .actions,
   .left .actions,
   .right .actions {
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
+  }
+  
+  /* Mobile button sizing - make them longer but not full width */
+  .actions > * {
+    min-width: 200px;
+    width: auto;
   }
   
   .sm .title {
@@ -206,6 +212,16 @@
   
   .subtitle {
     font-size: var(--font-size-xs);
+  }
+  
+  .actions {
+    gap: var(--space-3);
+  }
+  
+  /* Small screen button sizing */
+  .actions > * {
+    min-width: 180px;
+    width: auto;
   }
 }
 
