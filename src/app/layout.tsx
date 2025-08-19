@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
-import './globals.css';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -73,25 +72,45 @@ export default function RootLayout({
         {/* Critical CSS - Inline to reduce render-blocking and improve LCP */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            /* Critical base styles - minimal essential styles only */
+            /* Critical base styles */
             * {
               box-sizing: border-box;
+              margin: 0;
+              padding: 0;
             }
             
             html {
               scroll-behavior: smooth;
+              font-size: 16px;
+              height: 100%;
             }
             
             body {
-              margin: 0;
-              padding: 0;
               font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
               font-size: 1rem;
+              font-weight: 400;
               line-height: 1.5;
               color: #212121;
               background-color: #ffffff;
+              min-height: 100vh;
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
+              -webkit-tap-highlight-color: transparent;
+            }
+            
+            /* Critical typography */
+            h1, h2, h3, h4, h5, h6 {
+              font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              font-weight: 700;
+              line-height: 1.25;
+              margin-bottom: 1.5rem;
+              color: #212121;
+            }
+            
+            h1 {
+              font-size: 3rem;
+              font-weight: 800;
+              margin-bottom: 2rem;
             }
             
             /* Critical layout */
@@ -99,6 +118,17 @@ export default function RootLayout({
               max-width: 1200px;
               margin: 0 auto;
               padding: 0 1rem;
+            }
+            
+            /* Critical button styles */
+            button, a {
+              font-family: inherit;
+            }
+            
+            /* Critical image styles */
+            img {
+              max-width: 100%;
+              height: auto;
             }
             
             /* Critical focus styles */
@@ -111,6 +141,9 @@ export default function RootLayout({
             @media (max-width: 768px) {
               .container {
                 padding: 0 1rem;
+              }
+              h1 {
+                font-size: 2.25rem;
               }
             }
           `

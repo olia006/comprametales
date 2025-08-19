@@ -10,6 +10,9 @@ import { getFeaturedPrices } from '@/config/pricing';
 import styles from './page.module.css';
 import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
+// Import non-critical CSS at component level to avoid render-blocking
+import './globals.css';
+
 export default function HomePage() {
   const topPrices = getFeaturedPrices();
 

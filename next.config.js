@@ -11,13 +11,13 @@ const nextConfig = {
     ],
     // Allow local images
     unoptimized: false,
-    // Configure image formats
-    formats: ['image/webp', 'image/avif'],
-    // Configure image sizes
+    // Configure image formats - AVIF first for better compression
+    formats: ['image/avif', 'image/webp'],
+    // Configure image sizes for better responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Increase limits for large images
-    minimumCacheTTL: 60,
+    // Increase cache time for better performance
+    minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
