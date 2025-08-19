@@ -11,13 +11,13 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   background: transparent;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   position: relative;
   padding: var(--space-2) var(--space-3);
 }
 
 .readMoreButton:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-gray-900);
   background: var(--color-primary-subtle);
   text-decoration: none;
 }
@@ -99,7 +99,7 @@
   left: var(--space-3);
   right: calc(var(--space-3) + 20px); /* Account for arrow space */
   height: 1px;
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-fast);

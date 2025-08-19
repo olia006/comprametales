@@ -133,7 +133,7 @@
 
 .materialCategory {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -141,13 +141,13 @@
 .materialPrice {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 .unit {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
 }
 
 .pricesNote {
@@ -196,7 +196,7 @@
 .iconLabel {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
   text-align: center;
 }
 
@@ -436,7 +436,7 @@
 .statsInText .statLabel {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -474,7 +474,7 @@
 
 .contactText {
   font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-800);
+  color: var(--color-gray-700);
 }
 
 /* Bare iframe for contacto preview */
