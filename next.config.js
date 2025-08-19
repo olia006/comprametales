@@ -68,6 +68,13 @@ const nextConfig = {
         ...config.resolve.alias,
         // Use native implementations when available
         'core-js': false,
+        'core-js/features': false,
+        'core-js/proposals': false,
+        'core-js/actual': false,
+        'core-js/stable': false,
+        'core-js/modules': false,
+        'regenerator-runtime': false,
+        'regenerator-runtime/runtime': false,
       };
       
       // Reduce polyfill overhead by targeting modern browsers
@@ -78,7 +85,18 @@ const nextConfig = {
         ...config.resolve.fallback,
         'core-js/modules': false,
         'core-js/stable': false,
+        'core-js/features': false,
+        'core-js/proposals': false,
+        'core-js/actual': false,
         'regenerator-runtime': false,
+        'regenerator-runtime/runtime': false,
+        'core-js/features/array/at': false,
+        'core-js/features/array/flat': false,
+        'core-js/features/array/flat-map': false,
+        'core-js/features/object/from-entries': false,
+        'core-js/features/object/has-own': false,
+        'core-js/features/string/trim-end': false,
+        'core-js/features/string/trim-start': false,
       };
     }
 
