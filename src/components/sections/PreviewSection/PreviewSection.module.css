@@ -44,7 +44,7 @@
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   background: var(--color-primary-subtle);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
@@ -62,7 +62,7 @@
 .description {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
-  color: var(--color-gray-700);
+  color: var(--color-gray-800);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -133,7 +133,7 @@
 
 .materialCategory {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
+  color: var(--color-gray-800);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -147,12 +147,12 @@
 .unit {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-600);
+  color: var(--color-gray-800);
 }
 
 .pricesNote {
   text-align: center;
-  color: var(--color-gray-700);
+  color: var(--color-gray-900);
   border-top: 1px solid var(--color-gray-200);
   padding-top: var(--space-3);
 }
@@ -410,7 +410,7 @@
 .statLabel {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
-  color: var(--color-gray-700);
+  color: var(--color-gray-900);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -436,7 +436,7 @@
 .statsInText .statLabel {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--color-gray-600);
+  color: var(--color-gray-800);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;

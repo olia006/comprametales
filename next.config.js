@@ -24,6 +24,8 @@ const nextConfig = {
   // Enable experimental features for better image handling
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    // Improve module resolution
+    esmExternals: 'loose',
   },
   
   // Optimize JavaScript compilation for modern browsers
@@ -34,6 +36,24 @@ const nextConfig = {
   
   // Configure SWC for modern compilation
   swcMinify: true,
+  
+  // Webpack configuration to handle module loading issues
+  webpack: (config, { isServer }) => {
+    // Handle web-vitals module loading
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    };
+    
+    // Ensure proper module resolution
+    config.resolve.alias = {
+      ...config.resolve.alias,
+    };
+    
+    return config;
+  },
   
   // Security Headers including Content Security Policy
   async headers() {
