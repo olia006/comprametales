@@ -200,8 +200,10 @@
 }
 
 .materialCell,
-.priceCell,
-
+.priceCell {
+  padding: var(--space-4);
+  vertical-align: top;
+}
 
 .materialCell {
   text-align: left;
@@ -230,8 +232,6 @@
   color: var(--color-gray-600);
   line-height: var(--line-height-snug);
 }
-
-
 
 .price {
   font-size: var(--font-size-xl);
@@ -284,14 +284,6 @@
   border-top-color: var(--color-secondary-dark);
 }
 
-
-
-
-
-
-
-
-
 .updateNotice {
   text-align: center;
   margin-bottom: var(--space-4);
@@ -303,12 +295,6 @@
   margin: 0;
   font-weight: var(--font-weight-medium);
 }
-
-
-
-
-
-
 
 /* Tablet Responsive */
 @media (min-width: 768px) {
@@ -325,8 +311,6 @@
   .headerCell {
     font-size: var(--font-size-base);
   }
-  
-
 }
 
 /* Desktop Responsive */
@@ -346,8 +330,6 @@
   .priceCell {
     min-width: 120px;
   }
-  
-
 }
 
 /* Print Styles */

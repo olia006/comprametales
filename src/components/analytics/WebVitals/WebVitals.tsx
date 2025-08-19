@@ -110,6 +110,7 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
 };
 
 // Hook for manual Web Vitals reporting
+// eslint-disable-next-line no-unused-vars
 export const useWebVitals = (callback?: (metric: any) => void) => {
   useEffect(() => {
     if (!callback) {

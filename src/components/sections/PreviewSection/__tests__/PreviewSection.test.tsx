@@ -3,11 +3,14 @@ import { PreviewSection } from '../PreviewSection'
 import { MaterialPrice } from '@/config/pricing'
 
 // Mock Next.js Image component
+const MockImage = ({ src, alt, ...props }: any) => {
+  return <img src={src} alt={alt} {...props} />
+}
+MockImage.displayName = 'Image'
+
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, ...props }: any) => (
-    <img src={src} alt={alt} {...props} />
-  ),
+  default: MockImage,
 }))
 
 // Mock ReadMoreButton component

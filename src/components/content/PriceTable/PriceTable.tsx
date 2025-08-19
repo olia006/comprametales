@@ -21,7 +21,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
   materials,
   categoryColor = 'primary',
   showFilters = true,
-  showLastUpdated = true,
+  showLastUpdated = true, // eslint-disable-line no-unused-vars
   className = '',
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'price'>('price');
@@ -65,18 +65,21 @@ export const PriceTable: React.FC<PriceTableProps> = ({
     return sortOrder === 'asc' ? <ChevronUp size={16} /> : <ChevronDown size={16} />;
   };
 
+  // Helper functions for future use
+  // eslint-disable-next-line no-unused-vars
   const getHighestPrice = () => {
     const prices = materials.map(m => m.pricePerKg).filter(price => price > 0);
     return prices.length > 0 ? Math.max(...prices) : 0;
   };
 
+  // eslint-disable-next-line no-unused-vars
   const getLowestPrice = () => {
     const prices = materials.map(m => m.pricePerKg).filter(price => price > 0);
     return prices.length > 0 ? Math.min(...prices) : 0;
   };
 
   const getLastUpdateDate = () => {
-    const dates = materials.map(m => new Date(m.lastUpdated));
+    const dates = materials.map(m => new Date(m.lastUpdated).getTime());
     const latestDate = new Date(Math.max(...dates));
     return latestDate.toLocaleDateString('es-CL', {
       year: 'numeric',

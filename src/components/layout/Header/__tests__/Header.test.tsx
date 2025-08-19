@@ -7,11 +7,14 @@ jest.mock('next/link', () => {
   return ({ children, href }: any) => <a href={href}>{children}</a>
 })
 
+const MockImage = ({ src, alt, ...props }: any) => {
+  return <img src={src} alt={alt} {...props} />
+}
+MockImage.displayName = 'Image'
+
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, ...props }: any) => (
-    <img src={src} alt={alt} {...props} />
-  ),
+  default: MockImage,
 }))
 
 // Mock PrimaryButton component

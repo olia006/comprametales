@@ -207,7 +207,7 @@ src/components/
 
 ## 🎯 **SEO Components**
 
-#### `SEOHead` - Page metadata
+### `SEOHead` - Page metadata
 
 ```tsx
 <SEOHead 
@@ -227,7 +227,7 @@ src/components/
 
 ## 📊 **Analytics Components**
 
-#### `WebVitals` - Performance monitoring
+### `WebVitals` - Performance monitoring
 
 ```tsx
 <WebVitals debug={process.env.NODE_ENV === 'development'} />

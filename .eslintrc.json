@@ -23,5 +23,14 @@
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx", "**/__tests__/**/*"],
+      "rules": {
+        "@next/next/no-img-element": "off",
+        "react/display-name": "off"
+      }
+    }
+  ]
 }

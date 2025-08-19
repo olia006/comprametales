@@ -17,6 +17,8 @@
 }
 
 .heroImage {
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -36,6 +38,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+  background-color: var(--color-gray-800);
 }
 
 .heroText {
