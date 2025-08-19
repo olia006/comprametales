@@ -14,12 +14,13 @@ interface LazySectionProps {
 export const LazySection: React.FC<LazySectionProps> = ({
   children,
   threshold = 0.1,
-  rootMargin = '50px',
+  rootMargin = '150px', // Increased to show skeleton longer
   className = '',
   skeletonVariant = 'previewSection',
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [showContent, setShowContent] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,6 +29,10 @@ export const LazySection: React.FC<LazySectionProps> = ({
         if (entry.isIntersecting && !hasLoaded) {
           setIsVisible(true);
           setHasLoaded(true);
+          // Add minimum display time for skeleton (600ms)
+          setTimeout(() => {
+            setShowContent(true);
+          }, 600);
           // Disconnect observer after first load to prevent re-triggering
           observer.disconnect();
         }
@@ -52,7 +57,7 @@ export const LazySection: React.FC<LazySectionProps> = ({
       ref={sectionRef} 
       className={className}
     >
-      {isVisible ? children : (
+      {isVisible && showContent ? children : (
         <SkeletonLoader 
           variant={skeletonVariant} 
           aria-label="Cargando contenido..."

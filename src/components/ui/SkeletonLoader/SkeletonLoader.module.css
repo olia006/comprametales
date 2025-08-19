@@ -53,7 +53,9 @@
 }
 
 .skeletonSubtitle {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
   height: 24px;
   width: 150px;
   margin: 0 auto var(--space-4) auto;
@@ -61,14 +63,20 @@
 }
 
 .skeletonTitle {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-md);
   height: 48px;
   width: 300px;
   margin: 0 auto var(--space-4) auto;
 }
 
 .skeletonDescription {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-md);
   height: 20px;
   width: 100%;
   max-width: 600px;
@@ -81,11 +89,13 @@
 }
 
 .skeletonButton {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
   height: 48px;
   width: 180px;
   margin: 0 auto;
-  border-radius: var(--radius-0);
+  border-radius: var(--radius-lg);
 }
 
 /* Visual Content */
@@ -113,13 +123,19 @@
 }
 
 .skeletonImage {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-md);
   flex: 1;
   min-height: 200px;
 }
 
 .skeletonLabel {
-  @extend .skeleton;
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-50) 50%, var(--color-gray-100) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-md);
   height: 20px;
   margin: var(--space-4);
 }
