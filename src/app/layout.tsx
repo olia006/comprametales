@@ -48,16 +48,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico?v=2' },
+      { url: '/favicon/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-48x48.png?v=2', sizes: '48x48', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { url: '/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon/android-chrome-192x192.png?v=2', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon/android-chrome-512x512.png?v=2', sizes: '512x512', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -84,16 +85,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="canonical" href="https://konstander.cl" />
-        
-        {/* Favicon Links */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         
         {/* Critical CSS - Inline to reduce render-blocking and improve LCP */}
         <style dangerouslySetInnerHTML={{
