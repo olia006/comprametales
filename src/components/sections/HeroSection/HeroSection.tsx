@@ -6,10 +6,11 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
 
 import { COMPANY_INFO } from '@/config/pricing';
-
+import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 import styles from './HeroSection.module.css';
 
 export const HeroSection: React.FC = () => {
+  const { trackClick } = useInteractionTracking({ pageName: 'Homepage' });
 
   return (
     <section className={styles.heroSection}>
@@ -48,7 +49,7 @@ export const HeroSection: React.FC = () => {
                 size="md"
                 target="_blank"
                 rel="noopener noreferrer"
-
+                onClick={() => trackClick('whatsapp_cta_hero')}
               >
                 Cotizar por WhatsApp
                 <FaWhatsapp className={styles.icon} />
