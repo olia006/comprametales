@@ -12,32 +12,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'KONSTANDER - Compra de Chatarra y Metales en Lampa, Chile',
-  description: 'Compra y venta de chatarra, hierro, cobre, aluminio y metales en Lampa, Región Metropolitana. Mejores precios, atención de lunes a domingo.',
+  title: 'Konstander SpA | Compra & Venta de Chatarra',
+  description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
   keywords: 'chatarra, metales, hierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
   openGraph: {
-    title: 'KONSTANDER - Compra de Chatarra y Metales',
-    description: 'Compra y venta de chatarra y metales en Lampa. Mejores precios del mercado.',
+    title: 'Konstander SpA | Compra & Venta de Chatarra | Lampa, RM',
+    description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
     url: 'https://konstander.cl',
-    siteName: 'KONSTANDER',
+    siteName: 'Konstander SpA',
     locale: 'es_CL',
     type: 'website',
     images: [
       {
-        url: '/favicon/android-chrome-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'KONSTANDER - Reciclaje de Metales',
+        url: '/images/twitter-card.png',
+        width: 1200,
+        height: 630,
+        alt: 'KONSTANDER Chile - Compra de Chatarra y Metales al Mejor Precio en Lampa, Región Metropolitana',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KONSTANDER - Compra de Chatarra y Metales',
-    description: 'Compra y venta de chatarra y metales en Lampa. Mejores precios del mercado.',
-    images: ['/favicon/android-chrome-512x512.png'],
-    creator: '@konstander',
-    site: '@konstander',
+    title: '💰 Konstander SpA | Compra & Venta de Chatarra 🇨🇱',
+    description: '🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.000/kg • Fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56937720208',
+    images: ['/images/twitter-card.png'],
+    creator: '@konstander_cl',
+    site: '@konstander_cl',
   },
   robots: {
     index: true,
