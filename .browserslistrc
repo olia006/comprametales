@@ -3,14 +3,21 @@
 # Only targets browsers that natively support modern JS features
 
 # Production environment (default)
-Chrome >= 110
-Firefox >= 110  
-Safari >= 17.0
-Edge >= 110
+Chrome >= 115
+Firefox >= 115  
+Safari >= 17.2
+Edge >= 115
 not IE > 0
 not op_mini all
 not dead
 not and_uc > 0
+not and_chr > 0
+not and_ff > 0
+not and_qq > 0
+not and_uc > 0
+not baidu > 0
+not kaios > 0
+not op_mob > 0
 
 # Development environment
 [development]

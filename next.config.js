@@ -30,6 +30,8 @@ const nextConfig = {
     // optimizeCss: true,
     // Disable polyfills for modern browsers
     forceSwcTransforms: true,
+    // Disable SWC polyfills
+    swcMinify: true,
   },
   
   // Optimize JavaScript compilation for modern browsers
@@ -37,6 +39,9 @@ const nextConfig = {
     // Remove console.log in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  
+  // Disable polyfills completely for modern browsers
+  transpilePackages: [],
   
   // Optimize CSS loading and reduce critical path
   optimizeFonts: true,
@@ -75,6 +80,9 @@ const nextConfig = {
         'core-js/modules': false,
         'regenerator-runtime': false,
         'regenerator-runtime/runtime': false,
+        '@babel/runtime': false,
+        '@babel/runtime-corejs3': false,
+        '@babel/runtime-corejs2': false,
       };
       
       // Reduce polyfill overhead by targeting modern browsers
@@ -97,7 +105,35 @@ const nextConfig = {
         'core-js/features/object/has-own': false,
         'core-js/features/string/trim-end': false,
         'core-js/features/string/trim-start': false,
+        '@babel/runtime': false,
+        '@babel/runtime-corejs3': false,
+        '@babel/runtime-corejs2': false,
       };
+      
+      // Disable polyfills in webpack
+      config.optimization = {
+        ...config.optimization,
+        minimize: true,
+        minimizer: [
+          ...(config.optimization.minimizer || []),
+        ],
+      };
+      
+      // Add webpack plugin to remove polyfills
+      config.plugins = config.plugins || [];
+      config.plugins.push(
+        new (require('webpack').DefinePlugin)({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+          'process.env.BROWSERSLIST_ENV': JSON.stringify('production'),
+        })
+      );
+      
+      // Add IgnorePlugin to ignore polyfill modules
+      config.plugins.push(
+        new (require('webpack').IgnorePlugin)({
+          resourceRegExp: /^(core-js|@babel\/runtime|regenerator-runtime)$/,
+        })
+      );
     }
 
     // Optimize CSS loading for production
