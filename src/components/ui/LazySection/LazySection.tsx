@@ -37,7 +37,16 @@ export const LazySection: React.FC<LazySectionProps> = ({
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
+
+    // Fallback: ensure content loads after 2 seconds if intersection fails
+    const fallbackTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
   }, [threshold, rootMargin]);
 
   return (
