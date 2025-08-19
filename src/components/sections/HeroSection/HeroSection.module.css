@@ -22,6 +22,28 @@
   object-fit: cover;
 }
 
+/* Mobile Hero Image - Show on mobile, hide on desktop */
+.heroImageMobile {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .heroImageMobile {
+    display: none;
+  }
+}
+
+/* Desktop Hero Image - Hide on mobile, show on desktop */
+.heroImageDesktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .heroImageDesktop {
+    display: block;
+  }
+}
+
 .heroImageOverlay {
   position: absolute;
   inset: 0;

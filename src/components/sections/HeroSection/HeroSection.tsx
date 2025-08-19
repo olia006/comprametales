@@ -15,17 +15,32 @@ export const HeroSection: React.FC = () => {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroBackground}>
+        {/* Mobile Hero Image */}
+        <Image
+          src="/images/herosection-mobile.jpg"
+          alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
+          fill
+          priority
+          quality={70}
+          sizes="(max-width: 768px) 100vw, 0vw"
+          className={`${styles.heroImage} ${styles.heroImageMobile}`}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
+        />
+        
+        {/* Desktop Hero Image */}
         <Image
           src="/images/herosection.webp?v=2"
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
           quality={70}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-          className={styles.heroImage}
+          sizes="(min-width: 769px) 100vw, 0vw"
+          className={`${styles.heroImage} ${styles.heroImageDesktop}`}
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
         />
+        
         <div className={styles.heroImageOverlay} />
       </div>
       <div className="container">
