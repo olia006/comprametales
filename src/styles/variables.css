@@ -1,18 +1,18 @@
 /* Global Design System Variables */
 :root {
-  /* Brand Colors */
-  --color-primary: #4a7fa7; /* Primary Blue - Updated to new brand color */
-  --color-secondary: #2e7d32; /* Secondary Green */
+  /* Brand Colors - ECO & NATURAL Palette */
+  --color-primary: #4E7A51; /* Main - Muted Earthy Green */
+  --color-secondary: #8CB89F; /* Main - Light Desaturated Green */
   
-  /* Primary Color Variations (Blue) */
-  --color-primary-light: #6b9bc3;
-  --color-primary-dark: #2c4f6b;
-  --color-primary-subtle: rgba(74, 127, 167, 0.1);
+  /* Primary Color Variations (Earthy Green) */
+  --color-primary-light: #8CB89F;
+  --color-primary-dark: #00221C;
+  --color-primary-subtle: rgba(78, 122, 81, 0.1);
   
-  /* Secondary Color Variations (Green) */
-  --color-secondary-light: #66bb6a;
-  --color-secondary-dark: #1b5e20;
-  --color-secondary-subtle: rgba(46, 125, 50, 0.1);
+  /* Secondary Color Variations (Soft Blue) */
+  --color-secondary-light: #E7F6FC;
+  --color-secondary-dark: #A5CFE3;
+  --color-secondary-subtle: rgba(165, 207, 227, 0.1);
   
   /* Neutral Colors */
   --color-white: #ffffff;
@@ -115,7 +115,10 @@
   --container-xl: 1280px;
   
   /* Theme Colors for Browser UI */
-  --theme-color: #4a7fa7;
+  --theme-color: #4E7A51;
+  
+  /* Neutral Color from ECO Palette */
+  --color-neutral: #00221C; /* Dark Forest Green - Neutral */
 
   /* Platform Brand Colors */
   --color-whatsapp: #25D366; /* WhatsApp Green: RGB 37,211,102 */

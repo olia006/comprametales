@@ -9,6 +9,9 @@ import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import Image from 'next/image';
 import styles from './page.module.css';
 
+// Import non-critical CSS at component level to avoid render-blocking
+import '../globals.css';
+
 export default function MaterialesVendemosPage() {
   // Data for potential future MaterialGrid component
   /* const materialesVenta = [

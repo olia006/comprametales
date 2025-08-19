@@ -133,7 +133,7 @@ export default function RootLayout({
             
             /* Critical focus styles */
             :focus {
-              outline: 2px solid #4a7fa7;
+              outline: 2px solid #4E7A51;
               outline-offset: 2px;
             }
             

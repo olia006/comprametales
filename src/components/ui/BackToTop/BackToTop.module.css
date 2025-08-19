@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 0px 4px rgba(0, 123, 255, 0.253); /* Beautiful blue circle decoration */
+  box-shadow: 0px 0px 0px 4px rgba(78, 122, 81, 0.253); /* Beautiful eco green circle decoration */
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing */
   overflow: hidden;
@@ -37,7 +37,7 @@
   width: 140px;
   border-radius: 25px; /* Keep consistent border-radius */
   background-color: var(--color-primary);
-  box-shadow: 0px 0px 0px 6px rgba(0, 123, 255, 0.4); /* Enhanced blue circle on hover */
+  box-shadow: 0px 0px 0px 6px rgba(78, 122, 81, 0.4); /* Enhanced eco green circle on hover */
   transform: translateY(-2px); /* Subtle lift effect */
 }
 

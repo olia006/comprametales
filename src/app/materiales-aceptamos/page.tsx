@@ -8,6 +8,9 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { getPricesByCategory } from '@/config/pricing';
 import styles from './page.module.css';
 
+// Import non-critical CSS at component level to avoid render-blocking
+import '../globals.css';
+
 export default function MaterialesAceptamosPage() {
   const ferrosoMaterials = getPricesByCategory('ferrosos');
   const noFerrosoMaterials = getPricesByCategory('no-ferrosos');

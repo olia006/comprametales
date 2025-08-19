@@ -8,6 +8,9 @@ import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { DollarSign, Shield, Clock, MapPin, Recycle, Leaf, Globe } from 'lucide-react';
 import styles from './page.module.css';
 
+// Import non-critical CSS at component level to avoid render-blocking
+import '../globals.css';
+
 export default function NosotrosPage() {
   return (
     <Layout>
