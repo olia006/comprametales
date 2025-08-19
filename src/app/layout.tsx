@@ -22,6 +22,22 @@ export const metadata: Metadata = {
     siteName: 'KONSTANDER',
     locale: 'es_CL',
     type: 'website',
+    images: [
+      {
+        url: '/favicon/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'KONSTANDER - Reciclaje de Metales',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KONSTANDER - Compra de Chatarra y Metales',
+    description: 'Compra y venta de chatarra y metales en Lampa. Mejores precios del mercado.',
+    images: ['/favicon/android-chrome-512x512.png'],
+    creator: '@konstander',
+    site: '@konstander',
   },
   robots: {
     index: true,
@@ -46,13 +62,13 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   other: {
-    'msapplication-TileColor': '#1e88e5',
+    'msapplication-TileColor': '#4E7A51',
     'msapplication-config': '/browserconfig.xml',
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1e88e5',
+  themeColor: '#4E7A51',
   width: 'device-width',
   initialScale: 1
 };
@@ -68,6 +84,16 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="canonical" href="https://konstander.cl" />
+        
+        {/* Favicon Links */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         
         {/* Critical CSS - Inline to reduce render-blocking and improve LCP */}
         <style dangerouslySetInnerHTML={{
