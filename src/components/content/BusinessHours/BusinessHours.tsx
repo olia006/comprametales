@@ -71,6 +71,9 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
           <div className={styles.mainHours}>
             <span className={styles.hoursText}>{COMPANY_INFO.hours}</span>
           </div>
+          <div className={styles.flexibilityInfo}>
+            <span className={styles.flexibilityText}>Horarios flexibles - se pueden coordinar</span>
+          </div>
           {showStatus && (
             <div className={styles.statusInfo}>
               <span className={styles.nextChange}>{status.nextChange}</span>
@@ -120,12 +123,22 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
           </div>
           
           <div className={styles.infoCard}>
+            <h4 className={styles.infoTitle}>Horarios Flexibles</h4>
+            <ul className={styles.infoList}>
+              <li>Se pueden coordinar horarios convenientes</li>
+              <li>Atención especial para grandes volúmenes</li>
+              <li>Horarios extendidos según disponibilidad</li>
+              <li>Consultas por teléfono: 24/7</li>
+            </ul>
+          </div>
+          
+          <div className={styles.infoCard}>
             <h4 className={styles.infoTitle}>Mejores Horarios</h4>
             <ul className={styles.infoList}>
               <li>Mañanas: Menor espera</li>
               <li>Tardes: Evaluación más detallada</li>
               <li>Fines de semana: Disponible</li>
-              <li>Consultas por teléfono: 24/7</li>
+              <li>Horarios flexibles para su conveniencia</li>
             </ul>
           </div>
         </div>

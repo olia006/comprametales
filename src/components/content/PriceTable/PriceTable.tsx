@@ -75,6 +75,16 @@ export const PriceTable: React.FC<PriceTableProps> = ({
     return prices.length > 0 ? Math.min(...prices) : 0;
   };
 
+  const getLastUpdateDate = () => {
+    const dates = materials.map(m => new Date(m.lastUpdated));
+    const latestDate = new Date(Math.max(...dates));
+    return latestDate.toLocaleDateString('es-CL', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
 
 
   return (
@@ -135,9 +145,6 @@ export const PriceTable: React.FC<PriceTableProps> = ({
               <tr>
                 <th className={styles.headerCell} scope="col">Material</th>
                 <th className={styles.headerCell} scope="col">Precio por Kg</th>
-                {showLastUpdated && (
-                  <th className={styles.headerCell} scope="col">Actualizado</th>
-                )}
               </tr>
             </thead>
             <tbody className={styles.tableBody}>
@@ -168,17 +175,6 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                       {material.pricePerKg === 0 ? 'Consultar' : formatPrice(material.pricePerKg)}
                     </span>
                   </td>
-
-                  {showLastUpdated && (
-                    <td 
-                      className={styles.dateCell}
-                      aria-label={`Última actualización: ${material.lastUpdated}`}
-                    >
-                      <span className={styles.updateDate}>
-                        {material.lastUpdated}
-                      </span>
-                    </td>
-                  )}
                 </tr>
               ))}
             </tbody>
@@ -197,9 +193,9 @@ export const PriceTable: React.FC<PriceTableProps> = ({
       )}
 
       <div className={styles.summary} id="table-summary">
-        <div className={styles.whatsappCTA}>
-          <p className={styles.whatsappText}>
-            consulta más detalles por whatsapp
+        <div className={styles.updateNotice}>
+          <p className={styles.updateText}>
+            Precios actualizados el {getLastUpdateDate()}
           </p>
         </div>
       </div>

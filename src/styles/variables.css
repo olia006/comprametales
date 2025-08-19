@@ -1,13 +1,13 @@
 /* Global Design System Variables */
 :root {
   /* Brand Colors */
-  --color-primary: #1565c0; /* Primary Blue - Darker for better contrast */
+  --color-primary: #4a7fa7; /* Primary Blue - Updated to new brand color */
   --color-secondary: #2e7d32; /* Secondary Green */
   
   /* Primary Color Variations (Blue) */
-  --color-primary-light: #42a5f5;
-  --color-primary-dark: #0d47a1;
-  --color-primary-subtle: rgba(21, 101, 192, 0.1);
+  --color-primary-light: #6b9bc3;
+  --color-primary-dark: #3a6384;
+  --color-primary-subtle: rgba(74, 127, 167, 0.1);
   
   /* Secondary Color Variations (Green) */
   --color-secondary-light: #66bb6a;
@@ -115,7 +115,7 @@
   --container-xl: 1280px;
   
   /* Theme Colors for Browser UI */
-  --theme-color: #1565c0;
+  --theme-color: #4a7fa7;
 
   /* Platform Brand Colors */
   --color-whatsapp: #25D366; /* WhatsApp Green: RGB 37,211,102 */

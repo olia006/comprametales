@@ -206,13 +206,6 @@ export const PRICING_CONFIG: MaterialPrice[] = [
 ];
 
 // Helper functions for pricing
-export const getPriceByMaterial = (materialName: string): MaterialPrice | undefined => {
-  return PRICING_CONFIG.find(material => 
-    material.name.toLowerCase() === materialName.toLowerCase() || 
-    material.nameEs.toLowerCase() === materialName.toLowerCase()
-  );
-};
-
 export const getPricesByCategory = (category: MaterialPrice['category']): MaterialPrice[] => {
   return PRICING_CONFIG.filter(material => material.category === category);
 };
@@ -224,10 +217,11 @@ export const formatPrice = (price: number, currency: string = 'CLP'): string => 
   }).format(price);
 };
 
-export const getHighestPrices = (limit: number = 3): MaterialPrice[] => {
-  return [...PRICING_CONFIG]
-    .sort((a, b) => b.pricePerKg - a.pricePerKg)
-    .slice(0, limit);
+export const getFeaturedPrices = (): MaterialPrice[] => {
+  const featuredMaterials = ['Fierro Corto', 'Cobre 3ra', 'Aluminio Perfil'];
+  return PRICING_CONFIG.filter(material => 
+    featuredMaterials.includes(material.nameEs)
+  );
 };
 
 // Company information
@@ -237,6 +231,7 @@ export const COMPANY_INFO = {
   email: 'konstanderspa@gmail.com',
   address: 'Panamericana Norte 17110, Lampa, Región Metropolitana',
   hours: 'Lunes a Domingo: de 8:00 a 18:00 hs',
+  hoursFlexible: 'Horarios flexibles - se pueden coordinar horarios convenientes',
   coordinates: {
     lat: -33.2948,
     lng: -70.7366

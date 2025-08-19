@@ -201,10 +201,7 @@
 
 .materialCell,
 .priceCell,
-.dateCell {
-  padding: var(--space-4);
-  vertical-align: top;
-}
+
 
 .materialCell {
   text-align: left;
@@ -214,9 +211,7 @@
   text-align: center;
 }
 
-.dateCell {
-  text-align: center;
-}
+
 
 .materialInfo {
   display: flex;
@@ -249,11 +244,7 @@
   color: var(--color-secondary-dark);
 }
 
-.updateDate {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
-  font-family: monospace;
-}
+
 
 /* Empty State */
 .emptyState {
@@ -293,55 +284,31 @@
   border-top-color: var(--color-secondary-dark);
 }
 
-.summaryGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-4);
-}
 
-.summaryCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-3);
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
 
-.summaryLabel {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-600);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+
+
+
+
+
+
+.updateNotice {
   text-align: center;
+  margin-bottom: var(--space-4);
 }
 
-.summaryValue {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-gray-900);
-  text-align: center;
-}
-
-.whatsappCTA {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-
-
-.whatsappText {
-  font-size: var(--font-size-base);
-  color: var(--color-gray-600);
+.updateText {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
   margin: 0;
-  font-style: italic;
+  font-weight: var(--font-weight-medium);
 }
+
+
+
+
+
+
 
 /* Tablet Responsive */
 @media (min-width: 768px) {
@@ -359,9 +326,7 @@
     font-size: var(--font-size-base);
   }
   
-  .summaryGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
 }
 
 /* Desktop Responsive */
@@ -403,28 +368,8 @@
 }
 
 /* Consultar Indicator */
-.consultarIndicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-2) var(--space-3);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
 
-.consultarText {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
 
-.dash {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-gray-500);
-  text-align: center;
-  display: block;
-}
+
+
+

@@ -54,11 +54,8 @@ export const HeroSection: React.FC = () => {
             </div>
 
             <div className={styles.businessInfo}>
-              <p className={styles.hours}>
-                <strong>Horarios:</strong> {COMPANY_INFO.hours}
-              </p>
-              <p className={styles.location}>
-                <strong>Ubicación:</strong> {COMPANY_INFO.address}
+              <p className={styles.hoursFlexible}>
+                {COMPANY_INFO.hoursFlexible}
               </p>
             </div>
           </div>

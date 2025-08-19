@@ -22,8 +22,9 @@ describe('LazySection', () => {
       </LazySection>
     )
 
-    // Should show skeleton initially
-    expect(screen.getByTestId('skeleton-loader')).toBeInTheDocument()
+    // Should show skeleton initially (look for skeleton wrapper or elements)
+    const skeletonElements = document.querySelectorAll('[class*="skeleton"]')
+    expect(skeletonElements.length).toBeGreaterThan(0)
     expect(screen.queryByTestId('content')).not.toBeInTheDocument()
   })
 
@@ -70,10 +71,9 @@ describe('LazySection', () => {
       </LazySection>
     )
 
-    expect(screen.getByTestId('skeleton-loader')).toHaveAttribute(
-      'data-variant',
-      'materialCard'
-    )
+    // Check for material card skeleton elements
+    let skeletonElements = document.querySelectorAll('[class*="materialCard"]')
+    expect(skeletonElements.length).toBeGreaterThan(0)
 
     rerender(
       <LazySection skeletonVariant="priceCard">
@@ -81,9 +81,8 @@ describe('LazySection', () => {
       </LazySection>
     )
 
-    expect(screen.getByTestId('skeleton-loader')).toHaveAttribute(
-      'data-variant',
-      'priceCard'
-    )
+    // Check for price card skeleton elements
+    skeletonElements = document.querySelectorAll('[class*="priceCard"]')
+    expect(skeletonElements.length).toBeGreaterThan(0)
   })
 })

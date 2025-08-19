@@ -6,12 +6,12 @@ import { LazySection } from '@/components/ui/LazySection/LazySection';
 import { Layout } from '@/components/layout/Layout/Layout';
 
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
-import { getHighestPrices } from '@/config/pricing';
+import { getFeaturedPrices } from '@/config/pricing';
 import styles from './page.module.css';
 import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
 export default function HomePage() {
-  const topPrices = getHighestPrices(3);
+  const topPrices = getFeaturedPrices();
 
   return (
     <Layout>

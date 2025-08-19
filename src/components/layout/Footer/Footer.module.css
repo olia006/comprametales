@@ -49,23 +49,9 @@
   margin: 0;
 }
 
-.logoLocation {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
-  font-weight: var(--font-weight-normal);
-  font-style: italic;
-  margin-top: var(--space-1);
-}
 
-.companyDescription {
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-normal);
-  color: var(--color-gray-300);
-  margin-bottom: var(--space-4);
-  max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
 
 /* Contact Methods */
 .contactMethods {
@@ -136,11 +122,7 @@
   flex-shrink: 0;
 }
 
-.contactIconSmall {
-  color: var(--color-primary);
-  flex-shrink: 0;
-  margin-top: var(--space-1);
-}
+
 
 /* Section Titles */
 .sectionTitle {
@@ -151,10 +133,7 @@
   letter-spacing: 0.025em;
 }
 
-.sectionIcon {
-  color: var(--color-primary);
-  flex-shrink: 0;
-}
+
 
 /* Links Section */
 .linksSection {
@@ -201,34 +180,7 @@
   height: 16px;
 }
 
-/* Categories Section */
-.categoriesSection {
-  text-align: center;
-  min-width: 250px;
-}
 
-.categoriesList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.categoryItem {
-  color: var(--color-gray-400);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  padding: var(--space-1) 0;
-  position: relative;
-}
-
-.categoryItem::before {
-  content: '•';
-  color: var(--color-secondary);
-  font-weight: bold;
-  margin-right: var(--space-2);
-}
 
 /* Contact Section */
 .contactSection {
@@ -265,17 +217,7 @@
   letter-spacing: 0.05em;
 }
 
-.contactText {
-  color: var(--color-gray-300);
-  margin: 0;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
 
-.contactText:hover {
-  color: var(--color-primary);
-  text-decoration: none;
-}
 
 /* Footer Bottom */
 .footerBottom {
@@ -303,24 +245,9 @@
   justify-content: center;
 }
 
-.legalText {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-500);
-  text-align: center;
-}
 
-.seoFooter {
-  text-align: center;
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--color-gray-800);
-}
 
-.seoText {
-  font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
-  margin: 0;
-  line-height: var(--line-height-relaxed);
-}
+
 
 /* Tablet Styles */
 @media (min-width: 768px) {
@@ -331,14 +258,8 @@
   
   .companySection,
   .linksSection,
-  .categoriesSection,
   .contactSection {
     text-align: left;
-  }
-  
-  .companyDescription {
-    margin-left: 0;
-    margin-right: 0;
   }
   
   .linksList {
@@ -351,9 +272,7 @@
     gap: var(--space-4);
   }
   
-  .categoriesList {
-    align-items: flex-start;
-  }
+
   
   .bottomContent {
     flex-direction: row;
@@ -405,9 +324,7 @@
     font-size: var(--font-size-3xl);
   }
   
-  .companyDescription {
-    font-size: var(--font-size-lg);
-  }
+
 }
 
 /* Enhanced Styles for New Components */
@@ -430,9 +347,7 @@
   padding: var(--space-2) 0;
 }
 
-.locationIcon {
-  display: none;
-}
+
 
 .addressInfo {
   display: flex;
@@ -493,9 +408,7 @@
   margin-bottom: var(--space-4);
 }
 
-.copyrightSection {
-  text-align: center;
-}
+
 
 .legalLinks {
   display: flex;
@@ -561,9 +474,7 @@
   hyphens: auto;
 }
 
-.creditSection {
-  text-align: center;
-}
+
 
 .creditText {
   font-size: var(--font-size-xs);
@@ -596,7 +507,6 @@
   }
   
   .linksSection,
-  .categoriesSection,
   .contactSection {
     text-align: left;
   }

@@ -41,6 +41,8 @@
   box-shadow: 0 0 0 3px var(--color-primary-subtle), 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+
+
 /* Size Variations */
 .sm {
   padding: var(--space-2) var(--space-4);
@@ -127,7 +129,7 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .primaryButton {
+  .button {
     padding: var(--space-3) var(--space-5);
     font-size: var(--font-size-base);
     min-height: 48px; /* Better touch target */
