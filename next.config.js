@@ -28,6 +28,8 @@ const nextConfig = {
     esmExternals: 'loose',
     // Optimize CSS loading - temporarily disabled due to production issues
     // optimizeCss: true,
+    // Disable polyfills for modern browsers
+    forceSwcTransforms: true,
   },
   
   // Optimize JavaScript compilation for modern browsers
@@ -70,6 +72,14 @@ const nextConfig = {
       
       // Reduce polyfill overhead by targeting modern browsers
       config.target = ['web', 'es2022'];
+      
+      // Disable automatic polyfills for modern browsers
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        'core-js/modules': false,
+        'core-js/stable': false,
+        'regenerator-runtime': false,
+      };
     }
 
     // Optimize CSS loading for production
