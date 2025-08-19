@@ -63,7 +63,9 @@ export const Header: React.FC = () => {
                 width={260} 
                 height={87} 
                 className={styles.logoImage}
+                style={{ width: 'auto', height: 'auto' }}
                 priority
+                quality={85}
                 sizes="(max-width: 480px) 200px, (max-width: 768px) 220px, (max-width: 1023px) 240px, 260px"
               />
             </Link>

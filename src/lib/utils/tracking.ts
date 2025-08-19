@@ -63,8 +63,17 @@ export const trackCTAClick = (buttonText: string, destination: string, source: s
   }
 };
 
-// Track page views with additional context
+// Track page views with additional context - with deduplication
+let lastTrackedPage = '';
+
 export const trackPageView = (pageName: string, pageType: string = 'page') => {
+  // Prevent duplicate tracking on the same page
+  if (lastTrackedPage === pageName) {
+    return;
+  }
+  
+  lastTrackedPage = pageName;
+  
   pushToDataLayer('page_view', {
     page_name: pageName,
     page_type: pageType,

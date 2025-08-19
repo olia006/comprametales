@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
 import { formatPrice, MaterialPrice } from '@/config/pricing';
+import { LazyVideo } from '@/components/ui/LazyVideo/LazyVideo';
 import styles from './PreviewSection.module.css';
 
 interface PreviewSectionProps {
@@ -111,17 +112,18 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                       <Image 
                         src={item.src} 
                         alt={item.alt}
-                        width={400}
-                        height={300}
-                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        width={320}
+                        height={240}
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 320px"
                         loading="lazy"
                         placeholder="blur"
+                        quality={70}
                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className={styles.imageOverlay}></div>
                       <div className={styles.imageContent}>
-                        <h4 className={styles.imageTitle}>{item.title}</h4>
+                        <h3 className={styles.imageTitle}>{item.title}</h3>
                         <p className={styles.imageDescription}>{item.description}</p>
                       </div>
                     </div>
@@ -143,17 +145,18 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                       <Image 
                         src={item.src} 
                         alt={item.alt}
-                        width={400}
-                        height={300}
-                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        width={320}
+                        height={240}
+                        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 320px"
                         loading="lazy"
                         placeholder="blur"
+                        quality={70}
                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className={styles.imageOverlay}></div>
                       <div className={styles.imageContent}>
-                        <h4 className={styles.imageTitle}>{item.title}</h4>
+                        <h3 className={styles.imageTitle}>{item.title}</h3>
                         <p className={styles.imageDescription}>{item.description}</p>
                       </div>
                     </div>
@@ -163,16 +166,14 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               
               {id === 'nosotros' && (
                 <div className={styles.videoBackground}>
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
+                  <LazyVideo
+                    src="/images/aboutuspreview.mp4"
                     className={styles.backgroundVideo}
-                  >
-                    <source src="/images/aboutuspreview.mp4" type="video/mp4" />
-                  </video>
+                    preload="metadata"
+                    muted={true}
+                    loop={true}
+                    playsInline={true}
+                  />
                   <div className={styles.videoOverlay} />
                 </div>
               )}

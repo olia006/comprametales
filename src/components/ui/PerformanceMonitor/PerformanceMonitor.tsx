@@ -12,37 +12,40 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   pageType = 'page'
 }) => {
   useEffect(() => {
-    // Track page view
-    trackPageView(pageName, pageType);
+    // Track page view only once per page load
+    const timeoutId = setTimeout(() => {
+      trackPageView(pageName, pageType);
+    }, 100); // Small delay to avoid blocking initial render
 
     // Monitor page load performance
     if (typeof window !== 'undefined' && 'performance' in window) {
-      // Track Cumulative Layout Shift (CLS)
+      // Cleanup function
+      const cleanup = () => {
+        clearTimeout(timeoutId);
+      };
+      
+      // Return cleanup
+      return cleanup;
+      // Track Cumulative Layout Shift (CLS) - Simplified
       const trackCLS = () => {
         if ('PerformanceObserver' in window) {
           try {
+            let clsValue = 0;
             const clsObserver = new PerformanceObserver((list) => {
               for (const entry of list.getEntries()) {
-                if (!(entry as any).hadRecentInput) { // Ignore user-initiated shifts
-                  const clsValue = (entry as any).value;
-                  
-                  if (process.env.NODE_ENV === 'development') {
-                    console.log('[Performance Monitor] CLS detected:', clsValue);
-                  }
-                  
-                  if (clsValue > 0.1) { // CLS threshold
-                    window.dataLayer?.push({
-                      event: 'poor_cls',
-                      cls_value: clsValue,
-                      page_name: pageName,
-                      event_category: 'Performance',
-                      event_label: 'Poor CLS'
-                    });
-                  }
+                if (!(entry as any).hadRecentInput) {
+                  clsValue += (entry as any).value;
                 }
               }
             });
             clsObserver.observe({ entryTypes: ['layout-shift'] });
+            
+            // Only log once after page load
+            setTimeout(() => {
+              if (clsValue > 0.1 && process.env.NODE_ENV === 'development') {
+                console.log('[Performance Monitor] CLS:', clsValue);
+              }
+            }, 2000);
             
             return () => clsObserver.disconnect();
           } catch (error) {
@@ -51,7 +54,7 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
         }
       };
 
-      // Track Largest Contentful Paint (LCP)
+      // Track Largest Contentful Paint (LCP) - Simplified
       const trackLCP = () => {
         if ('PerformanceObserver' in window) {
           try {
@@ -59,19 +62,12 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
               const entries = list.getEntries();
               const lastEntry = entries[entries.length - 1];
               
-              if (process.env.NODE_ENV === 'development') {
-                console.log('[Performance Monitor] LCP:', lastEntry.startTime);
-              }
-              
-              if (lastEntry.startTime > 2500) { // LCP threshold
-                window.dataLayer?.push({
-                  event: 'poor_lcp',
-                  lcp_value: Math.round(lastEntry.startTime),
-                  page_name: pageName,
-                  event_category: 'Performance',
-                  event_label: 'Poor LCP'
-                });
-              }
+              // Only log once after page load
+              setTimeout(() => {
+                if (process.env.NODE_ENV === 'development') {
+                  console.log('[Performance Monitor] LCP:', Math.round(lastEntry.startTime));
+                }
+              }, 1000);
             });
             lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
             
