@@ -134,7 +134,6 @@ export const PriceTable: React.FC<PriceTableProps> = ({
             <thead className={styles.tableHead}>
               <tr>
                 <th className={styles.headerCell} scope="col">Material</th>
-                <th className={styles.headerCell} scope="col">Categoría</th>
                 <th className={styles.headerCell} scope="col">Precio por Kg</th>
                 {showLastUpdated && (
                   <th className={styles.headerCell} scope="col">Actualizado</th>
@@ -161,15 +160,6 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                       )}
                     </div>
                   </th>
-                  <td 
-                    className={styles.categoryCell}
-                    aria-label={`Categoría: ${material.category === 'ferrosos' ? 'Ferroso' : material.category === 'no-ferrosos' ? 'No Ferroso' : 'Especial'}`}
-                  >
-                    <span className={styles.categoryBadge}>
-                      {material.category === 'ferrosos' ? 'Ferroso' :
-                       material.category === 'no-ferrosos' ? 'No Ferroso' : 'Especial'}
-                    </span>
-                  </td>
                   <td 
                     className={styles.priceCell}
                     aria-label={`Precio: ${material.pricePerKg === 0 ? 'Consultar precio' : formatPrice(material.pricePerKg) + ' por kilogramo'}`}
@@ -207,23 +197,10 @@ export const PriceTable: React.FC<PriceTableProps> = ({
       )}
 
       <div className={styles.summary} id="table-summary">
-        <div className={styles.summaryGrid}>
-          <div className={styles.summaryCard}>
-            <span className={styles.summaryLabel}>Total Materiales</span>
-            <span className={styles.summaryValue}>{materials.length}</span>
-          </div>
-          <div className={styles.summaryCard}>
-            <span className={styles.summaryLabel}>Precio Más Alto</span>
-            <span className={styles.summaryValue}>{formatPrice(getHighestPrice())}</span>
-          </div>
-          <div className={styles.summaryCard}>
-            <span className={styles.summaryLabel}>Precio Más Bajo</span>
-            <span className={styles.summaryValue}>{formatPrice(getLowestPrice())}</span>
-          </div>
-          <div className={styles.summaryCard}>
-            <span className={styles.summaryLabel}>Moneda</span>
-            <span className={styles.summaryValue}>Pesos Chilenos</span>
-          </div>
+        <div className={styles.whatsappCTA}>
+          <p className={styles.whatsappText}>
+            consulta más detalles por whatsapp
+          </p>
         </div>
       </div>
     </div>

@@ -22,7 +22,10 @@
 /* Button focus indicators */
 button:focus-visible,
 .button:focus-visible,
-a[role="button"]:focus-visible {
+a[role="button"]:focus-visible,
+.floatingButton:focus-visible,
+.backToTop:focus-visible,
+.sortButton:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--color-primary-subtle);

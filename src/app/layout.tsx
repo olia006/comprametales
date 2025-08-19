@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: 'your-google-search-console-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-placeholder',
   },
   icons: {
     icon: [

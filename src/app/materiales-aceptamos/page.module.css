@@ -43,6 +43,14 @@
   color: var(--color-gray-700);
 }
 
+.requirementsGrid h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-3);
+  margin-top: 0;
+}
+
 /* Responsive Design */
 @media (min-width: 768px) {
   .pageContainer {

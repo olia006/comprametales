@@ -60,9 +60,10 @@ export const FloatingButtons: React.FC = () => {
         className={`${styles.floatingButton} ${styles.whatsappButton}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
+        aria-label="Contactar por WhatsApp para cotización"
+        title="Contactar por WhatsApp"
       >
-        <FaWhatsapp size={24} />
+        <FaWhatsapp size={24} aria-hidden="true" />
         <span className={styles.buttonText}>WhatsApp</span>
       </a>
 
@@ -72,9 +73,10 @@ export const FloatingButtons: React.FC = () => {
         className={`${styles.floatingButton} ${styles.directionsButton}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Ver dirección en Google Maps"
+        aria-label="Ver ubicación de KONSTANDER en Google Maps"
+        title="Ver dirección en Google Maps"
       >
-        <MapPin size={24} />
+        <MapPin size={24} aria-hidden="true" />
         <span className={styles.buttonText}>Dirección</span>
       </a>
     </div>

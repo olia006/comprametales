@@ -63,12 +63,11 @@ export const Map: React.FC<MapProps> = ({
 
   return (
     <div className={containerClasses}>
-      <div className={styles.mapHeader}>
-        <h3 className={styles.mapTitle}>Nuestra Ubicación</h3>
-        {showFullAddress && (
+      {showFullAddress && (
+        <div className={styles.mapHeader}>
           <p className={styles.address}>{COMPANY_INFO.address}</p>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className={`${styles.mapWrapper} ${styles[height] || ''}`}>
         {!mapError ? (

@@ -21,9 +21,10 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
 
   // Check if business is currently open
   const getCurrentStatus = () => {
+    // Get current time in Chilean timezone (GMT-3)
     const now = new Date();
-    const currentHour = now.getHours();
-    // const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const chileanTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Santiago"}));
+    const currentHour = chileanTime.getHours();
     
     // Business is open Monday-Sunday 8:00-18:00 (Chilean time)
     const isOpen = currentHour >= 8 && currentHour < 18;

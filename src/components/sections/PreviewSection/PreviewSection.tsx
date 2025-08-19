@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { MaterialPreviewCard } from '@/components/content/MaterialPreviewCard/MaterialPreviewCard';
+import Image from 'next/image';
 import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
 import { formatPrice, MaterialPrice } from '@/config/pricing';
 import styles from './PreviewSection.module.css';
@@ -101,20 +100,31 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-aceptamos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesqueAceptamos/fierro.webp', label: 'Fierro', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Santiago' },
-                    { src: '/images/MaterialesqueAceptamos/cobre.webp', label: 'Cobre', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria' },
-                    { src: '/images/MaterialesqueAceptamos/aluminio.webp', label: 'Aluminio', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato' },
-                    { src: '/images/MaterialesqueAceptamos/bronce.webp', label: 'Bronce', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
-                    { src: '/images/MaterialesqueAceptamos/acero.webp', label: 'Acero Inoxidable', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
-                    { src: '/images/MaterialesqueAceptamos/electrico.webp', label: 'Material Eléctrico', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
+                    { src: '/images/MaterialesqueAceptamos/fierro.webp', title: 'Fierro', description: 'Chatarra de acero ferroso', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Santiago' },
+                    { src: '/images/MaterialesqueAceptamos/cobre.webp', title: 'Cobre', description: 'Cables y tuberías', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria' },
+                    { src: '/images/MaterialesqueAceptamos/aluminio.webp', title: 'Aluminio', description: 'Perfiles y latas', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato' },
+                    { src: '/images/MaterialesqueAceptamos/bronce.webp', title: 'Bronce', description: 'Grifería y válvulas', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
+                    { src: '/images/MaterialesqueAceptamos/acero.webp', title: 'Acero Inoxidable', description: 'Utensilios industriales', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
+                    { src: '/images/MaterialesqueAceptamos/electrico.webp', title: 'Material Eléctrico', description: 'Cables y transformadores', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
                   ].map((item) => (
-                    <MaterialPreviewCard
-                      key={item.label}
-                      src={item.src}
-                      alt={item.alt}
-                      label={item.label}
-                      showLabel={true}
-                    />
+                    <div key={item.title} className={`${styles.imageCard} group`}>
+                      <Image 
+                        src={item.src} 
+                        alt={item.alt}
+                        width={400}
+                        height={300}
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className={styles.imageOverlay}></div>
+                      <div className={styles.imageContent}>
+                        <h4 className={styles.imageTitle}>{item.title}</h4>
+                        <p className={styles.imageDescription}>{item.description}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
@@ -122,20 +132,31 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-vendemos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesUsadosenVenta/armatura_3.webp', label: 'Armaduras y Estructuras', alt: 'Armaduras de acero estructural recicladas para construcción' },
-                    { src: '/images/MaterialesUsadosenVenta/Barras_3.webp', label: 'Barras de Refuerzo', alt: 'Barras de refuerzo de acero recicladas para hormigón armado' },
-                    { src: '/images/MaterialesUsadosenVenta/perfiles-acero.webp', label: 'Perfiles Estructurales', alt: 'Perfiles de acero reciclados tipo H, I y U para construcción industrial' },
-                    { src: '/images/MaterialesUsadosenVenta/planchas-metal.webp', label: 'Planchas Metálicas', alt: 'Planchas de acero recicladas de diversos grosores para proyectos industriales' },
-                    { src: '/images/MaterialesUsadosenVenta/vigas-acero.webp', label: 'Vigas de Acero', alt: 'Vigas de acero estructural recicladas para construcción de galpones y estructuras' },
-                    { src: '/images/MaterialesUsadosenVenta/tuberia-industrial.webp', label: 'Tubería Industrial', alt: 'Tubería de acero reciclada para instalaciones industriales y sistemas de transporte' },
+                    { src: '/images/MaterialesUsadosenVenta/armatura_3.webp', title: 'Armaduras y Estructuras', description: 'Acero estructural reciclado', alt: 'Armaduras de acero estructural recicladas para construcción' },
+                    { src: '/images/MaterialesUsadosenVenta/Barras_3.webp', title: 'Barras de Refuerzo', description: 'Para hormigón armado', alt: 'Barras de refuerzo de acero recicladas para hormigón armado' },
+                    { src: '/images/MaterialesUsadosenVenta/perfiles-acero.webp', title: 'Perfiles Estructurales', description: 'Tipo H, I y U', alt: 'Perfiles de acero reciclados tipo H, I y U para construcción industrial' },
+                    { src: '/images/MaterialesUsadosenVenta/planchas-metal.webp', title: 'Planchas Metálicas', description: 'Diversos grosores', alt: 'Planchas de acero recicladas de diversos grosores para proyectos industriales' },
+                    { src: '/images/MaterialesUsadosenVenta/vigas-acero.webp', title: 'Vigas de Acero', description: 'Para construcción', alt: 'Vigas de acero estructural recicladas para construcción de galpones y estructuras' },
+                    { src: '/images/MaterialesUsadosenVenta/tuberia-industrial.webp', title: 'Tubería Industrial', description: 'Instalaciones industriales', alt: 'Tubería de acero reciclada para instalaciones industriales y sistemas de transporte' },
                   ].map((item) => (
-                    <MaterialPreviewCard
-                      key={item.label}
-                      src={item.src}
-                      alt={item.alt}
-                      label={item.label}
-                      showLabel={true}
-                    />
+                    <div key={item.title} className={`${styles.imageCard} group`}>
+                      <Image 
+                        src={item.src} 
+                        alt={item.alt}
+                        width={400}
+                        height={300}
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className={styles.imageOverlay}></div>
+                      <div className={styles.imageContent}>
+                        <h4 className={styles.imageTitle}>{item.title}</h4>
+                        <p className={styles.imageDescription}>{item.description}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
@@ -147,6 +168,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     className={styles.backgroundVideo}
                   >
                     <source src="/images/aboutuspreview.mp4" type="video/mp4" />

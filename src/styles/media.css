@@ -150,11 +150,11 @@
   }
   
   h2 {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
   }
   
   h3 {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
   }
 }
 
