@@ -26,6 +26,8 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
     // Improve module resolution
     esmExternals: 'loose',
+    // Optimize CSS loading - temporarily disabled due to production issues
+    // optimizeCss: true,
   },
   
   // Optimize JavaScript compilation for modern browsers
@@ -37,8 +39,8 @@ const nextConfig = {
   // Configure SWC for modern compilation
   swcMinify: true,
   
-  // Webpack configuration to handle module loading issues
-  webpack: (config, { isServer }) => {
+  // Webpack configuration to handle module loading issues and optimize CSS
+  webpack: (config, { isServer, dev }) => {
     // Handle web-vitals module loading
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -51,6 +53,17 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
     };
+
+    // Optimize CSS loading for production
+    if (!dev && !isServer) {
+      // Extract critical CSS
+      config.optimization.splitChunks.cacheGroups.styles = {
+        name: 'styles',
+        test: /\.(css|scss)$/,
+        chunks: 'all',
+        enforce: true,
+      };
+    }
     
     return config;
   },
