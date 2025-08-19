@@ -36,8 +36,14 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
+  // Optimize CSS loading and reduce critical path
+  optimizeFonts: true,
+  
   // Configure SWC for modern compilation
   swcMinify: true,
+  
+  // Target modern browsers to reduce polyfill overhead
+  transpilePackages: [],
   
   // Webpack configuration to handle module loading issues and optimize CSS
   webpack: (config, { isServer, dev }) => {
@@ -54,6 +60,18 @@ const nextConfig = {
       ...config.resolve.alias,
     };
 
+    // Optimize for modern browsers - reduce polyfill overhead
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        // Use native implementations when available
+        'core-js': false,
+      };
+      
+      // Reduce polyfill overhead by targeting modern browsers
+      config.target = ['web', 'es2022'];
+    }
+
     // Optimize CSS loading for production
     if (!dev && !isServer) {
       // Extract critical CSS
@@ -62,6 +80,15 @@ const nextConfig = {
         test: /\.(css|scss)$/,
         chunks: 'all',
         enforce: true,
+      };
+      
+      // Optimize CSS loading to reduce critical path
+      config.optimization.splitChunks.cacheGroups.critical = {
+        name: 'critical',
+        test: /critical\.css$/,
+        chunks: 'all',
+        enforce: true,
+        priority: 10,
       };
     }
     

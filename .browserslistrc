@@ -1,14 +1,15 @@
-# Modern browsers that support ES2020+ features
-# This targets browsers with >0.2% market share that support modern JavaScript
+# Modern browsers that support ES2022+ features
+# This targets browsers with >2% market share that support modern JavaScript
+# Aggressive optimization to reduce polyfill overhead and improve performance
 
 # Production environment (default)
->0.2%
+>2%
 not dead
 not op_mini all
-Chrome >= 85
-Firefox >= 79
-Safari >= 14
-Edge >= 85
+Chrome >= 100
+Firefox >= 100
+Safari >= 16
+Edge >= 100
 
 # Development environment
 [development]
