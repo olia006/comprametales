@@ -15,6 +15,7 @@ export const FloatingButtons: React.FC = () => {
     let heroSection: Element | null = null;
     let heroHeight: number = 0;
     let threshold: number = 600; // fallback threshold
+    let lastScrollY: number = 0;
     
     const initializeHeroSection = () => {
       // Check for both main hero section and page hero sections
@@ -32,13 +33,22 @@ export const FloatingButtons: React.FC = () => {
     };
 
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Only update if scroll position changed significantly (avoid micro-updates)
+      if (Math.abs(currentScrollY - lastScrollY) < 10) {
+        return;
+      }
+      
+      lastScrollY = currentScrollY;
+      
       if (heroSection) {
         // Use cached height and only call getBoundingClientRect once
         const heroBottom = heroSection.getBoundingClientRect().bottom;
         setIsVisible(heroBottom < threshold);
       } else {
         // Fallback: show after scrolling 600px if no hero section found
-        setIsVisible(window.scrollY > 600);
+        setIsVisible(currentScrollY > 600);
       }
     };
 
@@ -49,10 +59,10 @@ export const FloatingButtons: React.FC = () => {
     let ticking = false;
     const throttledHandleScroll = () => {
       if (!ticking) {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           handleScroll();
           ticking = false;
-        });
+        }, 16); // ~60fps throttling
         ticking = true;
       }
     };

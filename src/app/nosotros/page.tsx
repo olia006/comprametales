@@ -96,40 +96,6 @@ export default function NosotrosPage() {
             </p>
           </div>
         </div>
-        
-                <div className={styles.valuesGrid}>
-          <div className={styles.valuesContent}>
-            <h3>Nuestros Valores</h3>
-            <div className="content-flow">
-              <div className={styles.valueItem}>
-                <h4>Honestidad</h4>
-                <p>
-                  Transparencia total en cada transacción, con evaluaciones justas y precios actualizados del mercado de metales.
-                </p>
-              </div>
-              <div className={styles.valueItem}>
-                <h4>Compromiso</h4>
-                <p>
-                  Dedicación a la satisfacción del cliente y al cuidado del medio ambiente mediante un reciclaje responsable.
-                </p>
-              </div>
-              <div className={styles.valueItem}>
-                <h4>Excelencia</h4>
-                <p>
-                  Mejora continua de nuestros procesos para ofrecer un servicio rápido, seguro y de calidad superior.
-                </p>
-              </div>
-              <div className={styles.valueItem}>
-                <h4>Responsabilidad</h4>
-                <p>
-                  Compromiso social y ambiental, impulsando prácticas sostenibles que benefician a la comunidad y al planeta.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
         <div className={styles.environmentalSection}>
           <h3 className={styles.environmentalTitle}>Nuestro Compromiso Ambiental</h3>
           <div className={styles.environmentalGrid}>
