@@ -11,8 +11,8 @@ export const useInteractionTracking = (options: InteractionTrackingOptions = {})
   const trackInteraction = useCallback((action: string, element: string) => {
     const startTime = performance.now();
     
-    // Track interaction responsiveness
-    requestAnimationFrame(() => {
+    // Use setTimeout with 0 delay instead of requestAnimationFrame for better performance
+    setTimeout(() => {
       const endTime = performance.now();
       const duration = endTime - startTime;
       
@@ -34,7 +34,7 @@ export const useInteractionTracking = (options: InteractionTrackingOptions = {})
           });
         }
       }
-    });
+    }, 0);
   }, [pageName, threshold]);
 
   const trackClick = useCallback((element: string) => {

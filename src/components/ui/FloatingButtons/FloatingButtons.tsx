@@ -11,25 +11,39 @@ export const FloatingButtons: React.FC = () => {
   const directionsUrl = `https://maps.google.com/?q=${encodeURIComponent(COMPANY_INFO.address)}`;
 
   useEffect(() => {
-    const handleScroll = () => {
+    // Cache hero section reference and height to avoid repeated DOM queries
+    let heroSection: Element | null = null;
+    let heroHeight: number = 0;
+    let threshold: number = 600; // fallback threshold
+    
+    const initializeHeroSection = () => {
       // Check for both main hero section and page hero sections
       const mainHeroSection = document.querySelector('.heroSection');
       const pageHeroSection = document.querySelector('.pageHero');
       
       // Use whichever hero section is present
-      const heroSection = mainHeroSection || pageHeroSection;
+      heroSection = mainHeroSection || pageHeroSection;
       
       if (heroSection) {
+        // Cache the height to avoid repeated offsetHeight calls
+        heroHeight = (heroSection as HTMLElement).offsetHeight;
+        threshold = heroHeight * 0.8;
+      }
+    };
+
+    const handleScroll = () => {
+      if (heroSection) {
+        // Use cached height and only call getBoundingClientRect once
         const heroBottom = heroSection.getBoundingClientRect().bottom;
-        // Show buttons when we've scrolled past 80% of the hero section
-        const heroHeight = (heroSection as HTMLElement).offsetHeight;
-        const threshold = heroHeight * 0.8;
         setIsVisible(heroBottom < threshold);
       } else {
         // Fallback: show after scrolling 600px if no hero section found
         setIsVisible(window.scrollY > 600);
       }
     };
+
+    // Initialize hero section on mount
+    initializeHeroSection();
 
     // Add scroll listener with throttling for better performance
     let ticking = false;

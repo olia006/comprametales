@@ -16,10 +16,12 @@ export const Header: React.FC = () => {
 
   // Prevent body scrolling when menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+    // Use a more efficient approach to avoid unnecessary style changes
+    const currentOverflow = document.body.style.overflow;
+    const newOverflow = isMenuOpen ? 'hidden' : 'unset';
+    
+    if (currentOverflow !== newOverflow) {
+      document.body.style.overflow = newOverflow;
     }
 
     // Cleanup function to restore scrolling when component unmounts
