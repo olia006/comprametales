@@ -45,6 +45,9 @@ export const HeroSection: React.FC = () => {
           }}
         />
         
+        {/* Dark Overlay for Background Image Only */}
+        <div className={styles.heroImageOverlay}></div>
+        
         {/* Foreground 3D Hero Image with Parallax Effect */}
         <Image
           src="/images/herosection3d.webp"
@@ -59,8 +62,8 @@ export const HeroSection: React.FC = () => {
           }}
         />
         
-        {/* Dark Overlay */}
-        <div className={styles.heroImageOverlay}></div>
+        {/* Slight Overlay for 3D Image */}
+        <div className={styles.heroImage3dOverlay}></div>
       </div>
       <div className="container">
         <div className={styles.heroContent}>
@@ -71,8 +74,7 @@ export const HeroSection: React.FC = () => {
                 <span className={styles.mobileText}>Horarios ajustables</span>
               </p>
               <h1 className={styles.mainTitle}>
-                Compra de <span className={styles.highlight}>Chatarra</span> y{' '}
-                <span className={styles.highlight}>Metales</span> en Lampa
+                Compra de Chatarra y Metales en Lampa
               </h1>
               <p className={styles.subtitle}>
                 Mejores precios en fierro, cobre, aluminio y más. Cotización rápida y pago al tiro.

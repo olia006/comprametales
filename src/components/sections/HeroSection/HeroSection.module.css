@@ -39,7 +39,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.heroImage3dOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .heroBackground {
@@ -84,7 +94,7 @@
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-tight);
-  color: var(--color-primary);
+  color: var(--color-white);
   margin-bottom: var(--space-6);
   max-width: none;
   margin-left: 0;
