@@ -89,6 +89,14 @@ export default function RootLayout({
         <link rel="canonical" href="https://konstander.cl" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
         
+        {/* Preconnect to critical origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* Preload critical CSS */}
+        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+        
         {/* Critical CSS - Inline to reduce render-blocking and improve LCP */}
         <style dangerouslySetInnerHTML={{
           __html: `
