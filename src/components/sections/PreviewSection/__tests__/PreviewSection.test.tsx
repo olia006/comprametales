@@ -113,10 +113,10 @@ describe('PreviewSection', () => {
     expect(section).toBeInTheDocument()
   })
 
-  it('renders "Precios actualizados diariamente" note when prices are shown', () => {
+  it('renders price update note when prices are shown', () => {
     render(<PreviewSection {...defaultProps} topPrices={mockMaterialPrices} />)
     
-    expect(screen.getByText(/precios actualizados diariamente/i)).toBeInTheDocument()
+    expect(screen.getByText(/precios actualizados:/i)).toBeInTheDocument()
   })
 
   it('handles empty topPrices array', () => {

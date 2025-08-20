@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
 import { formatPrice, MaterialPrice } from '@/config/pricing';
+import { getPriceUpdateText } from '@/utils/priceUpdateDate';
 import { LazyVideo } from '@/components/ui/LazyVideo/LazyVideo';
 
 import styles from './PreviewSection.module.css';
@@ -93,7 +94,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                   ))}
                 </div>
                 <div className={`${styles.pricesNote} scroll-reveal delay-3`}>
-                  <small>Precios actualizados diariamente</small>
+                  <small>{getPriceUpdateText(topPrices)}</small>
                 </div>
               </div>
             </div>
@@ -137,9 +138,9 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-vendemos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesUsadosenVenta/armatura_3.webp', title: 'Armaduras y Estructuras', description: 'Acero estructural reciclado', alt: 'Armaduras de acero estructural recicladas para construcción' },
-                    { src: '/images/MaterialesUsadosenVenta/Barras_3.webp', title: 'Barras de Refuerzo', description: 'Para hormigón armado', alt: 'Barras de refuerzo de acero recicladas para hormigón armado' },
-                    { src: '/images/MaterialesUsadosenVenta/perfiles-acero.webp', title: 'Perfiles Estructurales', description: 'Tipo H, I y U', alt: 'Perfiles de acero reciclados tipo H, I y U para construcción industrial' },
+                    { src: '/images/MaterialesUsadosenVenta/barrasrde-refuerzo.webp', title: 'Barras de Refuerzo', description: 'Para hormigón armado', alt: 'Barras de refuerzo de acero recicladas para hormigón armado' },
+                    { src: '/images/MaterialesUsadosenVenta/armadura.webp', title: 'Armadura', description: 'Diferentes diámetros', alt: 'Armadura de acero reciclada para construcción' },
+                    { src: '/images/MaterialesUsadosenVenta/armadura2.webp', title: 'Armadura Estructural', description: 'Diferentes diámetros', alt: 'Armadura de acero reciclada para construcción' },
                     { src: '/images/MaterialesUsadosenVenta/planchas-metal.webp', title: 'Planchas Metálicas', description: 'Diversos grosores', alt: 'Planchas de acero recicladas de diversos grosores para proyectos industriales' },
                     { src: '/images/MaterialesUsadosenVenta/vigas-acero.webp', title: 'Vigas de Acero', description: 'Para construcción', alt: 'Vigas de acero estructural recicladas para construcción de galpones y estructuras' },
                     { src: '/images/MaterialesUsadosenVenta/tuberia-industrial.webp', title: 'Tubería Industrial', description: 'Instalaciones industriales', alt: 'Tubería de acero reciclada para instalaciones industriales y sistemas de transporte' },

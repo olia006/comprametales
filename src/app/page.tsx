@@ -1,6 +1,7 @@
 import { HeroSection } from '@/components/sections/HeroSection/HeroSection';
 import { PreviewSection } from '@/components/sections/PreviewSection/PreviewSection';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
+import { getPriceUpdateText } from '@/utils/priceUpdateDate';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { Layout } from '@/components/layout/Layout/Layout';
 
@@ -10,8 +11,8 @@ import styles from './page.module.css';
 
 export const metadata = {
   title: 'KONSTANDER - Compra Chatarra y Metales | Mejores Precios Lampa 2024',
-  description: '🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
-  keywords: 'compra chatarra, metales, cobre precio hoy, hierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios',
+  description: '🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
+  keywords: 'compra chatarra, metales, cobre precio hoy, fierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios',
 };
 
 export default function HomePage() {
@@ -30,7 +31,7 @@ export default function HomePage() {
           id="precios"
           title="Nuestros Precios"
           subtitle="Precios Actualizados"
-          description="Precios actualizados y competitivos para cobre, fierro, aluminio, bronce y más. Cotiza hoy y recibe pago inmediato al mejor valor del mercado."
+          description={`${getPriceUpdateText(topPrices)} y competitivos para cobre, fierro, aluminio, bronce y más. Cotiza hoy y recibe pago inmediato al mejor valor del mercado.`}
           href="/precios"
           backgroundType="transparent"
           topPrices={topPrices}
@@ -77,7 +78,7 @@ export default function HomePage() {
         <CTASection
           title="¿Listo para Vender tus Metales?"
           subtitle="Obtén la Mejor Cotización"
-          description="Contáctanos ahora y obtén el mejor precio por tus materiales. Evaluación gratuita y pago inmediato."
+          description="Contáctanos ahora y recibe pago inmediato por tu chatarra al mejor precio en Santiago."
           actions={[
             {
               type: 'primary',

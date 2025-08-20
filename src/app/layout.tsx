@@ -15,14 +15,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://konstander.cl'),
+  metadataBase: new URL('https://comprametales.cl'),
   title: 'Konstander SpA | Compra & Venta de Chatarra',
   description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
-  keywords: 'chatarra, metales, hierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
+  keywords: 'chatarra, metales, fierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
   openGraph: {
     title: 'Konstander SpA | Compra & Venta de Chatarra | Lampa, RM',
     description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
-    url: 'https://konstander.cl',
+    url: 'https://comprametales.cl',
     siteName: 'Konstander SpA',
     locale: 'es_CL',
     type: 'website',
@@ -88,7 +88,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <link rel="canonical" href="https://konstander.cl" />
+        <link rel="canonical" href="https://comprametales.cl" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         
         {/* Preconnect to critical origins */}
@@ -266,23 +266,96 @@ export default function RootLayout({
                 return;
               }
               
-              const observer = new IntersectionObserver(
-                (entries) => {
-                  entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                      entry.target.classList.add('visible');
-                      observer.unobserve(entry.target);
-                    }
-                  });
-                },
-                {
-                  threshold: 0.1,
-                  rootMargin: '0px 0px -50px 0px'
-                }
-              );
+              let observer = null;
               
-              const elements = document.querySelectorAll('.scroll-reveal');
-              elements.forEach(element => observer.observe(element));
+              function initScrollReveal() {
+                // Clean up existing observer
+                if (observer) {
+                  observer.disconnect();
+                }
+                
+                observer = new IntersectionObserver(
+                  (entries) => {
+                    entries.forEach((entry) => {
+                      if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                      }
+                    });
+                  },
+                  {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                  }
+                );
+                
+                // Observe all scroll-reveal elements
+                const elements = document.querySelectorAll('.scroll-reveal');
+                elements.forEach(el => {
+                  // Check if element is already in viewport and should be visible immediately
+                  const rect = el.getBoundingClientRect();
+                  const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+                  
+                  if (isInViewport) {
+                    // If already in viewport, show immediately
+                    el.classList.add('visible');
+                  } else {
+                    // Otherwise, remove visible class and observe
+                    el.classList.remove('visible');
+                    observer.observe(el);
+                  }
+                });
+              }
+              
+              // Initial setup
+              initScrollReveal();
+              
+              // Use MutationObserver to detect when new elements are added to DOM
+              const mutationObserver = new MutationObserver((mutations) => {
+                let shouldReinit = false;
+                mutations.forEach((mutation) => {
+                  if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach((node) => {
+                      if (node.nodeType === 1) { // Element node
+                        if (node.classList && node.classList.contains('scroll-reveal')) {
+                          shouldReinit = true;
+                        } else if (node.querySelectorAll) {
+                          const scrollRevealElements = node.querySelectorAll('.scroll-reveal');
+                          if (scrollRevealElements.length > 0) {
+                            shouldReinit = true;
+                          }
+                        }
+                      }
+                    });
+                  }
+                });
+                
+                if (shouldReinit) {
+                  setTimeout(() => {
+                    initScrollReveal();
+                  }, 50);
+                }
+              });
+              
+              // Start observing DOM changes
+              mutationObserver.observe(document.body, {
+                childList: true,
+                subtree: true
+              });
+              
+              // Also listen for popstate (back/forward navigation)
+              window.addEventListener('popstate', () => {
+                setTimeout(() => {
+                  initScrollReveal();
+                }, 100);
+              });
+              
+              // Listen for focus events (when user returns to tab or page)
+              window.addEventListener('focus', () => {
+                setTimeout(() => {
+                  initScrollReveal();
+                }, 100);
+              });
             })();
           `}
         </Script>

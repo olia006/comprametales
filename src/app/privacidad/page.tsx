@@ -11,7 +11,7 @@ export default function PrivacidadPage() {
       <SEOHead 
         title="Política de Privacidad - KONSTANDER Lampa"
         description="Política de privacidad de KONSTANDER. Conoce cómo protegemos y utilizamos tus datos personales de acuerdo con la legislación chilena."
-        canonical="https://konstander.cl/privacidad"
+        canonical="https://comprametales.cl/privacidad"
         keywords="política privacidad, protección datos, KONSTANDER, Chile, ley datos personales"
       />
       
@@ -150,7 +150,7 @@ export default function PrivacidadPage() {
               tus derechos, puedes contactarnos:
             </p>
             <div className={styles.contactInfo}>
-              <p><strong>Email:</strong> info@konstander.cl</p>
+              <p><strong>Email:</strong> info@comprametales.cl</p>
               <p><strong>Teléfono:</strong> +56 9 3772 0208</p>
               <p><strong>Dirección:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana</p>
             </div>

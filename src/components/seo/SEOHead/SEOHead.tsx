@@ -17,7 +17,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
   canonical,
-  keywords = 'chatarra, metales, compra chatarra, hierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
+      keywords = 'chatarra, metales, compra chatarra, fierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
   ogImage = '/images/herosection.webp',
   ogType = 'website',
   structuredData,
@@ -27,10 +27,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   const defaultStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://konstander.cl/#business',
+    '@id': 'https://comprametales.cl/#business',
     name: 'KONSTANDER',
     description: 'Compra y venta de chatarra y metales en Lampa, Región Metropolitana. Mejores precios del mercado.',
-    url: 'https://konstander.cl',
+    url: 'https://comprametales.cl',
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
     address: {
@@ -58,7 +58,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Compra de Hierro y Acero',
+            name: 'Compra de Fierro y Acero',
             description: 'Compra de materiales ferrosos a los mejores precios'
           }
         },
@@ -90,7 +90,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       'https://www.facebook.com/compra.chatarra.konstander/',
       'https://www.instagram.com/konstander.spa/'
     ],
-    keywords: 'compra chatarra, metales, hierro, cobre, aluminio, reciclaje',
+    keywords: 'compra chatarra, metales, fierro, cobre, aluminio, reciclaje',
     priceRange: '$$$',
     currenciesAccepted: 'CLP',
     paymentAccepted: 'Cash, Bank Transfer'
@@ -119,8 +119,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="KONSTANDER" />
-      <meta property="og:image" content={`https://konstander.cl${ogImage}`} />
-      <meta property="og:image:secure_url" content={`https://konstander.cl${ogImage}`} />
+      <meta property="og:image" content={`https://comprametales.cl${ogImage}`} />
+      <meta property="og:image:secure_url" content={`https://comprametales.cl${ogImage}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
@@ -133,7 +133,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {ogType === 'article' && (
         <>
           <meta property="article:author" content="KONSTANDER" />
-          <meta property="article:publisher" content="https://konstander.cl" />
+          <meta property="article:publisher" content="https://comprametales.cl" />
           <meta property="article:section" content="Metales y Chatarra" />
           <meta property="article:tag" content="chatarra" />
           <meta property="article:tag" content="metales" />
@@ -159,9 +159,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:creator" content="@konstander_spa" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`https://konstander.cl${ogImage}`} />
+      <meta name="twitter:image" content={`https://comprametales.cl${ogImage}`} />
       <meta name="twitter:image:alt" content={title} />
-      <meta name="twitter:domain" content="konstander.cl" />
+      <meta name="twitter:domain" content="comprametales.cl" />
       <meta name="twitter:url" content={canonical} />
       
       {/* Additional Twitter metadata */}

@@ -105,11 +105,9 @@ describe('HeroSection', () => {
   it('renders highlighted keywords in title', () => {
     render(<HeroSection />)
     
-    const chatarraHighlight = screen.getByText('Chatarra')
-    const metalesHighlight = screen.getByText('Metales')
-    
-    expect(chatarraHighlight).toBeInTheDocument()
-    expect(metalesHighlight).toBeInTheDocument()
+    const title = screen.getByRole('heading', { level: 1 })
+    expect(title).toHaveTextContent('Chatarra')
+    expect(title).toHaveTextContent('Metales')
   })
 
   it('is accessible with proper ARIA labels', () => {

@@ -17,7 +17,7 @@ Disallow: /admin/
 Allow: /images/
 
 # Sitemap location
-Sitemap: https://konstander.cl/sitemap.xml
+Sitemap: https://comprametales.cl/sitemap.xml
 
 # Crawl delay (be respectful)
 Crawl-delay: 1

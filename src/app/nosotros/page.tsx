@@ -5,6 +5,7 @@ import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { DollarSign, Shield, Clock, MapPin, Recycle, Leaf, Globe } from 'lucide-react';
+import { COMPANY_INFO } from '@/config/pricing';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -13,8 +14,96 @@ export const metadata = {
 };
 
 export default function NosotrosPage() {
+  // Organization Schema for Company Information
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://comprametales.cl/#organization",
+    "name": COMPANY_INFO.name,
+    "alternateName": "Konstander SpA",
+    "legalName": "Konstander SpA",
+    "description": "Empresa líder en compra y venta de metales y chatarra en Lampa, Región Metropolitana. Más de 10 años de experiencia internacional y 3+ años en Chile.",
+    "url": "https://comprametales.cl",
+    "logo": "https://comprametales.cl/images/logo.png",
+    "foundingDate": "2021",
+    "numberOfEmployees": "10-50",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Panamericana Norte 17110",
+      "addressLocality": "Lampa",
+      "addressRegion": "Región Metropolitana",
+      "postalCode": "9380000",
+      "addressCountry": "CL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": COMPANY_INFO.coordinates.lat,
+      "longitude": COMPANY_INFO.coordinates.lng
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": COMPANY_INFO.phone,
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      }
+    ],
+    "email": COMPANY_INFO.email,
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Región Metropolitana, Chile"
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": COMPANY_INFO.coordinates.lat,
+        "longitude": COMPANY_INFO.coordinates.lng
+      },
+      "geoRadius": "50000" // 50km radius
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Compra de Metales",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Compra de Metales Ferrosos",
+            "description": "Compramos fierro, acero y otros metales ferrosos"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Compra de Metales No Ferrosos",
+            "description": "Compramos cobre, aluminio, bronce y otros metales no ferrosos"
+          }
+        }
+      ]
+    },
+    "knowsAbout": ["Reciclaje de Metales", "Compra de Chatarra", "Metales Ferrosos", "Metales No Ferrosos", "Evaluación de Materiales"],
+    "award": ["Mejores Precios del Mercado", "Servicio de Calidad"],
+    "slogan": "Mejores precios, pago inmediato, servicio confiable"
+  };
+
   return (
     <Layout>
+      {/* Organization Schema for Company */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
 
       
       <BreadcrumbNav 
@@ -39,11 +128,18 @@ export default function NosotrosPage() {
             <h2>Nuestra Historia</h2>
             <div className="content-flow">
               <p>
-                KONSTANDER es parte de una empresa internacional con más de 10 años de experiencia en la compra y venta de metales. Hace más de 3 años abrimos nuestra sucursal en Chile, donde trabajamos con un enfoque cercano, ágil y confiable.
+                <strong>KONSTANDER</strong> es parte de una empresa internacional con más de <strong>10 años de experiencia</strong> en la compra y venta de metales. Hace más de <strong>3 años abrimos nuestra sucursal en Chile</strong>, donde trabajamos con un enfoque cercano, ágil y confiable.
               </p>
               <p>
-                Nuestra estructura nos permite ofrecer un trato directo, rápido y flexible, adaptándonos a las necesidades de cada cliente. Destacamos por pagos inmediatos, horarios extendidos y opciones de pago variadas, siempre manteniendo precios competitivos y un servicio de calidad.
+                Nuestra estructura nos permite ofrecer un <strong>trato directo, rápido y flexible</strong>, adaptándonos a las necesidades de cada cliente. Destacamos por:
               </p>
+              <ul className={styles.historyList}>
+                <li><strong>Pagos inmediatos</strong> - Recibes tu dinero al instante</li>
+                <li><strong>Horarios extendidos</strong> - Abiertos 7 días a la semana</li>
+                <li><strong>Pago flexible</strong> - Varias opciones disponibles</li>
+                <li><strong>Precios actualizados</strong> - Cotizaciones al día</li>
+                <li><strong>Atención personalizada</strong> - Trato profesional y cercano</li>
+              </ul>
             </div>
           </div>
           <div className={styles.whyChooseSection}>

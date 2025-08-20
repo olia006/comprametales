@@ -69,7 +69,7 @@ function getEnvironmentVariable(key: string, fallback?: string): string {
 export const env: EnvironmentConfig = {
   // App Configuration
   nodeEnv: (process.env.NODE_ENV as any) || 'development',
-  siteUrl: getEnvironmentVariable('NEXT_PUBLIC_SITE_URL', 'https://konstander.cl'),
+  siteUrl: getEnvironmentVariable('NEXT_PUBLIC_SITE_URL', 'https://comprametales.cl'),
   isDevelopment: process.env.NODE_ENV === 'development',
   isProduction: process.env.NODE_ENV === 'production',
   isTest: process.env.NODE_ENV === 'test',

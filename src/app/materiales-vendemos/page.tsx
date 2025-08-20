@@ -10,7 +10,7 @@ import styles from './page.module.css';
 
 export const metadata = {
   title: 'Materiales Usados en Venta - KONSTANDER',
-  description: 'Vendemos materiales metálicos reciclados de calidad: barras de acero, planchas de hierro, tubos de cobre y perfiles de aluminio en Lampa.',
+  description: 'Vendemos materiales metálicos reciclados de calidad: barras de acero, planchas de fierro, tubos de cobre y perfiles de aluminio en Lampa.',
 };
 
 export default function MaterialesVendemosPage() {
@@ -27,11 +27,11 @@ export default function MaterialesVendemosPage() {
     },
     {
       name: 'Iron Sheets',
-      nameEs: 'Planchas de Hierro',
+      nameEs: 'Planchas de Fierro',
       pricePerKg: 160,
       currency: 'CLP',
       category: 'ferrosos' as const,
-      description: 'Planchas de hierro de diversos grosores',
+      description: 'Planchas de fierro de diversos grosores',
       lastUpdated: '2024-01-15'
     },
     {
@@ -86,8 +86,8 @@ export default function MaterialesVendemosPage() {
             <div className={styles.imageGrid}>
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/Barras_3.webp" 
-                  alt="Barras de acero disponibles"
+                  src="/images/MaterialesUsadosenVenta/barrasrde-refuerzo.webp" 
+                  alt="Barras de refuerzo de acero recicladas para hormigón armado"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -99,15 +99,15 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Barras de Acero</h4>
-                  <p className={styles.imageDescription}>Diferentes diámetros</p>
+                  <h4 className={styles.imageTitle}>Barras de Refuerzo</h4>
+                  <p className={styles.imageDescription}>Para hormigón armado</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/armatura_3.webp" 
-                  alt="Armadura disponible"
+                  src="/images/MaterialesUsadosenVenta/armadura.webp" 
+                  alt="Armadura de acero reciclada para construcción"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -120,14 +120,14 @@ export default function MaterialesVendemosPage() {
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
                   <h4 className={styles.imageTitle}>Armadura</h4>
-                  <p className={styles.imageDescription}>Para construcción</p>
+                  <p className={styles.imageDescription}>Diferentes diámetros</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/perfiles-acero.webp" 
-                  alt="Perfiles de acero disponibles"
+                  src="/images/MaterialesUsadosenVenta/armadura2.webp" 
+                  alt="Armadura de acero reciclada para construcción"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -139,8 +139,8 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Perfiles de Acero</h4>
-                  <p className={styles.imageDescription}>Diversos tamaños</p>
+                  <h4 className={styles.imageTitle}>Armadura Estructural</h4>
+                  <p className={styles.imageDescription}>Diferentes diámetros</p>
                 </div>
               </div>
               

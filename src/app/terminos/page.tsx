@@ -11,7 +11,7 @@ export default function TerminosPage() {
       <SEOHead 
         title="Términos y Condiciones - KONSTANDER Lampa"
         description="Términos y condiciones de servicio de KONSTANDER. Conoce las condiciones para la compra y venta de metales y chatarra en Chile."
-        canonical="https://konstander.cl/terminos"
+        canonical="https://comprametales.cl/terminos"
         keywords="términos condiciones, servicio, KONSTANDER, compra metales, Chile"
       />
       
@@ -62,7 +62,7 @@ export default function TerminosPage() {
             <h2>3. Condiciones de Compra</h2>
             <h3>3.1 Materiales Aceptados:</h3>
             <ul>
-              <li>Metales ferrosos: hierro, acero, fundición</li>
+                              <li>Metales ferrosos: fierro, acero, fundición</li>
               <li>Metales no ferrosos: cobre, aluminio, bronce, latón</li>
               <li>Materiales especiales: acero inoxidable, plomo, zinc</li>
               <li>Chatarra industrial y doméstica limpia</li>

@@ -4,13 +4,13 @@ import { MaterialGrid } from '@/components/content/MaterialGrid/MaterialGrid';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
-import { getPricesByCategory } from '@/config/pricing';
+import { getPricesByCategory, PRICING_CONFIG, COMPANY_INFO } from '@/config/pricing';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Compramos Chatarra y Metales - Cobre, Hierro, Aluminio - KONSTANDER Lampa',
-  description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, hierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
-  keywords: 'compra chatarra, venta metales, cobre precio, hierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales',
+  title: 'Compramos Chatarra y Metales - Cobre, Fierro, Aluminio - KONSTANDER Lampa',
+  description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, fierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
+  keywords: 'compra chatarra, venta metales, cobre precio, fierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales',
 };
 
 export default function MaterialesAceptamosPage() {
@@ -18,8 +18,55 @@ export default function MaterialesAceptamosPage() {
   const noFerrosoMaterials = getPricesByCategory('no-ferrosos');
   const especialesMaterials = getPricesByCategory('especiales');
 
+  // Generate Product Schema for all materials we buy
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@graph": PRICING_CONFIG.map(material => ({
+      "@type": "Product",
+      "@id": `https://comprametales.cl/materiales-aceptamos#${material.name.toLowerCase().replace(/\s+/g, '-')}`,
+      "name": material.nameEs,
+      "description": material.description || `Compramos ${material.nameEs.toLowerCase()} al mejor precio del mercado`,
+      "category": material.category === 'ferrosos' ? 'Metales Ferrosos' : 
+                 material.category === 'no-ferrosos' ? 'Metales No Ferrosos' : 'Metales Especiales',
+      "offers": {
+        "@type": "Offer",
+        "price": material.pricePerKg.toString(),
+        "priceCurrency": material.currency,
+        "availability": material.pricePerKg > 0 ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+        "priceValidUntil": new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 7 days from now
+        "seller": {
+          "@type": "Organization",
+          "name": COMPANY_INFO.name,
+          "telephone": COMPANY_INFO.phone,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Panamericana Norte 17110",
+            "addressLocality": "Lampa",
+            "addressRegion": "Región Metropolitana",
+            "addressCountry": "CL"
+          }
+        }
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "KONSTANDER"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Reciclado"
+      }
+    }))
+  };
+
   return (
     <Layout>
+      {/* Product Schema for Materials We Buy */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema)
+        }}
+      />
       <BreadcrumbNav 
         items={[
           { name: 'Inicio', href: '/' },
@@ -38,7 +85,7 @@ export default function MaterialesAceptamosPage() {
         <div className={styles.contentSections}>
           <MaterialGrid
             title="Materiales Ferrosos"
-            subtitle="Metales que contienen hierro"
+            subtitle="Metales que contienen fierro"
             description="Aceptamos todo tipo de materiales ferrosos en cualquier estado. Desde chatarra doméstica hasta estructuras industriales."
             materials={ferrosoMaterials}
             images={{
@@ -51,7 +98,7 @@ export default function MaterialesAceptamosPage() {
             }}
             examples={[
               'Vigas y estructuras metálicas',
-              'Tubos y cañerías de hierro',
+              'Tubos y cañerías de fierro',
               'Chatarra de automóviles',
               'Electrodomésticos viejos',
               'Herramientas en desuso',
@@ -61,11 +108,11 @@ export default function MaterialesAceptamosPage() {
           
           <MaterialGrid
             title="Materiales No Ferrosos"
-            subtitle="Metales sin contenido de hierro"
+            subtitle="Metales sin contenido de fierro"
             description="Los metales no ferrosos tienen mayor valor debido a sus propiedades especiales y su resistencia a la corrosión."
             materials={noFerrosoMaterials}
             examples={[
-              'Cables eléctricos de cobre',
+              'Tuberías de cobre',
               'Radiadores de automóviles',
               'Perfiles de ventanas de aluminio',
               'Grifería de latón',
@@ -95,12 +142,12 @@ export default function MaterialesAceptamosPage() {
               <div>
                 <h3>Materiales que Aceptamos:</h3>
                 <div className={styles.requirementsList}>
-                  <div>✓ Materiales limpios y separados</div>
+                  <div>✓ Metales ferrosos y no ferrosos</div>
                   <div>✓ Chatarra doméstica e industrial</div>
                   <div>✓ Estructuras metálicas desmontadas</div>
-                  <div>✓ Cables pelados y sin pelar</div>
-                  <div>✓ Radiadores sin plástico</div>
-                  <div>✓ Mínimo 50kg por transacción</div>
+                  <div>✓ Radiadores, motores y componentes metálicos</div>
+                  <div>✓ Material limpio y clasificado</div>
+                  <div>✓ No hay mínimo de entrega</div>
                 </div>
               </div>
               <div>

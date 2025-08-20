@@ -3,15 +3,16 @@ import { PageHero } from '@/components/sections/PageHero/PageHero';
 import { PriceTable } from '@/components/content/PriceTable/PriceTable';
 import { InfoNotice } from '@/components/content/InfoNotice/InfoNotice';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
+import { getPriceUpdateDescription } from '@/utils/priceUpdateDate';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { PRICING_CONFIG, getPricesByCategory } from '@/config/pricing';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Hierro $450/kg - KONSTANDER',
-  description: '📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!',
-  keywords: 'precios chatarra hoy, precio cobre 2024, precio hierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER',
+  title: 'Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Fierro $450/kg - KONSTANDER',
+  description: '📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!',
+  keywords: 'precios chatarra hoy, precio cobre 2024, precio fierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER',
 };
 
 export default function PreciosPage() {
@@ -31,7 +32,7 @@ export default function PreciosPage() {
       <PageHero
         title="Precios de Metales y Chatarra"
         subtitle="Cotizaciones Actualizadas"
-        description="Consulta nuestros precios competitivos para todos los tipos de metales. Precios actualizados diariamente según el mercado internacional."
+        description={getPriceUpdateDescription([...ferrosoMaterials, ...noFerrosoMaterials, ...especialesMaterials])}
         backgroundImage="/images/pricepage.webp"
       />
       
@@ -39,14 +40,14 @@ export default function PreciosPage() {
         <div className={styles.priceTablesGrid}>
           <PriceTable
             title="Materiales Ferrosos"
-            description="Hierro, acero y otros metales que contienen hierro"
+            description="Fierro, acero y otros metales que contienen fierro"
             materials={ferrosoMaterials}
             categoryColor="primary"
           />
           
           <PriceTable
             title="Materiales No Ferrosos"
-            description="Metales sin contenido de hierro, como cobre y aluminio"
+            description="Metales sin contenido de fierro, como cobre y aluminio"
             materials={noFerrosoMaterials}
             categoryColor="secondary"
           />
