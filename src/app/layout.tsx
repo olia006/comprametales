@@ -7,9 +7,9 @@ import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-  preload: true,
+  preload: false, // Don't preload to reduce critical path
   fallback: ['system-ui', 'arial'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'], // Only load essential weights
   variable: '--font-inter',
 });
 
@@ -93,6 +93,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* DNS prefetch for faster resource loading */}
+        <link rel="dns-prefetch" href="https://comprametales.vercel.app" />
+        
+        {/* Resource hints for critical CSS - simple approach */}
+        <link rel="preconnect" href="https://comprametales.vercel.app" crossOrigin="" />
         
 
         
