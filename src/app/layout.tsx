@@ -52,10 +52,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico?v=3' },
-      { url: '/favicon/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon/favicon-48x48.png?v=2', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.ico?v=4' },
+      { url: '/favicon/favicon-16x16.png?v=3', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon-32x32.png?v=3', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/favicon-48x48.png?v=3', sizes: '48x48', type: 'image/png' },
     ],
     apple: [
       { url: '/favicon/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
@@ -89,7 +89,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="canonical" href="https://konstander.cl" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         
         {/* Preconnect to critical origins */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
