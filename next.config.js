@@ -136,45 +136,10 @@ const nextConfig = {
         })
       );
       
-      // Optimize chunk splitting for better caching
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 10,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 5,
-          },
-        },
-      };
+
     }
 
-    // Optimize CSS loading for production
-    if (!dev && !isServer) {
-      // Extract critical CSS
-      config.optimization.splitChunks.cacheGroups.styles = {
-        name: 'styles',
-        test: /\.(css|scss)$/,
-        chunks: 'all',
-        enforce: true,
-      };
-      
-      // Optimize CSS loading to reduce critical path
-      config.optimization.splitChunks.cacheGroups.critical = {
-        name: 'critical',
-        test: /critical\.css$/,
-        chunks: 'all',
-        enforce: true,
-        priority: 10,
-      };
-    }
+
     
     return config;
   },
