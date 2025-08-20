@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
+import './globals.css';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -14,6 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://konstander.cl'),
   title: 'Konstander SpA | Compra & Venta de Chatarra',
   description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
   keywords: 'chatarra, metales, hierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
@@ -100,14 +102,7 @@ export default function RootLayout({
         {/* Resource hints for critical CSS - simple approach */}
         <link rel="preconnect" href="https://comprametales.vercel.app" crossOrigin="" />
         
-        {/* Preload critical font to fix 780ms bottleneck */}
-        <link 
-          rel="preload" 
-          href="/_next/static/media/e4af272ccee01ff0-s.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous" 
-        />
+
         
 
         

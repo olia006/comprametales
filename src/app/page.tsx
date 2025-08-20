@@ -8,22 +8,18 @@ import { Layout } from '@/components/layout/Layout/Layout';
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
 import { getFeaturedPrices } from '@/config/pricing';
 import styles from './page.module.css';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import './globals.css';
+export const metadata = {
+  title: 'KONSTANDER - Compra Chatarra y Metales | Mejores Precios Lampa 2024',
+  description: '🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
+  keywords: 'compra chatarra, metales, cobre precio hoy, hierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios',
+};
 
 export default function HomePage() {
   const topPrices = getFeaturedPrices();
 
   return (
     <Layout>
-      <SEOHead 
-        title="KONSTANDER - Compra Chatarra y Metales | Mejores Precios Lampa 2024"
-        description="🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!"
-        canonical="https://konstander.cl"
-        keywords="compra chatarra, metales, cobre precio hoy, hierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios"
-      />
 
       
       <PerformanceMonitor pageName="Homepage" pageType="landing" />

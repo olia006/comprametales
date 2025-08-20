@@ -5,12 +5,13 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import Image from 'next/image';
 import styles from './page.module.css';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import '../globals.css';
+export const metadata = {
+  title: 'Materiales Usados en Venta - KONSTANDER',
+  description: 'Vendemos materiales metálicos reciclados de calidad: barras de acero, planchas de hierro, tubos de cobre y perfiles de aluminio en Lampa.',
+};
 
 export default function MaterialesVendemosPage() {
   // Data for potential future MaterialGrid component
@@ -55,11 +56,6 @@ export default function MaterialesVendemosPage() {
 
   return (
     <Layout>
-      <SEOHead 
-        title="Materiales Usados en Venta - KONSTANDER"
-        description="Vendemos materiales metálicos reciclados de calidad: barras de acero, planchas de hierro, tubos de cobre y perfiles de aluminio en Lampa."
-        canonical="https://konstander.cl/materiales-vendemos"
-      />
 
       
       <BreadcrumbNav 
@@ -94,7 +90,7 @@ export default function MaterialesVendemosPage() {
                   alt="Barras de acero disponibles"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -114,11 +110,11 @@ export default function MaterialesVendemosPage() {
                   alt="Armadura disponible"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXwGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className={styles.imageOverlay}></div>
@@ -134,7 +130,7 @@ export default function MaterialesVendemosPage() {
                   alt="Perfiles de acero disponibles"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -154,7 +150,7 @@ export default function MaterialesVendemosPage() {
                   alt="Planchas metálicas disponibles"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -174,7 +170,7 @@ export default function MaterialesVendemosPage() {
                   alt="Vigas de acero industriales"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -194,7 +190,7 @@ export default function MaterialesVendemosPage() {
                   alt="Tubería industrial disponible"
                   width={240}
                   height={180}
-                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
+                  sizes="240px"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}

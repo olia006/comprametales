@@ -3,13 +3,15 @@ import { PageHero } from '@/components/sections/PageHero/PageHero';
 import { MaterialGrid } from '@/components/content/MaterialGrid/MaterialGrid';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { getPricesByCategory } from '@/config/pricing';
 import styles from './page.module.css';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import '../globals.css';
+export const metadata = {
+  title: 'Compramos Chatarra y Metales - Cobre, Hierro, Aluminio - KONSTANDER Lampa',
+  description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, hierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
+  keywords: 'compra chatarra, venta metales, cobre precio, hierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales',
+};
 
 export default function MaterialesAceptamosPage() {
   const ferrosoMaterials = getPricesByCategory('ferrosos');
@@ -18,13 +20,6 @@ export default function MaterialesAceptamosPage() {
 
   return (
     <Layout>
-      <SEOHead 
-        title="Compramos Chatarra y Metales - Cobre, Hierro, Aluminio | KONSTANDER Lampa"
-        description="💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, hierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!"
-        canonical="https://konstander.cl/materiales-aceptamos"
-        keywords="compra chatarra, venta metales, cobre precio, hierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales"
-      />
-      
       <BreadcrumbNav 
         items={[
           { name: 'Inicio', href: '/' },

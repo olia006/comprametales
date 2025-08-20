@@ -4,21 +4,17 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { DollarSign, Shield, Clock, MapPin, Recycle, Leaf, Globe } from 'lucide-react';
 import styles from './page.module.css';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import '../globals.css';
+export const metadata = {
+  title: 'Acerca de KONSTANDER - Empresa de Metales y Chatarra',
+  description: 'Conoce la historia de KONSTANDER, empresa líder en compra y venta de metales en Lampa. Experiencia, confianza y los mejores precios del mercado.',
+};
 
 export default function NosotrosPage() {
   return (
     <Layout>
-      <SEOHead 
-        title="Acerca de KONSTANDER - Empresa de Metales y Chatarra"
-        description="Conoce la historia de KONSTANDER, empresa líder en compra y venta de metales en Lampa. Experiencia, confianza y los mejores precios del mercado."
-        canonical="https://konstander.cl/nosotros"
-      />
 
       
       <BreadcrumbNav 

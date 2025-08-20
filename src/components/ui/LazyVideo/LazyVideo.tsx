@@ -21,11 +21,13 @@ export const LazyVideo: React.FC<LazyVideoProps> = ({
   poster,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  const [, setIsInView] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {

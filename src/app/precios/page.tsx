@@ -4,13 +4,15 @@ import { PriceTable } from '@/components/content/PriceTable/PriceTable';
 import { InfoNotice } from '@/components/content/InfoNotice/InfoNotice';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { PRICING_CONFIG, getPricesByCategory } from '@/config/pricing';
 import styles from './page.module.css';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import '../globals.css';
+export const metadata = {
+  title: 'Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Hierro $450/kg - KONSTANDER',
+  description: '📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!',
+  keywords: 'precios chatarra hoy, precio cobre 2024, precio hierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER',
+};
 
 export default function PreciosPage() {
   const ferrosoMaterials = getPricesByCategory('ferrosos');
@@ -19,13 +21,6 @@ export default function PreciosPage() {
 
   return (
     <Layout>
-      <SEOHead 
-        title="Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Hierro $450/kg | KONSTANDER"
-        description="📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Hierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!"
-        canonical="https://konstander.cl/precios"
-        keywords="precios chatarra hoy, precio cobre 2024, precio hierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER"
-      />
-      
       <BreadcrumbNav 
         items={[
           { name: 'Inicio', href: '/' },

@@ -6,21 +6,17 @@ import { BusinessHours } from '@/components/content/BusinessHours/BusinessHours'
 import { Map } from '@/components/content/Map/Map';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
-import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import styles from './page.module.css';
 
-// Import non-critical CSS at component level to avoid render-blocking
-import '../globals.css';
+export const metadata = {
+  title: 'Contacto - KONSTANDER Lampa',
+  description: 'Contáctanos para vender tus metales. Ubicados en Panamericana Norte 17110, Lampa. Teléfono: +56 9 3772 0208. Abierto lunes a domingo.',
+};
 
 export default function ContactoPage() {
   return (
     <Layout>
-      <SEOHead 
-        title="Contacto - KONSTANDER Lampa"
-        description="Contáctanos para vender tus metales. Ubicados en Panamericana Norte 17110, Lampa. Teléfono: +56 9 3772 0208. Abierto lunes a domingo."
-        canonical="https://konstander.cl/contacto"
-      />
       
       <BreadcrumbNav 
         items={[
