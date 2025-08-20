@@ -1,117 +1,83 @@
-.readMoreButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-medium);
-  text-decoration: none;
-  border: 1px solid var(--color-primary-dark); /* Blue border same as text */
-  border-radius: 9999px; /* PILL STYLE - fully rounded override */
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  background: transparent;
-  color: var(--color-primary-dark);
+.learnMore {
   position: relative;
-  padding: var(--space-1) var(--space-2); /* Made even smaller - reduced both vertical and horizontal padding */
-}
-
-.readMoreButton:hover {
-  color: var(--color-gray-900);
-  background: var(--color-primary-subtle);
-  border-color: var(--color-primary); /* Enhanced border on hover */
-  text-decoration: none;
-}
-
-.readMoreButton:hover .arrow {
-  transform: translateX(4px);
-}
-
-.readMoreButton:active {
-  transform: scale(0.98);
-}
-
-.readMoreButton:focus {
+  display: inline-block;
+  cursor: pointer;
   outline: none;
-  border-color: var(--color-primary); /* Enhanced border on focus */
-  box-shadow: 0 0 0 2px var(--color-primary-subtle);
-}
-
-/* Arrow Animation */
-.arrow {
-  transition: transform var(--transition-fast);
-  flex-shrink: 0;
-}
-
-/* Size Variations */
-.sm {
-  padding: var(--space-1) var(--space-2);
-  font-size: var(--font-size-sm);
-  gap: var(--space-1);
-}
-
-.sm .arrow {
-  width: 14px;
-  height: 14px;
-}
-
-.md {
-  padding: var(--space-2) var(--space-3);
-  font-size: var(--font-size-base);
-  gap: var(--space-2);
-}
-
-.md .arrow {
-  width: 16px;
-  height: 16px;
-}
-
-.lg {
-  padding: var(--space-1) var(--space-2); /* Made smaller - reduced from space-3/space-4 */
-  font-size: var(--font-size-lg);
-  gap: var(--space-2);
-}
-
-.lg .arrow {
-  width: 18px;
-  height: 18px;
-}
-
-/* Disabled State */
-.disabled {
-  color: var(--color-gray-400);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.disabled:hover {
-  color: var(--color-gray-400);
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
   background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  width: 12rem;
+  height: auto;
 }
 
-.disabled .arrow {
-  transform: none;
+.circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-primary);
+  border-radius: 1.625rem;
 }
 
-/* Underline Effect - REMOVED */
+.icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .readMoreButton {
-    padding: var(--space-3) var(--space-4);
-    min-height: 44px; /* Better touch target */
-    font-size: var(--font-size-base);
-  }
-  
-  .sm {
-    padding: var(--space-2) var(--space-3);
-    min-height: 40px;
-    font-size: var(--font-size-sm);
-  }
-  
-  .lg {
-    padding: var(--space-2) var(--space-3); /* Smaller mobile size too */
-    min-height: 40px; /* Reduced min-height */
-    font-size: var(--font-size-lg);
-  }
+.icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.buttonText {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.learnMore:hover .circle {
+  width: 100%;
+}
+
+.learnMore:hover .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+.learnMore:hover .buttonText {
+  color: #fff;
 }

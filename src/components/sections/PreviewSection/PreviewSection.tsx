@@ -63,8 +63,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
             <div className={styles.action}>
               <ReadMoreButton 
                 href={href} 
-                text="Ver Más Detalles"
-                size="lg"
+                text="Más Detalles"
               />
             </div>
           </div>

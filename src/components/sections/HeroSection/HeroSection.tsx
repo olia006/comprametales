@@ -18,8 +18,14 @@ export const HeroSection: React.FC = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        if (typeof window !== 'undefined') {
+          window.removeEventListener('scroll', handleScroll);
+        }
+      };
+    }
   }, []);
 
   return (
@@ -52,6 +58,9 @@ export const HeroSection: React.FC = () => {
             transform: `translateY(${scrollY * 0.7}px)`,
           }}
         />
+        
+        {/* Dark Overlay */}
+        <div className={styles.heroImageOverlay}></div>
       </div>
       <div className="container">
         <div className={styles.heroContent}>
@@ -83,6 +92,21 @@ export const HeroSection: React.FC = () => {
                 Cotizar por WhatsApp
                 <FaWhatsapp className={styles.icon} />
               </PrimaryButton>
+              
+              {/* Scroll Down Arrow */}
+              <div className={styles.scrollArrow}>
+                <svg 
+                  width="32" 
+                  height="32" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                  className={styles.scrollArrowIcon}
+                >
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
             </div>
 
 

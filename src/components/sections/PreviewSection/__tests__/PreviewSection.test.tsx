@@ -57,7 +57,7 @@ describe('PreviewSection', () => {
     render(<PreviewSection {...defaultProps} />)
     
     // Look for the ReadMore button (it has role="button", not "link")
-    const readMoreButton = screen.getByRole('button', { name: /ver más detalles/i })
+    const readMoreButton = screen.getByRole('button', { name: /más detalles/i })
     expect(readMoreButton).toBeInTheDocument()
     expect(readMoreButton).toHaveAttribute('href', '/test-page')
   })

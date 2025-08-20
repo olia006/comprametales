@@ -39,7 +39,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%);
 }
 
 .heroBackground {
@@ -175,6 +175,44 @@
     0px 20px 50px rgba(0, 0, 0, 0.5),
     0px 10px 25px rgba(0, 0, 0, 0.4),
     0px 0px 0px 1px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Scroll Down Arrow - Mobile Only */
+.scrollArrow {
+  display: none; /* Hidden by default */
+  justify-content: center;
+  margin-top: var(--space-6);
+  color: var(--color-white);
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.scrollArrow:hover {
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Show scroll arrow only on mobile */
+@media (max-width: 767px) {
+  .scrollArrow {
+    display: flex;
+  }
+}
+
+.scrollArrowIcon {
+  pointer-events: none;
 }
 
 .buttonIcon {
