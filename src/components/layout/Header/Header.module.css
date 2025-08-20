@@ -33,6 +33,8 @@
 .logoImage {
   flex-shrink: 0;
   filter: brightness(0) invert(1);
+  max-width: 260px;
+  height: auto;
 }
 
 
@@ -336,6 +338,14 @@
 
 
 
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .logoImage {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
   .contactInfo {
@@ -344,6 +354,11 @@
   
   .headerContent {
     padding: var(--space-5) 0;
+  }
+  
+  .logoImage {
+    max-width: 240px;
+    height: auto;
   }
   
   .logoText {

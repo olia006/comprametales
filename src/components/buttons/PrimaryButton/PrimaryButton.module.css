@@ -12,7 +12,7 @@
   font-weight: var(--font-weight-bold);
   font-size: 15px;
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: #25D366;
   border: 3px solid #ffffff4d;
   border-radius: 9999px;
   outline: none;
@@ -50,7 +50,7 @@
 .button:focus {
   outline: none;
   box-shadow: 
-    0 0 0 3px var(--color-primary-subtle),
+    0 0 0 3px rgba(37, 211, 102, 0.1),
     0px 8px 25px rgba(0, 0, 0, 0.15),
     0px 4px 10px rgba(0, 0, 0, 0.1),
     0px 0px 0px 1px rgba(255, 255, 255, 0.1);

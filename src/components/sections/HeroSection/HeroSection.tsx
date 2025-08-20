@@ -27,40 +27,40 @@ export const HeroSection: React.FC = () => {
       <div className={styles.heroBackground}>
         {/* Background Hero Image with Parallax Effect */}
         <Image
-          src="/images/herosectionbackground3d.png?v=3"
+          src="/images/herosectionbackground3d.webp"
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
-          quality={60}
+          quality={85}
           sizes="100vw"
           className={styles.heroImage}
           style={{
             transform: `translateY(${scrollY * 0.3}px)`,
           }}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
         />
         
         {/* Foreground 3D Hero Image with Parallax Effect */}
         <Image
-          src="/images/herosection3d.png?v=3"
+          src="/images/herosection3d.webp"
           alt="3D Hero Overlay for Testing"
           fill
           priority
-          quality={60}
+          quality={85}
           sizes="100vw"
           className={styles.heroImage3d}
           style={{
             transform: `translateY(${scrollY * 0.7}px)`,
           }}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
         />
       </div>
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
             <div className={styles.heroTitle}>
+              <p className={styles.flexibleHours}>
+                <span className={styles.desktopText}>Atención con horarios ajustables</span>
+                <span className={styles.mobileText}>Horarios ajustables</span>
+              </p>
               <h1 className={styles.mainTitle}>
                 Compra de <span className={styles.highlight}>Chatarra</span> y{' '}
                 <span className={styles.highlight}>Metales</span> en Lampa
@@ -85,11 +85,7 @@ export const HeroSection: React.FC = () => {
               </PrimaryButton>
             </div>
 
-            <div className={styles.businessInfo}>
-              <p className={styles.hoursFlexible}>
-                {COMPANY_INFO.hoursFlexible}
-              </p>
-            </div>
+
           </div>
 
           <div className={styles.heroVisual}>

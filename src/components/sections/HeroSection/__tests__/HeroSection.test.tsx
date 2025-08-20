@@ -30,17 +30,30 @@ describe('HeroSection', () => {
     expect(subtitle).toBeInTheDocument()
   })
 
-  it('renders hero background image with correct alt text', () => {
+  it('renders hero background images with correct alt text', () => {
     render(<HeroSection />)
     
     const heroImages = screen.getAllByAltText(/planta industrial de konstander/i)
     expect(heroImages.length).toBeGreaterThan(0)
     
-    // Check that the image has the correct source
-    const heroImage = heroImages.find(img => 
-      img.getAttribute('src')?.includes('herosection.webp')
+    // Check that the background image has the correct source
+    const backgroundImage = heroImages.find(img => 
+      img.getAttribute('src')?.includes('herosectionbackground3d.webp')
     )
-    expect(heroImage).toBeInTheDocument()
+    expect(backgroundImage).toBeInTheDocument()
+  })
+
+  it('renders 3D hero overlay image', () => {
+    render(<HeroSection />)
+    
+    const overlayImages = screen.getAllByAltText(/3d hero overlay/i)
+    expect(overlayImages.length).toBeGreaterThan(0)
+    
+    // Check that the 3D overlay image has the correct source
+    const overlayImage = overlayImages.find(img => 
+      img.getAttribute('src')?.includes('herosection3d.webp')
+    )
+    expect(overlayImage).toBeInTheDocument()
   })
 
   it('displays WhatsApp CTA button', () => {
@@ -73,8 +86,9 @@ describe('HeroSection', () => {
   it('shows flexible hours information', () => {
     render(<HeroSection />)
     
-    const flexibleHours = screen.getByText(/horarios flexibles/i)
-    expect(flexibleHours).toBeInTheDocument()
+    // Check for both desktop and mobile versions of the text
+    const flexibleHours = screen.getAllByText(/horarios ajustables/i)
+    expect(flexibleHours.length).toBeGreaterThan(0)
   })
 
   it('has proper semantic structure', () => {

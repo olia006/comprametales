@@ -104,6 +104,11 @@ const nextConfig = {
   
   // Security Headers including Content Security Policy
   async headers() {
+    // Skip ALL security headers in development to avoid Safari SSL issues
+    if (process.env.NODE_ENV === 'development') {
+      return [];
+    }
+    
     return [
       {
         source: '/(.*)',
@@ -145,8 +150,8 @@ const nextConfig = {
               // Frame ancestors: Prevent clickjacking
               "frame-ancestors 'none'",
               
-              // Upgrade insecure requests to HTTPS
-              "upgrade-insecure-requests"
+              // Upgrade insecure requests to HTTPS (only in production)
+              ...(process.env.NODE_ENV === 'production' ? ["upgrade-insecure-requests"] : [])
             ].join('; ')
           },
           
