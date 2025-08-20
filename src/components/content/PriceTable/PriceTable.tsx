@@ -103,11 +103,15 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         <div className={styles.controls}>
           <div className={styles.searchContainer}>
             <input
+              id="material-search"
+              name="materialSearch"
               type="text"
               placeholder="Buscar material..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className={styles.searchInput}
+              aria-label="Buscar materiales por nombre"
+              autoComplete="off"
             />
             <Search className={styles.searchIcon} size={20} />
           </div>

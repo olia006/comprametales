@@ -72,10 +72,10 @@ convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-
 convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-mixto.jpg" "public/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-mixto.webp"
 convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesFerrosos/viruta.jpg" "public/images/MaterialesqueAceptamos/MaterialesFerrosos/viruta.webp"
 
-# Non-ferrosos materials
-convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/618f1fb4a7672a7b919e90b80a1b3381.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/brass-scrap.webp"
-convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-recycling-process.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-recycling-process.webp"
-convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/cx4dat4nvxr7mchqpc1p3o7sseey4erq.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-wires.webp"
+# Non-ferrosos materials - REMOVED (not used in the application)
+# convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/618f1fb4a7672a7b919e90b80a1b3381.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/brass-scrap.webp"
+# convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-recycling-process.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-recycling-process.webp"
+# convert_to_webp "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/cx4dat4nvxr7mchqpc1p3o7sseey4erq.jpg" "public/images/MaterialesqueAceptamos/MaterialesNoFerrosos/copper-wires.webp"
 
 echo ""
 echo "🎉 Image optimization complete!"
