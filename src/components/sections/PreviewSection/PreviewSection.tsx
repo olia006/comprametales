@@ -1,8 +1,10 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
 import { formatPrice, MaterialPrice } from '@/config/pricing';
 import { LazyVideo } from '@/components/ui/LazyVideo/LazyVideo';
+
 import styles from './PreviewSection.module.css';
 
 interface PreviewSectionProps {
@@ -26,6 +28,8 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
   topPrices,
   className = '',
 }) => {
+
+  
   const sectionClasses = [
     styles.previewSection,
     styles[backgroundType],
@@ -38,9 +42,9 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
         <div className={styles.content}>
           <div className={styles.textContent}>
             <div className={styles.header}>
-              <span className={styles.subtitle}>{subtitle}</span>
-              <h2 className={styles.title}>{title}</h2>
-              <p className={styles.description}>{description}</p>
+              <span className={`${styles.subtitle} scroll-reveal`}>{subtitle}</span>
+              <h2 className={`${styles.title} scroll-reveal delay-1`}>{title}</h2>
+              <p className={`${styles.description} scroll-reveal delay-2`}>{description}</p>
             </div>
             
             {id === 'nosotros' && (
@@ -71,10 +75,10 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
           {topPrices && (
             <div className={styles.visualContent}>
               <div className={styles.pricesPreview}>
-                <h3 className={styles.pricesTitle}>Precios Destacados</h3>
+                <h3 className={`${styles.pricesTitle} scroll-reveal`}>Precios Destacados</h3>
                 <div className={styles.pricesList}>
-                  {topPrices.map((material) => (
-                    <div key={material.name} className={styles.priceItem}>
+                  {topPrices.map((material, index) => (
+                    <div key={material.name} className={`${styles.priceItem} scroll-reveal delay-${Math.min(index + 1, 3)}`}>
                       <div className={styles.materialInfo}>
                         <span className={styles.materialName}>{material.nameEs}</span>
                         <span className={styles.materialCategory}>
@@ -88,7 +92,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                     </div>
                   ))}
                 </div>
-                <div className={styles.pricesNote}>
+                <div className={`${styles.pricesNote} scroll-reveal delay-3`}>
                   <small>Precios actualizados diariamente</small>
                 </div>
               </div>
@@ -106,8 +110,8 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                     { src: '/images/MaterialesqueAceptamos/bronce.webp', title: 'Bronce', description: 'Grifería y válvulas', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
                     { src: '/images/MaterialesqueAceptamos/acero.webp', title: 'Acero Inoxidable', description: 'Utensilios industriales', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
                     { src: '/images/MaterialesqueAceptamos/electrico.webp', title: 'Material Eléctrico', description: 'Cables y transformadores', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
-                  ].map((item) => (
-                    <div key={item.title} className={`${styles.imageCard} group`}>
+                  ].map((item, index) => (
+                    <div key={item.title} className={`${styles.imageCard} group scroll-reveal delay-${Math.min(index + 1, 3)}`}>
                       <Image 
                         src={item.src} 
                         alt={item.alt}
@@ -139,8 +143,8 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                     { src: '/images/MaterialesUsadosenVenta/planchas-metal.webp', title: 'Planchas Metálicas', description: 'Diversos grosores', alt: 'Planchas de acero recicladas de diversos grosores para proyectos industriales' },
                     { src: '/images/MaterialesUsadosenVenta/vigas-acero.webp', title: 'Vigas de Acero', description: 'Para construcción', alt: 'Vigas de acero estructural recicladas para construcción de galpones y estructuras' },
                     { src: '/images/MaterialesUsadosenVenta/tuberia-industrial.webp', title: 'Tubería Industrial', description: 'Instalaciones industriales', alt: 'Tubería de acero reciclada para instalaciones industriales y sistemas de transporte' },
-                  ].map((item) => (
-                    <div key={item.title} className={`${styles.imageCard} group`}>
+                  ].map((item, index) => (
+                    <div key={item.title} className={`${styles.imageCard} group scroll-reveal delay-${Math.min(index + 1, 3)}`}>
                       <Image 
                         src={item.src} 
                         alt={item.alt}
@@ -164,7 +168,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               )}
               
               {id === 'nosotros' && (
-                <div className={styles.videoBackground}>
+                <div className={`${styles.videoBackground} scroll-reveal`}>
                   <LazyVideo
                     src="/images/aboutuspreview.mp4"
                     className={styles.backgroundVideo}

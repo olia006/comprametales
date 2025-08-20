@@ -183,6 +183,38 @@ export default function RootLayout({
                 font-size: 2.25rem;
               }
             }
+            
+            /* Scroll reveal animation - inline for immediate loading */
+            .scroll-reveal {
+              opacity: 0;
+              transform: translateY(50px);
+              transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                          transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              will-change: opacity, transform;
+            }
+            
+            .scroll-reveal.visible {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            
+            .scroll-reveal.delay-1 {
+              transition-delay: 0.1s;
+            }
+            
+            .scroll-reveal.delay-2 {
+              transition-delay: 0.2s;
+            }
+            
+            .scroll-reveal.delay-3 {
+              transition-delay: 0.3s;
+            }
+            
+            html:not(.js-enabled) .scroll-reveal {
+              opacity: 1;
+              transform: translateY(0);
+              transition: none;
+            }
           `
         }} />
         
@@ -219,6 +251,41 @@ export default function RootLayout({
           {children}
         </ErrorBoundary>
         <WebVitals debug={process.env.NODE_ENV === 'development'} />
+        
+        {/* Initialize scroll reveal animations */}
+        <Script id="scroll-reveal-init" strategy="afterInteractive">
+          {`
+            (function() {
+              if (typeof document !== 'undefined') {
+                document.documentElement.classList.add('js-enabled');
+              }
+              
+              if (!('IntersectionObserver' in window)) {
+                const elements = document.querySelectorAll('.scroll-reveal');
+                elements.forEach(el => el.classList.add('visible'));
+                return;
+              }
+              
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('visible');
+                      observer.unobserve(entry.target);
+                    }
+                  });
+                },
+                {
+                  threshold: 0.1,
+                  rootMargin: '0px 0px -50px 0px'
+                }
+              );
+              
+              const elements = document.querySelectorAll('.scroll-reveal');
+              elements.forEach(element => observer.observe(element));
+            })();
+          `}
+        </Script>
       </body>
     </html>
   );

@@ -248,23 +248,24 @@
   }
   
   .statsInText {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
     margin: var(--space-4) 0 var(--space-6) 0;
   }
   
   .statsInText .statItem {
-    padding: var(--space-4) var(--space-3);
-    min-height: 80px;
+    padding: var(--space-3) var(--space-2);
   }
   
   .statsInText .statNumber {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
   
   .statsInText .statLabel {
     font-size: var(--font-size-xs);
     letter-spacing: 0.3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -324,21 +325,15 @@
 }
 
 .statsInText .statItem {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-100);
-  border-radius: var(--radius-0);
-  padding: var(--space-6) var(--space-4);
   text-align: center;
   position: relative;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  min-height: 100px;
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* Remove hover effects - these are informational cards */
 
 /* Stats over video - no frame */
 .statsOverlay .statItem {
@@ -424,26 +419,24 @@
 }
 
 .statsInText .statNumber {
-  font-size: 2rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-gray-900);
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary-dark);
   line-height: 1;
   margin-bottom: var(--space-2);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
-/* Remove hover effects for numbers */
 
 .statsInText .statLabel {
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-gray-700);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* Remove hover effects for labels */
 
 /* Contact Preview */
 .contactPreview {
@@ -699,16 +692,4 @@
   }
 }
 
-/* Animation for section entrance */
-.previewSection {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: sectionFadeIn 0.6s ease-out forwards;
-}
-
-@keyframes sectionFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Removed old animation CSS - now using global scroll-reveal.css */
