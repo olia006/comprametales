@@ -27,8 +27,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
     // Improve module resolution
     esmExternals: 'loose',
-    // Optimize CSS loading - temporarily disabled due to production issues
-    // optimizeCss: true,
     // Disable polyfills for modern browsers
     forceSwcTransforms: true,
     // Disable SWC polyfills
@@ -72,18 +70,6 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        // Use native implementations when available
-        'core-js': false,
-        'core-js/features': false,
-        'core-js/proposals': false,
-        'core-js/actual': false,
-        'core-js/stable': false,
-        'core-js/modules': false,
-        'regenerator-runtime': false,
-        'regenerator-runtime/runtime': false,
-        '@babel/runtime': false,
-        '@babel/runtime-corejs3': false,
-        '@babel/runtime-corejs2': false,
       };
       
       // Reduce polyfill overhead by targeting modern browsers
@@ -92,23 +78,6 @@ const nextConfig = {
       // Disable automatic polyfills for modern browsers
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        'core-js/modules': false,
-        'core-js/stable': false,
-        'core-js/features': false,
-        'core-js/proposals': false,
-        'core-js/actual': false,
-        'regenerator-runtime': false,
-        'regenerator-runtime/runtime': false,
-        'core-js/features/array/at': false,
-        'core-js/features/array/flat': false,
-        'core-js/features/array/flat-map': false,
-        'core-js/features/object/from-entries': false,
-        'core-js/features/object/has-own': false,
-        'core-js/features/string/trim-end': false,
-        'core-js/features/string/trim-start': false,
-        '@babel/runtime': false,
-        '@babel/runtime-corejs3': false,
-        '@babel/runtime-corejs2': false,
       };
       
       // Disable polyfills in webpack
@@ -128,19 +97,8 @@ const nextConfig = {
           'process.env.BROWSERSLIST_ENV': JSON.stringify('production'),
         })
       );
-      
-      // Add IgnorePlugin to ignore polyfill modules
-      config.plugins.push(
-        new (require('webpack').IgnorePlugin)({
-          resourceRegExp: /^(core-js|@babel\/runtime|regenerator-runtime)$/,
-        })
-      );
-      
-
     }
 
-
-    
     return config;
   },
   

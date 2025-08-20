@@ -3,21 +3,16 @@ import { PreviewSection } from '../PreviewSection'
 import { MaterialPrice } from '@/config/pricing'
 
 // Mock Next.js Image component
-const MockImage = ({ src, alt, ...props }: any) => {
-  return <img src={src} alt={alt} {...props} />
-}
-MockImage.displayName = 'Image'
-
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: MockImage,
+  default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }))
 
 // Mock ReadMoreButton component
 jest.mock('@/components/buttons/ReadMoreButton/ReadMoreButton', () => ({
-  ReadMoreButton: ({ href, children }: any) => (
-    <a href={href} data-testid="read-more-button">
-      {children}
+  ReadMoreButton: ({ href, text }: any) => (
+    <a href={href} data-testid="read-more-button" role="button">
+      {text || 'Ver Más Detalles'}
     </a>
   ),
 }), { virtual: true })

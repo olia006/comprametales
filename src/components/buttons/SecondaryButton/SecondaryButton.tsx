@@ -12,6 +12,8 @@ interface SecondaryButtonProps {
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   className?: string;
+  target?: string;
+  rel?: string;
 }
 
 export const SecondaryButton: React.FC<SecondaryButtonProps> = ({
@@ -23,6 +25,8 @@ export const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   size = 'md',
   fullWidth = false,
   className = '',
+  target,
+  rel,
 }) => {
   const buttonClasses = [
     styles.button,
@@ -38,6 +42,8 @@ export const SecondaryButton: React.FC<SecondaryButtonProps> = ({
         href={href} 
         className={buttonClasses}
         role="button"
+        target={target}
+        rel={rel}
       >
         {children}
       </a>

@@ -5,7 +5,7 @@ import { CTASection } from '../CTASection'
 // Mock button components
 jest.mock('@/components/buttons/PrimaryButton/PrimaryButton', () => ({
   PrimaryButton: ({ children, href, onClick }: any) => (
-    <a href={href} onClick={onClick} data-testid="primary-button">
+    <a href={href} onClick={onClick} data-testid="primary-button" role="button">
       {children}
     </a>
   ),
@@ -13,7 +13,7 @@ jest.mock('@/components/buttons/PrimaryButton/PrimaryButton', () => ({
 
 jest.mock('@/components/buttons/SecondaryButton/SecondaryButton', () => ({
   SecondaryButton: ({ children, href, onClick }: any) => (
-    <a href={href} onClick={onClick} data-testid="secondary-button">
+    <a href={href} onClick={onClick} data-testid="secondary-button" role="button">
       {children}
     </a>
   ),

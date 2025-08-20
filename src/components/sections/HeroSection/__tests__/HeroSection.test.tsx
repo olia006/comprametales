@@ -2,14 +2,9 @@ import { render, screen } from '@testing-library/react'
 import { HeroSection } from '../HeroSection'
 
 // Mock Next.js Image component
-const MockImage = ({ src, alt, ...props }: any) => {
-  return <img src={src} alt={alt} {...props} />
-}
-MockImage.displayName = 'Image'
-
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: MockImage,
+  default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }))
 
 // Mock the useInteractionTracking hook
@@ -38,9 +33,14 @@ describe('HeroSection', () => {
   it('renders hero background image with correct alt text', () => {
     render(<HeroSection />)
     
-    const heroImage = screen.getByAltText(/planta industrial de konstander/i)
-    expect(heroImage).toBeInTheDocument()
-    expect(heroImage).toHaveAttribute('src', '/images/herosection.webp?v=2')
+    const heroImages = screen.getAllByAltText(/planta industrial de konstander/i)
+    expect(heroImages.length).toBeGreaterThan(0)
+    
+    // Check that at least one image has the desktop version
+    const desktopImage = heroImages.find(img => 
+      img.getAttribute('src')?.includes('herosection.webp?v=2')
+    )
+    expect(desktopImage).toBeInTheDocument()
   })
 
   it('displays WhatsApp CTA button', () => {

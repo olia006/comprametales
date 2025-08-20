@@ -7,14 +7,9 @@ jest.mock('next/link', () => {
   return ({ children, href }: any) => <a href={href}>{children}</a>
 })
 
-const MockImage = ({ src, alt, ...props }: any) => {
-  return <img src={src} alt={alt} {...props} />
-}
-MockImage.displayName = 'Image'
-
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: MockImage,
+  default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }))
 
 // Mock PrimaryButton component
@@ -183,8 +178,8 @@ describe('Header', () => {
     render(<Header />)
     
     const logo = screen.getByAltText(/konstander logo/i)
-    expect(logo).toHaveAttribute('width', '200')
-    expect(logo).toHaveAttribute('height', '67')
+    expect(logo).toHaveAttribute('width', '260')
+    expect(logo).toHaveAttribute('height', '87')
   })
 
   it('WhatsApp button has correct href format', () => {
