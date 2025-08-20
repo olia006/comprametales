@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
-          quality={70}
+          quality={60}
           sizes="(max-width: 768px) 100vw, 0vw"
           className={`${styles.heroImage} ${styles.heroImageMobile}`}
           placeholder="blur"
@@ -34,7 +34,7 @@ export const HeroSection: React.FC = () => {
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
-          quality={70}
+          quality={60}
           sizes="(min-width: 769px) 100vw, 0vw"
           className={`${styles.heroImage} ${styles.heroImageDesktop}`}
           placeholder="blur"

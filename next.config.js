@@ -135,6 +135,25 @@ const nextConfig = {
           resourceRegExp: /^(core-js|@babel\/runtime|regenerator-runtime)$/,
         })
       );
+      
+      // Optimize chunk splitting for better caching
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 5,
+          },
+        },
+      };
     }
 
     // Optimize CSS loading for production
