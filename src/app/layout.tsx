@@ -7,7 +7,7 @@ import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-  preload: false, // Don't preload to reduce critical path
+  preload: true, // Preload to fix critical path
   fallback: ['system-ui', 'arial'],
   weight: ['400', '600', '700'], // Only load essential weights
   variable: '--font-inter',
@@ -99,6 +99,15 @@ export default function RootLayout({
         
         {/* Resource hints for critical CSS - simple approach */}
         <link rel="preconnect" href="https://comprametales.vercel.app" crossOrigin="" />
+        
+        {/* Preload critical font to fix 780ms bottleneck */}
+        <link 
+          rel="preload" 
+          href="/_next/static/media/e4af272ccee01ff0-s.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
         
 
         
