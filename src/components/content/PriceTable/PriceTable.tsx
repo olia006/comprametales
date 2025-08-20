@@ -103,7 +103,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         <div className={styles.controls}>
           <div className={styles.searchContainer}>
             <input
-              id="material-search"
+              id={`material-search-${title.toLowerCase().replace(/\s+/g, '-')}`}
               name="materialSearch"
               type="text"
               placeholder="Buscar material..."
@@ -139,7 +139,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
             className={styles.table}
             role="table"
             aria-label={`Tabla de precios: ${title}`}
-            aria-describedby="table-summary"
+            aria-describedby={`table-summary-${title.toLowerCase().replace(/\s+/g, '-')}`}
           >
             <caption className={styles.tableCaption}>
               {title} - Lista de precios de materiales y metales. 
@@ -199,7 +199,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         </div>
       )}
 
-      <div className={styles.summary} id="table-summary">
+      <div className={styles.summary} id={`table-summary-${title.toLowerCase().replace(/\s+/g, '-')}`}>
         <div className={styles.updateNotice}>
           <p className={styles.updateText}>
             Precios actualizados el {getLastUpdateDate()}
