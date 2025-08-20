@@ -31,7 +31,7 @@
 }
 
 .logoImage {
-  width: 100%;
+  width: auto;
   height: auto;
   flex-shrink: 0;
   filter: brightness(0) invert(1);

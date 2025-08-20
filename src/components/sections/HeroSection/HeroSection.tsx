@@ -17,7 +17,7 @@ export const HeroSection: React.FC = () => {
       <div className={styles.heroBackground}>
         {/* Mobile Hero Image */}
         <Image
-          src="/images/herosection-mobile.jpg"
+          src="/images/herosection-mobile.webp"
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority

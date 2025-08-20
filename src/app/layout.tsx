@@ -94,8 +94,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/_next/static/css/app/layout.css" as="style" />
+
         
         {/* Critical CSS - Inline to reduce render-blocking and improve LCP */}
         <style dangerouslySetInnerHTML={{
