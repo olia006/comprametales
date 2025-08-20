@@ -15,28 +15,15 @@ export const HeroSection: React.FC = () => {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroBackground}>
-        {/* Mobile Hero Image */}
+        {/* Single Hero Image for both mobile and desktop */}
         <Image
-          src="/images/herosection-mobile.webp"
+          src="/images/herosection.webp"
           alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
           fill
           priority
           quality={60}
-          sizes="(max-width: 768px) 100vw, 0vw"
-          className={`${styles.heroImage} ${styles.heroImageMobile}`}
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
-        />
-        
-        {/* Desktop Hero Image */}
-        <Image
-          src="/images/herosection.webp?v=2"
-          alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
-          fill
-          priority
-          quality={60}
-          sizes="(min-width: 769px) 100vw, 0vw"
-          className={`${styles.heroImage} ${styles.heroImageDesktop}`}
+          sizes="100vw"
+          className={styles.heroImage}
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECA//EACUQAAIBAwMEAgMAAAAAAAAAAAECEQADIQQSMWFxgZETQRQi0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8A2z0dOIeqJAAAAAElFTkSuQmCC"
         />

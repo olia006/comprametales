@@ -36,11 +36,11 @@ describe('HeroSection', () => {
     const heroImages = screen.getAllByAltText(/planta industrial de konstander/i)
     expect(heroImages.length).toBeGreaterThan(0)
     
-    // Check that at least one image has the desktop version
-    const desktopImage = heroImages.find(img => 
-      img.getAttribute('src')?.includes('herosection.webp?v=2')
+    // Check that the image has the correct source
+    const heroImage = heroImages.find(img => 
+      img.getAttribute('src')?.includes('herosection.webp')
     )
-    expect(desktopImage).toBeInTheDocument()
+    expect(heroImage).toBeInTheDocument()
   })
 
   it('displays WhatsApp CTA button', () => {

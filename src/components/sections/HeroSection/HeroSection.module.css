@@ -18,30 +18,9 @@
 
 .heroImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-}
-
-/* Mobile Hero Image - Show on mobile, hide on desktop */
-.heroImageMobile {
-  display: block;
-}
-
-@media (min-width: 769px) {
-  .heroImageMobile {
-    display: none;
-  }
-}
-
-/* Desktop Hero Image - Hide on mobile, show on desktop */
-.heroImageDesktop {
-  display: none;
-}
-
-@media (min-width: 769px) {
-  .heroImageDesktop {
-    display: block;
-  }
+  object-position: center;
 }
 
 .heroImageOverlay {
