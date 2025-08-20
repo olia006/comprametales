@@ -92,11 +92,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/Barras_3.webp" 
                   alt="Barras de acero disponibles"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
@@ -111,11 +112,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/armatura_3.webp" 
                   alt="Armadura disponible"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
@@ -130,11 +132,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/perfiles-acero.webp" 
                   alt="Perfiles de acero disponibles"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
@@ -149,11 +152,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/planchas-metal.webp" 
                   alt="Planchas metálicas disponibles"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXXGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
@@ -168,11 +172,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/vigas-acero.webp" 
                   alt="Vigas de acero industriales"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
@@ -187,11 +192,12 @@ export default function MaterialesVendemosPage() {
                 <Image 
                   src="/images/MaterialesUsadosenVenta/tuberia-industrial.webp" 
                   alt="Tubería industrial disponible"
-                  width={400}
-                  height={300}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  width={240}
+                  height={180}
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 280px, 320px"
                   loading="lazy"
                   placeholder="blur"
+                  quality={85}
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
