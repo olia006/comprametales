@@ -18,7 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   canonical,
       keywords = 'chatarra, metales, compra chatarra, fierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
-  ogImage = '/images/konstander-chatarra-metales-twitter-card.webp',
+  ogImage = '/images/konstander-chatarra-metales-twitter-card.webp?v=2',
   ogType = 'website',
   structuredData,
   noIndex = false,

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/konstander-chatarra-metales-twitter-card.webp',
+        url: '/images/konstander-chatarra-metales-twitter-card.webp?v=2',
         width: 1200,
         height: 474,
         alt: 'KONSTANDER Chile - Compra de Chatarra y Metales al Mejor Precio en Lampa, Región Metropolitana',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '💰 Konstander SpA | Compra & Venta de Chatarra 🇨🇱',
     description: '🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.000/kg • Fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56937720208',
-    images: ['/images/konstander-chatarra-metales-twitter-card.webp'],
+    images: ['/images/konstander-chatarra-metales-twitter-card.webp?v=2'],
     creator: '@konstander_cl',
     site: '@konstander_cl',
   },
