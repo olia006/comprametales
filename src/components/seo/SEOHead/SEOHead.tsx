@@ -18,7 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   canonical,
       keywords = 'chatarra, metales, compra chatarra, fierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
-  ogImage = '/images/herosection.webp',
+  ogImage = '/images/twitter-card.webp',
   ogType = 'website',
   structuredData,
   noIndex = false,
@@ -122,7 +122,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={`https://comprametales.cl${ogImage}`} />
       <meta property="og:image:secure_url" content={`https://comprametales.cl${ogImage}`} />
       <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:height" content="474" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:image:type" content="image/webp" />
       <meta property="og:locale" content="es_CL" />
