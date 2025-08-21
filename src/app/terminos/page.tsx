@@ -188,7 +188,7 @@ export default function TerminosPage() {
               Para consultas, reclamos o resolución de controversias, puedes contactarnos:
             </p>
             <div className={styles.contactInfo}>
-              <p><strong>Email:</strong> info@konstander.cl</p>
+              <p><strong>Email:</strong> konstanderspa@gmail.com</p>
               <p><strong>Teléfono:</strong> +56 9 3772 0208</p>
               <p><strong>Dirección:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana</p>
             </div>

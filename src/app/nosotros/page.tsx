@@ -118,7 +118,7 @@ export default function NosotrosPage() {
           title="Acerca de KONSTANDER"
           subtitle="Experiencia y Confianza en Metales"
           description="Somos una empresa familiar con años de experiencia en el rubro de compra y venta de metales, comprometidos con brindar el mejor servicio y los mejores precios del mercado."
-          backgroundImage="/images/aboutuspage.webp"
+          backgroundImage="/images/nosotros-konstander-empresa-chatarra-lampa.webp"
         />
       </div>
       

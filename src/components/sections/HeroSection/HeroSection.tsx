@@ -33,8 +33,8 @@ export const HeroSection: React.FC = () => {
       <div className={styles.heroBackground}>
         {/* Background Hero Image with Parallax Effect */}
         <Image
-          src="/images/herosectionbackground3d.webp"
-          alt="Planta industrial de KONSTANDER para compra de chatarra y metales en Lampa, con equipos de pesaje y clasificación de materiales reciclados"
+          src="/images/planta-industrial-konstander-chatarra-lampa.webp"
+          alt="Planta industrial KONSTANDER para compra de chatarra y metales reciclados en Panamericana Norte 17110, Lampa, Región Metropolitana - equipos de pesaje y clasificación profesional"
           fill
           priority
           quality={85}
@@ -50,8 +50,8 @@ export const HeroSection: React.FC = () => {
         
         {/* Foreground 3D Hero Image with Parallax Effect */}
         <Image
-          src="/images/herosection3d.webp"
-          alt="3D Hero Overlay for Testing"
+          src="/images/equipos-clasificacion-metales-konstander.webp"
+          alt="Equipos industriales KONSTANDER para clasificación y procesamiento de metales reciclados en Panamericana Norte 17110, Lampa, Región Metropolitana"
           fill
           priority
           quality={85}

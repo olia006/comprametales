@@ -69,7 +69,7 @@ export default function MaterialesVendemosPage() {
         title="Materiales Usados en Venta"
         subtitle="Metales Reciclados de Calidad"
         description="Disponemos de materiales metálicos reciclados para construcción, industria y reparaciones, hasta un 50% más económicos que nuevos y con la misma resistencia. Todos son cuidadosamente seleccionados y limpiados."
-        backgroundImage="/images/ventapage.webp"
+        backgroundImage="/images/venta-materiales-reciclados-konstander-lampa.webp"
       />
       
       <div className={styles.pageContainer}>
@@ -86,8 +86,8 @@ export default function MaterialesVendemosPage() {
             <div className={styles.imageGrid}>
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/barrasrde-refuerzo.webp" 
-                  alt="Barras de refuerzo de acero recicladas para hormigón armado"
+                  src="/images/MaterialesUsadosenVenta/barras-refuerzo-acero-hormigon-lampa.webp" 
+                  alt="Barras de refuerzo de acero recicladas para hormigón armado en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -106,8 +106,8 @@ export default function MaterialesVendemosPage() {
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/armadura.webp" 
-                  alt="Armadura de acero reciclada para construcción"
+                  src="/images/MaterialesUsadosenVenta/fierro-construccion-reciclado-santiago.webp" 
+                  alt="Fierro de construcción reciclado económico para obras en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -119,15 +119,15 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Armadura</h4>
-                  <p className={styles.imageDescription}>Diferentes diámetros</p>
+                  <h4 className={styles.imageTitle}>Fierro Construcción</h4>
+                  <p className={styles.imageDescription}>Diferentes tamaños</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/armadura2.webp" 
-                  alt="Armadura de acero reciclada para construcción"
+                  src="/images/MaterialesUsadosenVenta/fierro-estriado-construccion-lampa.webp" 
+                  alt="Fierro de construcción reciclado económico para obras en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -139,15 +139,15 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Armadura Estructural</h4>
-                  <p className={styles.imageDescription}>Diferentes diámetros</p>
+                  <h4 className={styles.imageTitle}>Fierro Estriado</h4>
+                  <p className={styles.imageDescription}>Diferentes tamaños</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/planchas-metal.webp" 
-                  alt="Planchas metálicas disponibles"
+                  src="/images/MaterialesUsadosenVenta/tuberia-acero-reciclada-lampa.webp" 
+                  alt="Tubería de acero reciclada de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -159,15 +159,15 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Planchas Metálicas</h4>
-                  <p className={styles.imageDescription}>Varios grosores</p>
+                  <h4 className={styles.imageTitle}>Tubería</h4>
+                  <p className={styles.imageDescription}>Diferentes tamaños</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/vigas-acero.webp" 
-                  alt="Vigas de acero industriales"
+                  src="/images/MaterialesUsadosenVenta/tornillos-reciclados-construccion-santiago.webp" 
+                  alt="Tornillos reciclados de diferentes tipos y tamaños para construcción - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -179,15 +179,15 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Vigas de Acero</h4>
-                  <p className={styles.imageDescription}>Para construcción</p>
+                  <h4 className={styles.imageTitle}>Tornillos</h4>
+                  <p className={styles.imageDescription}>Diferentes tipos y tamaños</p>
                 </div>
               </div>
               
               <div className={`${styles.imageCard} group`}>
                 <Image 
-                  src="/images/MaterialesUsadosenVenta/tuberia-industrial.webp" 
-                  alt="Tubería industrial disponible"
+                  src="/images/MaterialesUsadosenVenta/pernos-anclaje-reciclados-lampa.webp" 
+                  alt="Pernos de anclaje reciclados resistentes de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
                   sizes="240px"
@@ -199,8 +199,28 @@ export default function MaterialesVendemosPage() {
                 />
                 <div className={styles.imageOverlay}></div>
                 <div className={styles.imageContent}>
-                  <h4 className={styles.imageTitle}>Tubería Industrial</h4>
-                  <p className={styles.imageDescription}>Diferentes diámetros</p>
+                  <h4 className={styles.imageTitle}>Perno Anclaje</h4>
+                  <p className={styles.imageDescription}>Diferentes tamaños</p>
+                </div>
+              </div>
+              
+              <div className={`${styles.imageCard} group`}>
+                <Image 
+                  src="/images/MaterialesUsadosenVenta/pernos-tuercas-reciclados-construccion.webp" 
+                  alt="Pernos con tuercas reciclados económicos para construcción en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
+                  width={240}
+                  height={180}
+                  sizes="240px"
+                  loading="lazy"
+                  placeholder="blur"
+                  quality={85}
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGxwf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R4DW"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className={styles.imageOverlay}></div>
+                <div className={styles.imageContent}>
+                  <h4 className={styles.imageTitle}>Pernos con Tuercas</h4>
+                  <p className={styles.imageDescription}>Diferentes tipos y tamaños</p>
                 </div>
               </div>
             </div>

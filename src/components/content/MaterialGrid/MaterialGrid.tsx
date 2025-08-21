@@ -78,6 +78,29 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
     }
   };
 
+  const getSEOAltText = (material: any) => {
+    const baseAlt = `${material.nameEs} - chatarra de ${getCategoryName(material.category).toLowerCase()} reciclado`;
+    const locationKeywords = 'compra en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER';
+    
+    // Add specific descriptions for different materials
+    switch (material.name) {
+      case 'Iron Short':
+        return `${baseAlt} de hasta 1 metro - ${locationKeywords}`;
+      case 'Iron Long':
+        return `${baseAlt} de hasta 2 metros - ${locationKeywords}`;
+      case 'Iron Mixed':
+        return `${baseAlt} clasificado y limpio - ${locationKeywords}`;
+      case 'Tinplate Steel':
+        return `${baseAlt} de latas y envases - ${locationKeywords}`;
+      case 'Cast Iron':
+        return `${baseAlt} fundido industrial - ${locationKeywords}`;
+      case 'Iron Turnings':
+        return `${baseAlt} viruta de torno - ${locationKeywords}`;
+      default:
+        return `${baseAlt} - ${locationKeywords}`;
+    }
+  };
+
   return (
     <section className={containerClasses}>
       <div className={styles.header}>
@@ -99,7 +122,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
                   <div className={styles.materialImage}>
                     <Image
                       src={images[material.name]}
-                      alt={`${material.nameEs} - ${getCategoryName(material.category)}`}
+                      alt={getSEOAltText(material)}
                       width={180}
                       height={320}
                       className={styles.image}

@@ -105,12 +105,12 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-aceptamos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesqueAceptamos/fierro.webp', title: 'Fierro', description: 'Chatarra de acero ferroso', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Santiago' },
-                    { src: '/images/MaterialesqueAceptamos/cobre.webp', title: 'Cobre', description: 'Cables y tuberías', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria' },
-                    { src: '/images/MaterialesqueAceptamos/aluminio.webp', title: 'Aluminio', description: 'Perfiles y latas', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato' },
-                    { src: '/images/MaterialesqueAceptamos/bronce.webp', title: 'Bronce', description: 'Grifería y válvulas', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado' },
-                    { src: '/images/MaterialesqueAceptamos/acero.webp', title: 'Acero Inoxidable', description: 'Utensilios industriales', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables' },
-                    { src: '/images/MaterialesqueAceptamos/electrico.webp', title: 'Material Eléctrico', description: 'Cables y transformadores', alt: 'Cables eléctricos y transformadores - reciclaje de material eléctrico con cobre' },
+                    { src: '/images/MaterialesqueAceptamos/fierro-reciclado-compra-konstander-lampa.webp', title: 'Fierro', description: 'Chatarra de acero ferroso', alt: 'Chatarra de fierro y acero ferroso - compra al mejor precio en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesqueAceptamos/cobre-reciclado-compra-konstander-lampa.webp', title: 'Cobre', description: 'Cables y tuberías', alt: 'Cobre reciclado - cables, tuberías y chatarra de cobre con cotización diaria en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesqueAceptamos/aluminio-reciclado-compra-konstander-lampa.webp', title: 'Aluminio', description: 'Perfiles y latas', alt: 'Aluminio reciclado - perfiles, latas y chatarra de aluminio con pago inmediato en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesqueAceptamos/bronce-reciclado-compra-konstander-lampa.webp', title: 'Bronce', description: 'Grifería y válvulas', alt: 'Bronce y aleaciones - grifería, válvulas y piezas de bronce reciclado en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesqueAceptamos/acero-reciclado-compra-konstander-lampa.webp', title: 'Acero Inoxidable', description: 'Utensilios industriales', alt: 'Acero inoxidable - utensilios, equipos industriales y estructuras inoxidables en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesqueAceptamos/placas-electronicas-chatarra-konstander-lampa.webp', title: 'Chatarra Electrónica', description: 'Placas electrónicas', alt: 'Chatarra electrónica - placas electrónicas, circuitos y componentes electrónicos en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
                   ].map((item, index) => (
                     <div key={item.title} className={`${styles.imageCard} group scroll-reveal delay-${Math.min(index + 1, 3)}`}>
                       <Image 
@@ -138,12 +138,12 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
               {id === 'materiales-vendemos' && (
                 <div className={styles.acceptImagesGrid}>
                   {[
-                    { src: '/images/MaterialesUsadosenVenta/barrasrde-refuerzo.webp', title: 'Barras de Refuerzo', description: 'Para hormigón armado', alt: 'Barras de refuerzo de acero recicladas para hormigón armado' },
-                    { src: '/images/MaterialesUsadosenVenta/armadura.webp', title: 'Armadura', description: 'Diferentes diámetros', alt: 'Armadura de acero reciclada para construcción' },
-                    { src: '/images/MaterialesUsadosenVenta/armadura2.webp', title: 'Armadura Estructural', description: 'Diferentes diámetros', alt: 'Armadura de acero reciclada para construcción' },
-                    { src: '/images/MaterialesUsadosenVenta/planchas-metal.webp', title: 'Planchas Metálicas', description: 'Diversos grosores', alt: 'Planchas de acero recicladas de diversos grosores para proyectos industriales' },
-                    { src: '/images/MaterialesUsadosenVenta/vigas-acero.webp', title: 'Vigas de Acero', description: 'Para construcción', alt: 'Vigas de acero estructural recicladas para construcción de galpones y estructuras' },
-                    { src: '/images/MaterialesUsadosenVenta/tuberia-industrial.webp', title: 'Tubería Industrial', description: 'Instalaciones industriales', alt: 'Tubería de acero reciclada para instalaciones industriales y sistemas de transporte' },
+                    { src: '/images/MaterialesUsadosenVenta/barras-refuerzo-acero-hormigon-lampa.webp', title: 'Barras de Refuerzo', description: 'Para hormigón armado', alt: 'Barras de refuerzo de acero recicladas para hormigón armado en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesUsadosenVenta/fierro-construccion-reciclado-santiago.webp', title: 'Fierro Construcción', description: 'Diferentes tamaños', alt: 'Fierro de construcción reciclado económico para obras en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesUsadosenVenta/fierro-estriado-construccion-lampa.webp', title: 'Fierro Estriado', description: 'Diferentes tamaños', alt: 'Fierro estriado reciclado resistente para construcción en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesUsadosenVenta/tuberia-acero-reciclada-lampa.webp', title: 'Tubería', description: 'Diferentes tamaños', alt: 'Tubería de acero reciclada de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
+                    { src: '/images/MaterialesUsadosenVenta/tornillos-reciclados-construccion-santiago.webp', title: 'Tornillos', description: 'Diferentes tipos y tamaños', alt: 'Tornillos reciclados de diferentes tipos y tamaños para construcción' },
+                    { src: '/images/MaterialesUsadosenVenta/pernos-anclaje-reciclados-lampa.webp', title: 'Perno Anclaje', description: 'Diferentes tamaños', alt: 'Pernos de anclaje reciclados resistentes de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER' },
                   ].map((item, index) => (
                     <div key={item.title} className={`${styles.imageCard} group scroll-reveal delay-${Math.min(index + 1, 3)}`}>
                       <Image 

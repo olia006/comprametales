@@ -191,7 +191,7 @@ async function sendPerformanceAlert(metric: WebVitalMetric) {
             to: [{ email: process.env.ALERT_EMAIL }],
             subject: `Performance Alert: Poor ${metric.name} Score`,
           }],
-          from: { email: 'alerts@konstander.cl', name: 'KONSTANDER Performance Monitor' },
+          from: { email: 'konstanderspa@gmail.com', name: 'KONSTANDER Performance Monitor' },
           content: [{
             type: 'text/plain',
             value: `${alertMessage}\n\nMetric Details:\n- Value: ${metric.value}\n- Rating: ${metric.rating}\n- Page: ${metric.url}\n- Timestamp: ${new Date(metric.timestamp).toISOString()}`,

@@ -12,7 +12,7 @@ describe('SEOHead', () => {
   const defaultProps = {
     title: 'Test Page Title',
     description: 'Test page description',
-    canonical: 'https://konstander.cl/test',
+    canonical: 'https://comprametales.cl/test',
   }
 
   it('renders basic meta tags', () => {
@@ -25,7 +25,7 @@ describe('SEOHead', () => {
     )
     expect(container.querySelector('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      'https://konstander.cl/test'
+      'https://comprametales.cl/test'
     )
   })
 
@@ -42,7 +42,7 @@ describe('SEOHead', () => {
     )
     expect(container.querySelector('meta[property="og:url"]')).toHaveAttribute(
       'content',
-      'https://konstander.cl/test'
+      'https://comprametales.cl/test'
     )
   })
 

@@ -213,7 +213,7 @@ src/components/
 <SEOHead 
   title="Page Title"
   description="Page description"
-  canonical="https://konstander.cl/page"
+  canonical="https://comprametales.cl/page"
   keywords="optional, keywords" // Optional
   ogImage="/path/to/image.jpg" // Optional
 />

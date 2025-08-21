@@ -1,51 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://konstander.cl/</loc>
+    <loc>https://comprametales.cl/</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/precios</loc>
+    <loc>https://comprametales.cl/precios</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/materiales-aceptamos</loc>
+    <loc>https://comprametales.cl/materiales-aceptamos</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/materiales-vendemos</loc>
+    <loc>https://comprametales.cl/materiales-vendemos</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/nosotros</loc>
+    <loc>https://comprametales.cl/nosotros</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/contacto</loc>
+    <loc>https://comprametales.cl/contacto</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/terminos</loc>
+    <loc>https://comprametales.cl/terminos</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://konstander.cl/privacidad</loc>
+    <loc>https://comprametales.cl/privacidad</loc>
     <lastmod>2024-12-20T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <!-- SEO-Friendly URL Aliases for Trending Terms -->
+  <url>
+    <loc>https://comprametales.cl/chatarra-precios-hoy</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/precio-cobre-hoy</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/precio-fierro-kg</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/compra-chatarra-lampa</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/venta-metales-reciclados</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/chatarra-lampa</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://comprametales.cl/metales-reciclados-santiago</loc>
+    <lastmod>2024-12-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

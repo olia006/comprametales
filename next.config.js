@@ -51,6 +51,54 @@ const nextConfig = {
   // Target modern browsers to reduce polyfill overhead
   transpilePackages: [],
   
+  // SEO-FRIENDLY URL REDIRECTS FOR TRENDING TERMS
+  async redirects() {
+    return [
+      // Trending search terms redirect to relevant pages
+      {
+        source: '/chatarra-precios-hoy',
+        destination: '/precios',
+        permanent: true,
+      },
+      {
+        source: '/precio-cobre-hoy',
+        destination: '/precios',
+        permanent: true,
+      },
+      {
+        source: '/precio-fierro-kg',
+        destination: '/precios',
+        permanent: true,
+      },
+      {
+        source: '/compra-chatarra-lampa',
+        destination: '/materiales-aceptamos',
+        permanent: true,
+      },
+      {
+        source: '/venta-metales-reciclados',
+        destination: '/materiales-vendemos',
+        permanent: true,
+      },
+      {
+        source: '/chatarra-lampa',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/metales-reciclados-santiago',
+        destination: '/',
+        permanent: true,
+      },
+      // Old domain redirects (if needed)
+      {
+        source: '/konstander',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+  
   // Webpack configuration to handle module loading issues and optimize CSS
   webpack: (config, { isServer, dev }) => {
     // Handle web-vitals module loading

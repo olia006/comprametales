@@ -22,7 +22,7 @@ export const BreadcrumbNav: React.FC<BreadcrumbNavProps> = ({ items, className =
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `https://konstander.cl${item.href}`
+      item: `https://comprametales.cl${item.href}`
     }))
   };
 

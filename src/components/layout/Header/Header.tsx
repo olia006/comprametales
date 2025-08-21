@@ -58,8 +58,8 @@ export const Header: React.FC = () => {
           <div className={styles.logo}>
             <Link href="/" className={styles.logoLink} onClick={closeMenu}>
               <Image 
-                src="/images/logo_konstander_black.webp" 
-                alt="KONSTANDER Logo" 
+                src="/images/logo-konstander-compra-chatarra-lampa-santiago.webp" 
+                alt="KONSTANDER - Compra de chatarra y metales reciclados en Panamericana Norte 17110, Lampa, Región Metropolitana - Líder en reciclaje" 
                 width={260} 
                 height={87} 
                 className={styles.logoImage}

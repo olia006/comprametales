@@ -147,7 +147,7 @@ async function sendCriticalErrorAlert(errorReport: ErrorReport) {
             to: [{ email: process.env.ALERT_EMAIL }],
             subject: 'Critical Error - KONSTANDER Website',
           }],
-          from: { email: 'alerts@konstander.cl', name: 'KONSTANDER Error Monitor' },
+          from: { email: 'konstanderspa@gmail.com', name: 'KONSTANDER Error Monitor' },
           content: [{
             type: 'text/plain',
             value: `${alertMessage}\n\nFull Error Details:\n${JSON.stringify(errorReport, null, 2)}`,

@@ -4,6 +4,7 @@ import { MaterialGrid } from '@/components/content/MaterialGrid/MaterialGrid';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
+import { ImageSchema } from '@/components/seo/ImageSchema/ImageSchema';
 import { getPricesByCategory, PRICING_CONFIG, COMPANY_INFO } from '@/config/pricing';
 import styles from './page.module.css';
 
@@ -17,6 +18,25 @@ export default function MaterialesAceptamosPage() {
   const ferrosoMaterials = getPricesByCategory('ferrosos');
   const noFerrosoMaterials = getPricesByCategory('no-ferrosos');
   const especialesMaterials = getPricesByCategory('especiales');
+
+  // Consolidated images object for Schema.org
+  const allImages = {
+    'Iron Mixed': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-mixto-chatarra-konstander-lampa.webp',
+    'Cast Iron': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-fundido-chatarra-konstander-lampa.webp',
+    'Iron Long': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-largo-chatarra-konstander-lampa.webp',
+    'Iron Short': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-corto-chatarra-konstander-lampa.webp',
+    'Iron Turnings': '/images/MaterialesqueAceptamos/MaterialesFerrosos/viruta-fierro-chatarra-konstander-lampa.webp',
+    'Tinplate Steel': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-lata-chatarra-konstander-lampa.webp',
+    'Copper Grade 3': '/images/MaterialesqueAceptamos/cobre-reciclado-compra-konstander-lampa.webp',
+    'Copper Grade 2': '/images/MaterialesqueAceptamos/cobre-reciclado-compra-konstander-lampa.webp',
+    'Copper Grade 1': '/images/MaterialesqueAceptamos/cobre-reciclado-compra-konstander-lampa.webp',
+    'Aluminum Clean': '/images/MaterialesqueAceptamos/aluminio-reciclado-compra-konstander-lampa.webp',
+    'Aluminum Profiles': '/images/MaterialesqueAceptamos/aluminio-reciclado-compra-konstander-lampa.webp',
+    'Aluminum Cans': '/images/MaterialesqueAceptamos/aluminio-reciclado-compra-konstander-lampa.webp',
+    'Stainless Steel': '/images/MaterialesqueAceptamos/acero-reciclado-compra-konstander-lampa.webp',
+    'Bronze': '/images/MaterialesqueAceptamos/bronce-reciclado-compra-konstander-lampa.webp',
+    'Electric Material': '/images/MaterialesqueAceptamos/placas-electronicas-chatarra-konstander-lampa.webp'
+  };
 
   // Generate Product Schema for all materials we buy
   const productSchema = {
@@ -78,7 +98,7 @@ export default function MaterialesAceptamosPage() {
         title="Materiales que Aceptamos"
         subtitle="Compramos Todo Tipo de Metales"
         description="En KONSTANDER compramos todo tipo de metales: desde chatarra común hasta materiales especializados. Pagamos al tiro y siempre con los mejores precios del mercado para cobre, fierro, aluminio, bronce y más."
-        backgroundImage="/images/aceptamospage.webp"
+        backgroundImage="/images/materiales-aceptamos-chatarra-metales-lampa.webp"
       />
       
       <div className={styles.pageContainer}>
@@ -88,14 +108,11 @@ export default function MaterialesAceptamosPage() {
             subtitle="Metales que contienen fierro"
             description="Aceptamos todo tipo de materiales ferrosos en cualquier estado. Desde chatarra doméstica hasta estructuras industriales."
             materials={ferrosoMaterials}
-            images={{
-              'Iron Mixed': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-mixto.webp',
-              'Cast Iron': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-fundido.webp',
-              'Iron Long': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-largo.webp',
-              'Iron Short': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-corto.webp',
-              'Iron Turnings': '/images/MaterialesqueAceptamos/MaterialesFerrosos/viruta.webp',
-              'Tinplate Steel': '/images/MaterialesqueAceptamos/MaterialesFerrosos/fierro-lata.webp'
-            }}
+            images={Object.fromEntries(
+              Object.entries(allImages).filter(([key]) => 
+                ['Iron Mixed', 'Cast Iron', 'Iron Long', 'Iron Short', 'Iron Turnings', 'Tinplate Steel'].includes(key)
+              )
+            )}
             examples={[
               'Vigas y estructuras metálicas',
               'Tubos y cañerías de fierro',
@@ -111,6 +128,11 @@ export default function MaterialesAceptamosPage() {
             subtitle="Metales sin contenido de fierro"
             description="Los metales no ferrosos tienen mayor valor debido a sus propiedades especiales y su resistencia a la corrosión."
             materials={noFerrosoMaterials}
+            images={Object.fromEntries(
+              Object.entries(allImages).filter(([key]) => 
+                ['Copper Grade 3', 'Copper Grade 2', 'Copper Grade 1', 'Aluminum Clean', 'Aluminum Profiles', 'Aluminum Cans'].includes(key)
+              )
+            )}
             examples={[
               'Tuberías de cobre',
               'Radiadores de automóviles',
@@ -126,6 +148,11 @@ export default function MaterialesAceptamosPage() {
             subtitle="Aleaciones y metales especializados"
             description="Metales con características especiales que requieren procesamiento específico y tienen alto valor comercial."
             materials={especialesMaterials}
+            images={Object.fromEntries(
+              Object.entries(allImages).filter(([key]) => 
+                ['Stainless Steel', 'Bronze', 'Electric Material'].includes(key)
+              )
+            )}
             examples={[
               'Ollas y utensilios de acero inoxidable',
               'Equipos médicos en desuso',
@@ -183,6 +210,18 @@ export default function MaterialesAceptamosPage() {
         ]}
         backgroundType="gradient"
         alignment="center"
+      />
+      
+      <ImageSchema 
+        images={[
+          ...Object.keys(allImages).map(materialName => ({
+            url: allImages[materialName as keyof typeof allImages],
+            alt: `${PRICING_CONFIG.find(m => m.name === materialName)?.nameEs || materialName} - chatarra reciclada compra en Panamericana Norte 17110, Lampa`,
+            width: 180,
+            height: 320,
+            caption: `Material reciclado disponible en KONSTANDER Lampa`
+          }))
+        ]}
       />
       
       <BackToTop />

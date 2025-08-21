@@ -33,12 +33,12 @@ describe('HeroSection', () => {
   it('renders hero background images with correct alt text', () => {
     render(<HeroSection />)
     
-    const heroImages = screen.getAllByAltText(/planta industrial de konstander/i)
+    const heroImages = screen.getAllByAltText(/planta industrial konstander/i)
     expect(heroImages.length).toBeGreaterThan(0)
     
     // Check that the background image has the correct source
     const backgroundImage = heroImages.find(img => 
-      img.getAttribute('src')?.includes('herosectionbackground3d.webp')
+      img.getAttribute('src')?.includes('planta-industrial-konstander-chatarra-lampa.webp')
     )
     expect(backgroundImage).toBeInTheDocument()
   })
@@ -46,12 +46,12 @@ describe('HeroSection', () => {
   it('renders 3D hero overlay image', () => {
     render(<HeroSection />)
     
-    const overlayImages = screen.getAllByAltText(/3d hero overlay/i)
+    const overlayImages = screen.getAllByAltText(/equipos industriales konstander/i)
     expect(overlayImages.length).toBeGreaterThan(0)
     
     // Check that the 3D overlay image has the correct source
     const overlayImage = overlayImages.find(img => 
-      img.getAttribute('src')?.includes('herosection3d.webp')
+      img.getAttribute('src')?.includes('equipos-clasificacion-metales-konstander.webp')
     )
     expect(overlayImage).toBeInTheDocument()
   })

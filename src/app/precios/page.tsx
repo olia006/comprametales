@@ -33,7 +33,7 @@ export default function PreciosPage() {
         title="Precios de Metales y Chatarra"
         subtitle="Cotizaciones Actualizadas"
         description={getPriceUpdateDescription([...ferrosoMaterials, ...noFerrosoMaterials, ...especialesMaterials])}
-        backgroundImage="/images/pricepage.webp"
+        backgroundImage="/images/precios-chatarra-metales-actualizados-lampa.webp"
       />
       
       <div className={styles.pageContainer}>

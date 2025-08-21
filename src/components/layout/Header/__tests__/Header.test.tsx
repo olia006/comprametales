@@ -37,7 +37,7 @@ describe('Header', () => {
   it('renders logo with correct alt text', () => {
     render(<Header />)
     
-    const logo = screen.getByAltText(/konstander logo/i)
+    const logo = screen.getByAltText(/KONSTANDER.*compra.*chatarra/i)
     expect(logo).toBeInTheDocument()
   })
 
@@ -177,7 +177,7 @@ describe('Header', () => {
   it('renders with responsive logo sizing', () => {
     render(<Header />)
     
-    const logo = screen.getByAltText(/konstander logo/i)
+    const logo = screen.getByAltText(/KONSTANDER.*compra.*chatarra/i)
     expect(logo).toHaveAttribute('width', '260')
     expect(logo).toHaveAttribute('height', '87')
   })

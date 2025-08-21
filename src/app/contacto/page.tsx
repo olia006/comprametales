@@ -29,7 +29,7 @@ export default function ContactoPage() {
         title="Contáctanos"
         subtitle="Estamos Aquí para Ayudarte"
         description="Visítanos en nuestra planta de Lampa o contáctanos para cotizaciones y consultas. Nuestro equipo está listo para atenderte y ofrecerte el mejor servicio."
-        backgroundImage="/images/contactpage.webp"
+        backgroundImage="/images/contacto-konstander-compra-chatarra-lampa.webp"
       />
       
       <div className={styles.pageContainer}>
