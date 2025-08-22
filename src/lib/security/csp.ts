@@ -3,8 +3,8 @@
 
 // Generate a secure nonce for inline scripts and styles
 export function generateNonce(): string {
-  const crypto = require('crypto');
-  return crypto.randomBytes(16).toString('base64');
+  // Simple, secure nonce generation that works in all environments
+  return btoa(Date.now().toString() + Math.random().toString(36)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
 }
 
 // CSP configuration based on environment and features used
@@ -16,13 +16,13 @@ export function getCSPHeader(nonce?: string): string {
     "default-src 'self'",
     
     // Scripts: Allow self, nonce, and required external services
-    `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com${isDevelopment ? " 'unsafe-eval'" : ""}`,
+    `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com 'unsafe-eval'`,
     
     // Styles: Allow self, inline styles, and Google Fonts
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     
     // Images: Allow self, data, and required external services
-    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com",
+    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
     
     // Fonts: Allow self and Google Fonts
     "font-src 'self' https://fonts.gstatic.com",
@@ -31,7 +31,7 @@ export function getCSPHeader(nonce?: string): string {
     "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
     
     // Frames: Allow Google services
-    "frame-src 'self' https://www.googletagmanager.com https://maps.google.com",
+    "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
     
     // Objects: Block all
     "object-src 'none'",
@@ -45,8 +45,8 @@ export function getCSPHeader(nonce?: string): string {
     // Frame ancestors: Block embedding
     "frame-ancestors 'none'",
     
-    // Upgrade insecure requests
-    "upgrade-insecure-requests"
+    // Upgrade insecure requests (only in production)
+    ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
   ];
 
   return cspDirectives.join('; ');

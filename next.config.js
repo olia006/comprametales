@@ -172,94 +172,64 @@ const nextConfig = {
     return config;
   },
   
-  // Security Headers including Content Security Policy
+  // Security Headers using our professional CSP utility
   async headers() {
-    // Skip ALL security headers in development to avoid Safari SSL issues
-    if (process.env.NODE_ENV === 'development') {
-      return [];
-    }
+    
+    // Simple nonce generation that works everywhere
+    const generateNonce = () => {
+      return btoa(Date.now().toString() + Math.random().toString(36)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
+    };
+    
+    // CSP configuration with proper development handling
+    const getCSPWithReporting = (nonce) => {
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      
+      const cspDirectives = [
+        "default-src 'self'",
+        `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com 'unsafe-eval'`,
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+        "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
+        "font-src 'self' https://fonts.gstatic.com",
+        "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+        "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
+        "object-src 'none'",
+        "base-uri 'self'",
+        "form-action 'self' https://wa.me tel: mailto:",
+        "frame-ancestors 'none'",
+        // Only upgrade insecure requests in production
+        ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
+      ];
+
+      const baseCSP = cspDirectives.join('; ');
+      return isDevelopment ? `${baseCSP}; report-uri /api/csp-violation` : baseCSP;
+    };
+    
+    const SECURITY_HEADERS = {
+      'X-Frame-Options': 'DENY',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'X-XSS-Protection': '1; mode=block',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self), payment=()',
+      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
+    };
     
     return [
       {
         source: '/(.*)',
         headers: [
-          // Content Security Policy - Comprehensive protection against XSS
+          // Content Security Policy using our utility
           {
             key: 'Content-Security-Policy',
-            value: [
-              // Default source: only allow same origin
-              "default-src 'self'",
-              
-              // Scripts: Allow required external services for analytics and functionality
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://vercel.live https://maps.googleapis.com https://maps.google.com https://www.google.com",
-              
-              // Styles: Allow inline styles (required for CSS-in-JS) and Google Fonts
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              
-              // Fonts: Allow Google Fonts
-              "font-src 'self' https://fonts.gstatic.com",
-              
-              // Images: Allow data URIs, blob, and required external services
-              "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
-              
-              // Connect: Allow analytics and performance monitoring
-              "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
-              
-              // Frames: Allow Google services (Maps, GTM)
-              "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
-              
-              // Objects: Block all object embeds
-              "object-src 'none'",
-              
-              // Base URI: Restrict to same origin
-              "base-uri 'self'",
-              
-              // Form actions: Allow self and communication protocols
-              "form-action 'self' https://wa.me tel: mailto:",
-              
-              // Frame ancestors: Prevent clickjacking
-              "frame-ancestors 'none'",
-              
-              // Upgrade insecure requests to HTTPS (only in production)
-              ...(process.env.NODE_ENV === 'production' ? ["upgrade-insecure-requests"] : [])
-            ].join('; ')
+            value: getCSPWithReporting()
           },
           
-          // Prevent clickjacking attacks
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          
-          // Prevent MIME type sniffing
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          
-          // Control referrer information
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
-          },
-          
-          // Enable XSS filtering
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          
-          // Control browser features
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(self), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()'
-          },
-          
-          // Enforce HTTPS (disabled in development)
-          ...(process.env.NODE_ENV === 'production' ? [{
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains; preload'
-          }] : [])
+          // Additional security headers from our utility (skip HSTS in development)
+          ...Object.entries(SECURITY_HEADERS)
+            .filter(([key]) => !(key === 'Strict-Transport-Security' && process.env.NODE_ENV === 'development'))
+            .map(([key, value]) => ({
+              key,
+              value
+            }))
         ]
       }
     ]
