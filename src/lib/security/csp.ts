@@ -34,8 +34,8 @@ export function getCSPHeader(nonce?: string): string {
     // Fonts: Allow self and Google Fonts
     "font-src 'self' https://fonts.gstatic.com",
     
-    // Connect: Allow self and analytics services
-    "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+    // Connect: Allow self and analytics services (including production domain for RSC)
+    "connect-src 'self' https://www.comprametales.cl https://comprametales.cl https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
     
     // Frames: Allow Google services
     "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
