@@ -9,8 +9,14 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Materiales Usados en Venta - KONSTANDER',
-  description: 'Vendemos materiales metálicos reciclados de calidad: barras de acero, planchas de fierro, tubos de cobre y perfiles de aluminio en Lampa.',
+  title: 'Materiales de Construcción Usados en Venta | KONSTANDER Lampa, RM',
+  description: 'Venta de materiales metálicos reciclados: barras de refuerzo, fierro construcción, tubería acero, tornillos y pernos. Hasta 60% más económicos. Panamericana Norte 17110, Lampa.',
+  keywords: 'materiales construcción usados, fierro reciclado, barras refuerzo usadas, tubería acero reciclada, tornillos construcción, pernos anclaje, materiales metálicos Lampa, KONSTANDER',
+  openGraph: {
+    title: 'Materiales de Construcción Usados en Venta | KONSTANDER Lampa',
+    description: 'Venta de materiales metálicos reciclados de calidad: barras de refuerzo, fierro construcción, tubería acero. Hasta 60% más económicos que nuevos.',
+    images: ['/images/venta-materiales-reciclados-konstander-lampa.webp'],
+  },
 };
 
 export default function MaterialesVendemosPage() {
@@ -68,7 +74,7 @@ export default function MaterialesVendemosPage() {
       <PageHero
         title="Materiales Usados en Venta"
         subtitle="Metales Reciclados de Calidad"
-        description="Disponemos de materiales metálicos reciclados para construcción, industria y reparaciones, hasta un 50% más económicos que nuevos y con la misma resistencia. Todos son cuidadosamente seleccionados y limpiados."
+        description="Disponemos de materiales metálicos reciclados de alta calidad para construcción, industria y reparaciones. Hasta 60% más económicos que nuevos con la misma resistencia. Ubicados en Panamericana Norte 17110, Lampa, Región Metropolitana. Todos nuestros materiales son cuidadosamente seleccionados, clasificados y limpiados."
         backgroundImage="/images/venta-materiales-reciclados-konstander-lampa.webp"
       />
       
@@ -80,8 +86,8 @@ export default function MaterialesVendemosPage() {
           <div className={styles.galleryCard}>
             <h3 className={styles.galleryTitle}>Galería de Materiales Disponibles</h3>
             <p className={styles.galleryDescription}>
-              Visualiza algunos de los materiales que tenemos disponibles en nuestro inventario. 
-              Todos nuestros productos son seleccionados y verificados para garantizar la mejor calidad.
+              Visualiza algunos de los materiales metálicos reciclados que tenemos disponibles en nuestro inventario en Lampa, Región Metropolitana. 
+              Todos nuestros productos son cuidadosamente seleccionados, clasificados y verificados para garantizar la mejor calidad y resistencia para tus proyectos de construcción.
             </p>
             <div className={styles.imageGrid}>
               <div className={`${styles.imageCard} group`}>
@@ -90,7 +96,7 @@ export default function MaterialesVendemosPage() {
                   alt="Barras de refuerzo de acero recicladas para hormigón armado en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -110,7 +116,7 @@ export default function MaterialesVendemosPage() {
                   alt="Fierro de construcción reciclado económico para obras en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -130,7 +136,7 @@ export default function MaterialesVendemosPage() {
                   alt="Fierro de construcción reciclado económico para obras en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -150,7 +156,7 @@ export default function MaterialesVendemosPage() {
                   alt="Tubería de acero reciclada de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -170,7 +176,7 @@ export default function MaterialesVendemosPage() {
                   alt="Tornillos reciclados de diferentes tipos y tamaños para construcción - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -190,7 +196,7 @@ export default function MaterialesVendemosPage() {
                   alt="Pernos de anclaje reciclados resistentes de diferentes tamaños en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}
@@ -210,7 +216,7 @@ export default function MaterialesVendemosPage() {
                   alt="Pernos con tuercas reciclados económicos para construcción en Panamericana Norte 17110, Lampa, Región Metropolitana - KONSTANDER"
                   width={240}
                   height={180}
-                  sizes="240px"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   placeholder="blur"
                   quality={85}

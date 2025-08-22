@@ -83,7 +83,7 @@ export default function PreciosPage() {
           },
           {
             type: 'secondary',
-            text: 'Ver Materiales que Aceptamos',
+            text: 'Ver Materiales',
             href: '/materiales-aceptamos'
           }
         ]}
