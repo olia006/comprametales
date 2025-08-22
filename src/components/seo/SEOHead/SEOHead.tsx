@@ -18,7 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   canonical,
       keywords = 'chatarra, metales, compra chatarra, fierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
-  ogImage = '/images/konstander-chatarra-metales-twittercard.webp?v=5',
+  ogImage = '/images/konstander-chatarra-metales-twittercard.webp?v=6',
   ogType = 'website',
   structuredData,
   noIndex = false,
@@ -119,8 +119,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="KONSTANDER" />
-      <meta property="og:image" content={`https://comprametales.cl${ogImage}`} />
-      <meta property="og:image:secure_url" content={`https://comprametales.cl${ogImage}`} />
+      <meta property="og:image" content={`https://comprametales.vercel.app${ogImage}`} />
+      <meta property="og:image:secure_url" content={`https://comprametales.vercel.app${ogImage}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="474" />
       <meta property="og:image:alt" content={title} />
@@ -159,7 +159,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:creator" content="@konstander_cl" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`https://comprametales.cl${ogImage}`} />
+      <meta name="twitter:image" content={`https://comprametales.vercel.app${ogImage}`} />
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:domain" content="comprametales.cl" />
       <meta name="twitter:url" content={canonical} />

@@ -135,11 +135,6 @@ export default function MaterialesAceptamosPage() {
             subtitle="Metales sin contenido de fierro"
             description="Los metales no ferrosos tienen mayor valor debido a sus propiedades especiales y su resistencia a la corrosión."
             materials={noFerrosoMaterials}
-            images={Object.fromEntries(
-              Object.entries(allImages).filter(([key]) => 
-                ['Copper Grade 3', 'Copper Grade 2', 'Copper Grade 1', 'Aluminum Clean', 'Aluminum Profiles', 'Aluminum Cans'].includes(key)
-              )
-            )}
             examples={[
               'Tuberías de cobre',
               'Radiadores de automóviles',
