@@ -25,7 +25,7 @@ export default function NosotrosPage() {
     "legalName": "Konstander SpA",
     "description": "Empresa líder en compra y venta de metales y chatarra en Lampa, Región Metropolitana. Más de 10 años de experiencia internacional y 3+ años en Chile.",
     "url": "https://comprametales.cl",
-    "logo": "https://comprametales.cl/images/logo.png",
+    "logo": "https://comprametales.cl/images/logo-konstander-compra-chatarra-lampa-santiago.webp",
     "foundingDate": "2021",
     "numberOfEmployees": "10-50",
     "address": {
