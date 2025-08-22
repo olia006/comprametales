@@ -15,20 +15,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://comprametales.vercel.app'),
+  metadataBase: new URL('https://comprametales.cl'),
   title: 'Konstander SpA | Compra & Venta de Chatarra',
   description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
   keywords: 'chatarra, metales, fierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
   openGraph: {
     title: 'Konstander SpA | Compra & Venta de Chatarra | Lampa, RM',
     description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
-    url: 'https://comprametales.vercel.app',
+    url: 'https://comprametales.cl',
     siteName: 'Konstander SpA',
     locale: 'es_CL',
     type: 'website',
     images: [
       {
-        url: '/images/konstander-chatarra-metales-twittercard.webp?v=6',
+        url: '/images/konstander-chatarra-metales-twittercard.webp?v=5',
         width: 1200,
         height: 474,
         alt: 'KONSTANDER Chile - Compra de Chatarra y Metales al Mejor Precio en Lampa, Región Metropolitana',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@konstander_cl',
     creator: '@konstander_cl',
-    images: ['/images/konstander-chatarra-metales-twittercard.webp?v=6'],
+    images: ['/images/konstander-chatarra-metales-twittercard.webp?v=5'],
   },
 
   robots: {
@@ -87,7 +87,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <link rel="canonical" href="https://comprametales.vercel.app" />
+        <link rel="canonical" href="https://comprametales.cl" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         
         {/* Preconnect to critical origins */}
