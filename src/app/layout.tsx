@@ -28,12 +28,18 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/konstander-chatarra-metales-twitter-card.webp?v=2',
+        url: '/images/konstander-chatarra-metales-twitter-card.webp?v=3',
         width: 1200,
         height: 474,
         alt: 'KONSTANDER Chile - Compra de Chatarra y Metales al Mejor Precio en Lampa, Región Metropolitana',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@konstander_cl',
+    creator: '@konstander_cl',
+    images: ['/images/konstander-chatarra-metales-twitter-card.webp?v=3'],
   },
 
   robots: {
