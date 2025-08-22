@@ -18,7 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   canonical,
       keywords = 'chatarra, metales, compra chatarra, fierro, cobre, aluminio, Lampa, Chile, KONSTANDER, reciclaje metales',
-  ogImage = '/images/konstander-chatarra-metales-twitter-card.webp?v=3',
+  ogImage = '/images/konstander-chatarra-metales-twitter-card.webp?v=4',
   ogType = 'website',
   structuredData,
   noIndex = false,
@@ -163,6 +163,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:domain" content="comprametales.cl" />
       <meta name="twitter:url" content={canonical} />
+      
+      {/* Force Twitter to use correct image */}
+      <meta name="twitter:image:width" content="1200" />
+      <meta name="twitter:image:height" content="474" />
+      <meta name="twitter:image:type" content="image/webp" />
       
       {/* Additional Twitter metadata */}
       <meta name="twitter:label1" content="Ubicación" />
