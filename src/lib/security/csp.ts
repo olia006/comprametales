@@ -22,7 +22,7 @@ export function getCSPHeader(nonce?: string): string {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     
     // Images: Allow self, data, and required external services
-    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com",
+    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com",
     
     // Fonts: Allow self and Google Fonts
     "font-src 'self' https://fonts.gstatic.com",

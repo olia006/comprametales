@@ -2,6 +2,7 @@ import { trackPageView, trackPhoneClick, trackCTAClick } from '../tracking';
 
 // Mock window.dataLayer
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     dataLayer: any[];
   }

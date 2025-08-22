@@ -128,16 +128,38 @@ const nextConfig = {
         ...config.resolve.fallback,
       };
       
-      // Disable polyfills in webpack
+      // Prevent chunk loading errors with better optimization
       config.optimization = {
         ...config.optimization,
         minimize: true,
         minimizer: [
           ...(config.optimization.minimizer || []),
         ],
+        // Improve chunk splitting to prevent loading errors
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 5,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+        // Ensure consistent chunk names
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
       };
       
-      // Add webpack plugin to remove polyfills
+      // Add webpack plugin to remove polyfills and handle chunk errors
       config.plugins = config.plugins || [];
       config.plugins.push(
         new (require('webpack').DefinePlugin)({
@@ -178,7 +200,7 @@ const nextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               
               // Images: Allow data URIs, blob, and required external services
-              "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.google.com https://www.google.com",
+              "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
               
               // Connect: Allow analytics and performance monitoring
               "connect-src 'self' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",

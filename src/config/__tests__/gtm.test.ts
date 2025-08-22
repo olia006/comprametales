@@ -2,6 +2,7 @@ import { GTM_CONFIG, pushToDataLayer } from '../gtm';
 
 // Mock window.dataLayer
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface Window {
     dataLayer: any[];
   }

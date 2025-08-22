@@ -260,6 +260,67 @@ export default function RootLayout({
         </ErrorBoundary>
         <WebVitals debug={false} />
         
+        {/* Initialize chunk error handler */}
+        <Script id="chunk-error-handler" strategy="afterInteractive">
+          {`
+            // Chunk Error Handler - Initialize before other scripts
+            (function() {
+              if (typeof window === 'undefined') return;
+              
+              let retryCount = new Map();
+              const MAX_RETRIES = 2;
+              const RETRY_DELAY = 1500;
+              
+              function isChunkError(error) {
+                if (!error) return false;
+                const errorMessage = error.message || error.toString();
+                const patterns = [
+                  /Loading chunk \\d+ failed/i,
+                  /ChunkLoadError/i,
+                  /Loading CSS chunk \\d+ failed/i,
+                  /Failed to import/i,
+                  /Unexpected token '<'/i
+                ];
+                return patterns.some(pattern => pattern.test(errorMessage));
+              }
+              
+              function handleChunkError(error) {
+                const errorKey = error.message || 'unknown-chunk-error';
+                const currentRetries = retryCount.get(errorKey) || 0;
+                
+                if (currentRetries >= MAX_RETRIES) {
+                  console.warn('[ChunkError] Max retries exceeded, refreshing page');
+                  window.location.reload();
+                  return;
+                }
+                
+                retryCount.set(errorKey, currentRetries + 1);
+                
+                setTimeout(() => {
+                  console.warn('[ChunkError] Refreshing due to chunk loading failure');
+                  window.location.reload();
+                }, RETRY_DELAY * (currentRetries + 1));
+              }
+              
+              // Handle unhandled promise rejections
+              window.addEventListener('unhandledrejection', function(event) {
+                if (isChunkError(event.reason)) {
+                  event.preventDefault();
+                  handleChunkError(event.reason);
+                }
+              });
+              
+              // Handle JavaScript errors
+              window.addEventListener('error', function(event) {
+                if (isChunkError(event.error)) {
+                  event.preventDefault();
+                  handleChunkError(event.error);
+                }
+              });
+            })();
+          `}
+        </Script>
+        
         {/* Initialize scroll reveal animations */}
         <Script id="scroll-reveal-init" strategy="afterInteractive">
           {`

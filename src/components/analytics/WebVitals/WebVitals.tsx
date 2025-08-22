@@ -191,14 +191,17 @@ const createWebVitalsFallback = () => {
   };
 };
 
-// Dynamic import for web-vitals with fallback
-const getWebVitals = async () => {
+// Dynamic import for web-vitals with fallback and retry logic
+const getWebVitals = async (retryCount = 0) => {
   if (!isBrowser) {
     return null;
   }
 
+  const MAX_RETRIES = 3;
+  const RETRY_DELAY = 1000;
+
   try {
-    // Try to import web-vitals
+    // Try to import web-vitals with retry logic
     const webVitalsModule = await import('web-vitals');
     
     if (webVitalsModule && typeof webVitalsModule === 'object') {
@@ -212,6 +215,21 @@ const getWebVitals = async () => {
       }
     }
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    
+    // Check if this is a chunk loading error
+    const isChunkError = /Loading chunk|ChunkLoadError|Failed to import/i.test(errorMessage);
+    
+    if (isChunkError && retryCount < MAX_RETRIES) {
+      console.warn(`[Web Vitals] Chunk loading failed, retrying... (${retryCount + 1}/${MAX_RETRIES})`);
+      
+      // Wait before retrying with exponential backoff
+      await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retryCount + 1)));
+      
+      // Retry the import
+      return getWebVitals(retryCount + 1);
+    }
+    
     console.warn('[Web Vitals] Failed to import web-vitals, using fallback:', error);
   }
 

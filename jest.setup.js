@@ -43,6 +43,44 @@ jest.mock('next/navigation', () => ({
   },
 }))
 
+// Mock Next.js server components
+jest.mock('next/server', () => ({
+  NextRequest: class NextRequest {
+    constructor(input, init) {
+      this.url = input;
+      this.method = init?.method || 'GET';
+      this.headers = new Map();
+      this.body = init?.body;
+    }
+    
+    async json() {
+      return JSON.parse(this.body || '{}');
+    }
+  },
+  NextResponse: class NextResponse {
+    constructor(body, init) {
+      this.body = body;
+      this.status = init?.status || 200;
+      this.statusText = init?.statusText || 'OK';
+      this.headers = new Map();
+    }
+    
+    static json(data, init) {
+      return new NextResponse(JSON.stringify(data), {
+        ...init,
+        headers: {
+          'content-type': 'application/json',
+          ...(init?.headers || {})
+        }
+      });
+    }
+    
+    async json() {
+      return JSON.parse(this.body || '{}');
+    }
+  }
+}))
+
 // Mock Next.js Image component
 jest.mock('next/image', () => ({
   __esModule: true,
@@ -83,6 +121,52 @@ Object.defineProperty(window, 'scrollTo', {
 
 // Mock fetch
 global.fetch = jest.fn()
+
+// Mock Next.js server runtime for API routes
+global.Request = class Request {
+  constructor(input, init) {
+    this.url = input;
+    this.method = init?.method || 'GET';
+    this.headers = new Headers(init?.headers);
+    this.body = init?.body;
+  }
+  
+  async json() {
+    return JSON.parse(this.body || '{}');
+  }
+};
+
+global.Response = class Response {
+  constructor(body, init) {
+    this.body = body;
+    this.status = init?.status || 200;
+    this.statusText = init?.statusText || 'OK';
+    this.headers = new Headers(init?.headers);
+  }
+  
+  async json() {
+    return JSON.parse(this.body || '{}');
+  }
+};
+
+global.Headers = class Headers {
+  constructor(init) {
+    this.map = new Map();
+    if (init) {
+      Object.entries(init).forEach(([key, value]) => {
+        this.map.set(key.toLowerCase(), value);
+      });
+    }
+  }
+  
+  get(name) {
+    return this.map.get(name.toLowerCase());
+  }
+  
+  set(name, value) {
+    this.map.set(name.toLowerCase(), value);
+  }
+};
 
 // Mock console methods to reduce noise in tests
 global.console = {
