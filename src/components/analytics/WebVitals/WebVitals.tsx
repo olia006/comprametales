@@ -306,28 +306,8 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
         }
       }
 
-      // Send to custom analytics endpoint (optional)
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/web-vitals', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            value: Math.round(value),
-            id,
-            delta: Math.round(delta),
-            rating: getMetricRating(name, value),
-            url: window.location.href,
-            timestamp: Date.now(),
-          }),
-        }).catch((error) => {
-          if (debug) {
-            console.error('Failed to send Web Vitals data:', error);
-          }
-        });
-      }
+      // Note: Web Vitals data is sent to Google Analytics via GTM dataLayer above
+      // No backend API needed for static sites
     };
 
 
