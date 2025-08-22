@@ -155,8 +155,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Twitter Card - Complete Implementation */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@konstander_spa" />
-      <meta name="twitter:creator" content="@konstander_spa" />
+      <meta name="twitter:site" content="@konstander_cl" />
+      <meta name="twitter:creator" content="@konstander_cl" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`https://comprametales.cl${ogImage}`} />

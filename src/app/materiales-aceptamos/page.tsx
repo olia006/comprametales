@@ -5,6 +5,7 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { ImageSchema } from '@/components/seo/ImageSchema/ImageSchema';
+import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { getPricesByCategory, PRICING_CONFIG, COMPANY_INFO } from '@/config/pricing';
 import styles from './page.module.css';
 
@@ -80,6 +81,12 @@ export default function MaterialesAceptamosPage() {
 
   return (
     <Layout>
+      <SEOHead 
+        title="🏭 Compramos Chatarra y Metales | KONSTANDER Lampa, RM"
+        description="💰 Compramos chatarra y metales al MEJOR PRECIO: Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Pago inmediato, balanza certificada. Panamericana Norte 17110, Lampa. ¡Llama ya! 📞+56937720208"
+        canonical="https://comprametales.cl/materiales-aceptamos"
+        keywords="compra chatarra, venta metales, cobre precio, fierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales"
+      />
       {/* Product Schema for Materials We Buy */}
       <script
         type="application/ld+json"

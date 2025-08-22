@@ -6,6 +6,7 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { getPriceUpdateDescription } from '@/utils/priceUpdateDate';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
+import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 import { PRICING_CONFIG, getPricesByCategory } from '@/config/pricing';
 import styles from './page.module.css';
 
@@ -22,6 +23,12 @@ export default function PreciosPage() {
 
   return (
     <Layout>
+      <SEOHead 
+        title="📊 Precios Chatarra Actualizados HOY | KONSTANDER Lampa 2024"
+        description="💵 Precios chatarra actualizados HOY: Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Mejores precios garantizados en Lampa, RM. ¡Cotiza gratis! 📞+56937720208"
+        canonical="https://comprametales.cl/precios"
+        keywords="precios chatarra hoy, precio cobre 2024, precio fierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER"
+      />
       <BreadcrumbNav 
         items={[
           { name: 'Inicio', href: '/' },

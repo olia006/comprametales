@@ -4,6 +4,7 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { getPriceUpdateText } from '@/utils/priceUpdateDate';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { Layout } from '@/components/layout/Layout/Layout';
+import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
 import { getFeaturedPrices } from '@/config/pricing';
@@ -20,6 +21,12 @@ export default function HomePage() {
 
   return (
     <Layout>
+      <SEOHead 
+        title="💰 Konstander SpA | Compra & Venta de Chatarra 🇨🇱"
+        description="🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56937720208"
+        canonical="https://comprametales.cl"
+        keywords="compra chatarra, metales, cobre precio hoy, fierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios"
+      />
       <PerformanceMonitor pageName="Homepage" pageType="landing" />
       
       <div className={styles.heroSection}>

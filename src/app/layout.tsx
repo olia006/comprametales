@@ -35,14 +35,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: '💰 Konstander SpA | Compra & Venta de Chatarra 🇨🇱',
-    description: '🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.000/kg • Fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56937720208',
-    images: ['/images/konstander-chatarra-metales-twitter-card.webp?v=2'],
-    creator: '@konstander_cl',
-    site: '@konstander_cl',
-  },
+
   robots: {
     index: true,
     follow: true,
