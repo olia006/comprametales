@@ -11,24 +11,33 @@ import styles from './HeroSection.module.css';
 
 export const HeroSection: React.FC = () => {
   const { trackClick } = useInteractionTracking({ pageName: 'Homepage' });
-  const [scrollY, setScrollY] = useState(0);
+  // Initialize with null to prevent hydration mismatch
+  const [scrollY, setScrollY] = useState<number | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  // Hydration-safe client detection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
-    }
+    // Set initial scroll position
+    setScrollY(window.scrollY);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Always return cleanup function
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('scroll', handleScroll);
-      }
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <section className={styles.heroSection}>
@@ -43,7 +52,7 @@ export const HeroSection: React.FC = () => {
           sizes="100vw"
           className={styles.heroImage}
           style={{
-            transform: `translateY(${scrollY * 0.3}px)`,
+            transform: `translateY(${(scrollY || 0) * 0.3}px)`,
           }}
         />
         
@@ -60,7 +69,7 @@ export const HeroSection: React.FC = () => {
           sizes="100vw"
           className={styles.heroImage3d}
           style={{
-            transform: `translateY(${scrollY * 0.7}px)`,
+            transform: `translateY(${(scrollY || 0) * 0.7}px)`,
           }}
         />
         

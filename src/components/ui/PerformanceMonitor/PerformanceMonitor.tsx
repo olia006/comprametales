@@ -12,13 +12,18 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   pageType = 'page'
 }) => {
   useEffect(() => {
+    // Ensure we're in browser environment
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     // Track page view only once per page load
     const timeoutId = setTimeout(() => {
       trackPageView(pageName, pageType);
     }, 100); // Small delay to avoid blocking initial render
 
-    // Monitor page load performance
-    if (typeof window !== 'undefined' && 'performance' in window) {
+    // Monitor page load performance with proper guards
+    if ('performance' in window && window.performance) {
       // Track Cumulative Layout Shift (CLS) - Simplified
       const trackCLS = () => {
         if ('PerformanceObserver' in window) {

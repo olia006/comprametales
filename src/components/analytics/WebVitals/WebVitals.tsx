@@ -204,15 +204,23 @@ const getWebVitals = async (retryCount = 0) => {
     // Try to import web-vitals with retry logic
     const webVitalsModule = await import('web-vitals');
     
+    // Validate module structure more thoroughly
     if (webVitalsModule && typeof webVitalsModule === 'object') {
       const { onCLS, onINP, onFCP, onLCP, onTTFB } = webVitalsModule;
       
-      // Check if all functions are available
-      if (typeof onCLS === 'function' && typeof onINP === 'function' && 
-          typeof onFCP === 'function' && typeof onLCP === 'function' && 
-          typeof onTTFB === 'function') {
-        return { onCLS, onINP, onFCP, onLCP, onTTFB };
+      // Check if all functions are available and are actually functions
+      const functions = { onCLS, onINP, onFCP, onLCP, onTTFB };
+      const allFunctionsValid = Object.values(functions).every(fn => typeof fn === 'function');
+      
+      if (allFunctionsValid) {
+        return functions;
+      } else {
+        console.warn('[Web Vitals] Some functions are not available:', 
+          Object.entries(functions).filter(([, fn]) => typeof fn !== 'function').map(([name]) => name)
+        );
       }
+    } else {
+      console.warn('[Web Vitals] Invalid module structure:', typeof webVitalsModule);
     }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);

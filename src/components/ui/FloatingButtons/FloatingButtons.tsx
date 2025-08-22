@@ -7,10 +7,20 @@ import styles from './FloatingButtons.module.css';
 
 export const FloatingButtons: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const whatsappUrl = `https://wa.me/${COMPANY_INFO.phone.replace(/\s/g, '')}?text=Hola, me interesa vender mis metales. ¿Podrían darme una cotización?`;
   const directionsUrl = `https://maps.google.com/?q=${encodeURIComponent(COMPANY_INFO.address)}`;
 
+  // Hydration-safe client detection
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+
     // Cache hero section reference and height to avoid repeated DOM queries
     let heroSection: Element | null = null;
     let heroHeight: number = 0;
@@ -74,7 +84,7 @@ export const FloatingButtons: React.FC = () => {
 
     // Cleanup
     return () => window.removeEventListener('scroll', throttledHandleScroll);
-  }, []);
+  }, [isClient]);
 
   return (
     <div className={`${styles.floatingButtons} ${isVisible ? styles.visible : styles.hidden}`}>

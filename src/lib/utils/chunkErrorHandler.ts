@@ -64,6 +64,10 @@ class ChunkErrorHandler {
       /Failed to import/i,
       /Unexpected token '<'/i, // Often indicates HTML returned instead of JS
       /Cannot read property.*of undefined.*chunk/i,
+      // React-specific chunk errors
+      /Minified React error #425/i, // Hydration mismatch often caused by chunks
+      /Minified React error #418/i, // Hook errors from failed imports
+      /Minified React error #423/i, // Undefined access from missing chunks
     ];
 
     return chunkErrorPatterns.some(pattern => pattern.test(errorMessage));

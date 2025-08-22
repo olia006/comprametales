@@ -30,21 +30,66 @@ export class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.setState({ error, errorInfo })
     
-    // Log error to console in development
+    // Enhanced error logging with React error detection
+    const isReactError = this.isReactError(error);
+    const errorContext = {
+      isReactError,
+      errorType: this.getErrorType(error),
+      timestamp: new Date().toISOString(),
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown'
+    };
+    
+    // Log error to console in development with context
     if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught an error:', error, errorInfo)
+      console.group('🚨 ErrorBoundary caught an error');
+      console.error('Error:', error);
+      console.error('Error Info:', errorInfo);
+      console.error('Context:', errorContext);
+      console.groupEnd();
     }
 
     // Send error to monitoring service in production
     if (process.env.NODE_ENV === 'production') {
-      this.logErrorToService(error, errorInfo)
+      this.logErrorToService(error, errorInfo, errorContext)
     }
 
     // Call custom error handler if provided
     this.props.onError?.(error, errorInfo)
   }
 
-  private async logErrorToService(error: Error, errorInfo: ErrorInfo) {
+  private isReactError(error: Error): boolean {
+    const reactErrorPatterns = [
+      /Minified React error #(\d+)/,
+      /React error #(\d+)/,
+      /Hydration failed/,
+      /Text content does not match/,
+      /Cannot read properties of undefined/,
+      /Cannot read property.*of undefined/
+    ];
+    
+    return reactErrorPatterns.some(pattern => 
+      pattern.test(error.message) || 
+      (error.stack && pattern.test(error.stack))
+    );
+  }
+
+  private getErrorType(error: Error): string {
+    if (/Minified React error #425|Hydration failed|Text content does not match/.test(error.message)) {
+      return 'hydration_mismatch';
+    }
+    if (/Minified React error #418|Invalid hook call/.test(error.message)) {
+      return 'invalid_hook_call';
+    }
+    if (/Minified React error #423|Cannot read properties of undefined/.test(error.message)) {
+      return 'undefined_access';
+    }
+    if (/ChunkLoadError|Loading chunk.*failed/.test(error.message)) {
+      return 'chunk_load_error';
+    }
+    return 'unknown';
+  }
+
+  private async logErrorToService(error: Error, errorInfo: ErrorInfo, errorContext?: any) {
     try {
       await fetch('/api/errors', {
         method: 'POST',
@@ -55,9 +100,10 @@ export class ErrorBoundary extends Component<Props, State> {
           message: error.message,
           stack: error.stack,
           componentStack: errorInfo.componentStack,
-          url: window.location.href,
-          userAgent: navigator.userAgent,
+          url: typeof window !== 'undefined' ? window.location.href : 'unknown',
+          userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown',
           timestamp: new Date().toISOString(),
+          ...errorContext,
         }),
       })
     } catch (logError) {

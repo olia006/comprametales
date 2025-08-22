@@ -279,7 +279,11 @@ export default function RootLayout({
                   /ChunkLoadError/i,
                   /Loading CSS chunk \\d+ failed/i,
                   /Failed to import/i,
-                  /Unexpected token '<'/i
+                  /Unexpected token '<'/i,
+                  // React-specific errors that may be chunk-related
+                  /Minified React error #425/i,
+                  /Minified React error #418/i,
+                  /Minified React error #423/i
                 ];
                 return patterns.some(pattern => pattern.test(errorMessage));
               }
