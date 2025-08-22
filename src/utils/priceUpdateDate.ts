@@ -8,8 +8,9 @@ import { MaterialPrice } from '@/config/pricing';
 
 export function getPriceUpdateDate(materials?: MaterialPrice[]): string {
   if (!materials || materials.length === 0) {
-    // Fallback to current date if no materials provided
-    return new Date().toLocaleDateString('es-CL', { 
+    // Use fixed date to prevent hydration mismatch
+    const fixedDate = new Date('2024-01-15');
+    return fixedDate.toLocaleDateString('es-CL', { 
       day: 'numeric', 
       month: 'long', 
       year: 'numeric' 
@@ -17,7 +18,7 @@ export function getPriceUpdateDate(materials?: MaterialPrice[]): string {
   }
 
   // Calculate the latest update date from actual material data
-  const dates = materials.map(m => new Date(m.lastUpdated || new Date()).getTime());
+  const dates = materials.map(m => new Date(m.lastUpdated || '2024-01-15').getTime());
   const latestDate = new Date(Math.max(...dates));
   
   return latestDate.toLocaleDateString('es-CL', {

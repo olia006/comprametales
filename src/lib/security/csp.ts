@@ -3,8 +3,15 @@
 
 // Generate a secure nonce for inline scripts and styles
 export function generateNonce(): string {
-  // Simple, secure nonce generation that works in all environments
-  return btoa(Date.now().toString() + Math.random().toString(36)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
+  // Use crypto.randomUUID if available, fallback to deterministic generation
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID().replace(/-/g, '').substring(0, 16);
+  }
+  
+  // Fallback for environments without crypto.randomUUID
+  const timestamp = Date.now().toString(36);
+  const random = Math.random().toString(36).substring(2);
+  return btoa(timestamp + random).replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
 }
 
 // CSP configuration based on environment and features used

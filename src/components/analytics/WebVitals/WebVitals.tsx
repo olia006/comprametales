@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import { ClientOnly } from '@/components/ui/ClientOnly/ClientOnly';
 
 // Check if we're in a browser environment
 const isBrowser = typeof window !== 'undefined';
@@ -270,7 +271,7 @@ const getMetricRating = (name: string, value: number): 'good' | 'needs-improveme
   return 'poor';
 };
 
-export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
+const WebVitalsInner: React.FC<WebVitalsProps> = ({ debug = false }) => {
   useEffect(() => {
     if (!isBrowser) {
       return;
@@ -396,6 +397,14 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
   }, [debug]);
 
   return null; // This component doesn't render anything
+};
+
+export const WebVitals: React.FC<WebVitalsProps> = (props) => {
+  return (
+    <ClientOnly>
+      <WebVitalsInner {...props} />
+    </ClientOnly>
+  );
 };
 
 // Hook for manual Web Vitals reporting

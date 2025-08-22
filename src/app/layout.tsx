@@ -90,7 +90,7 @@ export default function RootLayout({
   const nonce = headersList.get('x-nonce') || undefined;
 
   return (
-    <html lang="es-CL">
+    <html lang="es-CL" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
