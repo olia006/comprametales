@@ -46,9 +46,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-placeholder',
-  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+  }),
   icons: {
     icon: [
       { url: '/favicon.ico?v=4' },
@@ -173,6 +175,12 @@ export default function RootLayout({
               outline-offset: 2px;
             }
             
+            /* GTM noscript iframe */
+            .gtm-noscript {
+              display: none !important;
+              visibility: hidden !important;
+            }
+            
             /* Critical responsive */
             @media (max-width: 768px) {
               .container {
@@ -219,37 +227,36 @@ export default function RootLayout({
         
         {/* Google Fonts are handled by Next.js font optimization */}
         
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
+        {/* Google Tag Manager - Inline script in head for optimal loading */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `
+              window.dataLayer = window.dataLayer || [];
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-KRM573BR');
+              })(window,document,'script','dataLayer','${process.env.GTM_ID || 'GTM-KRM573BR'}');
             `,
           }}
         />
       </head>
       <body className={inter.className}>
-        
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KRM573BR"
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.GTM_ID || 'GTM-KRM573BR'}`}
             height="0"
             width="0"
             className="gtm-noscript"
+            title="Google Tag Manager"
           />
         </noscript>
         
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
-        <WebVitals debug={process.env.NODE_ENV === 'development'} />
+        <WebVitals debug={false} />
         
         {/* Initialize scroll reveal animations */}
         <Script id="scroll-reveal-init" strategy="afterInteractive">

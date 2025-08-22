@@ -19,13 +19,6 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
 
     // Monitor page load performance
     if (typeof window !== 'undefined' && 'performance' in window) {
-      // Cleanup function
-      const cleanup = () => {
-        clearTimeout(timeoutId);
-      };
-      
-      // Return cleanup
-      return cleanup;
       // Track Cumulative Layout Shift (CLS) - Simplified
       const trackCLS = () => {
         if ('PerformanceObserver' in window) {
@@ -169,6 +162,7 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       }
 
       return () => {
+        clearTimeout(timeoutId);
         cleanupCLS?.();
         cleanupLCP?.();
         cleanupFID?.();

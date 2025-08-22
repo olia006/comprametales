@@ -223,6 +223,27 @@ interface WebVitalsProps {
   debug?: boolean;
 }
 
+// Helper function to get metric rating
+const getMetricRating = (name: string, value: number): 'good' | 'needs-improvement' | 'poor' => {
+  const thresholds: Record<string, [number, number]> = {
+    CLS: [0.1, 0.25],
+    INP: [200, 500],
+    FCP: [1800, 3000],
+    LCP: [2500, 4000],
+    TTFB: [800, 1800],
+  };
+
+  const [good, poor] = thresholds[name] || [0, 0];
+  
+  if (value <= good) {
+    return 'good';
+  }
+  if (value <= poor) {
+    return 'needs-improvement';
+  }
+  return 'poor';
+};
+
 export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
   useEffect(() => {
     if (!isBrowser) {
@@ -246,10 +267,15 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
         });
       }
 
-      // Send to Google Analytics 4 (if available)
-      if (typeof window !== 'undefined' && (window as any).gtag) {
+      // Send to Google Analytics via GTM dataLayer
+      if (typeof window !== 'undefined' && window.dataLayer) {
         try {
-          (window as any).gtag('event', name, {
+          window.dataLayer.push({
+            event: 'web_vital',
+            web_vital_name: name,
+            web_vital_value: Math.round(value),
+            web_vital_id: id,
+            web_vital_rating: getMetricRating(name, value),
             event_category: 'Web Vitals',
             event_label: id,
             value: Math.round(value),
@@ -257,7 +283,7 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
           });
         } catch (error) {
           if (debug) {
-            console.error('[Web Vitals] Failed to send to GA4:', error);
+            console.error('[Web Vitals] Failed to send to GTM dataLayer:', error);
           }
         }
       }
@@ -286,26 +312,7 @@ export const WebVitals: React.FC<WebVitalsProps> = ({ debug = false }) => {
       }
     };
 
-    // Helper function to get metric rating
-    const getMetricRating = (name: string, value: number): 'good' | 'needs-improvement' | 'poor' => {
-      const thresholds: Record<string, [number, number]> = {
-        CLS: [0.1, 0.25],
-        INP: [200, 500],
-        FCP: [1800, 3000],
-        LCP: [2500, 4000],
-        TTFB: [800, 1800],
-      };
 
-      const [good, poor] = thresholds[name] || [0, 0];
-      
-      if (value <= good) {
-        return 'good';
-      }
-      if (value <= poor) {
-        return 'needs-improvement';
-      }
-      return 'poor';
-    };
 
     // Initialize web vitals monitoring
     const initWebVitals = async () => {
