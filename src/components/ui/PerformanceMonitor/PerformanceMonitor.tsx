@@ -169,6 +169,11 @@ export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
         window.removeEventListener('load', measurePageLoad);
       };
     }
+
+    // Return cleanup for timeout even when performance monitoring is not available
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [pageName, pageType]);
 
   return null; // This component doesn't render anything

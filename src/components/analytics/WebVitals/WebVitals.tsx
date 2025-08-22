@@ -453,7 +453,7 @@ export const useWebVitals = (callback?: (metric: any) => void) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [callback]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- callback dependency would cause infinite re-renders
 };
 
 
