@@ -227,8 +227,10 @@ export default function RootLayout({
         
         {/* Google Fonts are handled by Next.js font optimization */}
         
-        {/* Google Tag Manager - Inline script in head for optimal loading */}
-        <script
+        {/* Google Tag Manager - Using Next.js Script component */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
