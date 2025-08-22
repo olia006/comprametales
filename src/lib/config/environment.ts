@@ -47,6 +47,16 @@ interface EnvironmentConfig {
   gtm: {
     id?: string
   }
+
+  // Google Ads
+  googleAds: {
+    conversionId?: string
+  }
+
+  // New Google Tag (Unified 2024)
+  googleTag: {
+    id?: string
+  }
 }
 
 function getEnvironmentVariable(key: string, fallback?: string): string {
@@ -112,6 +122,16 @@ export const env: EnvironmentConfig = {
   // Google Tag Manager
   gtm: {
     id: getEnvironmentVariable('GTM_ID', 'GTM-KRM573BR'),
+  },
+
+  // Google Ads
+  googleAds: {
+    conversionId: getEnvironmentVariable('NEXT_PUBLIC_GOOGLE_ADS_ID'),
+  },
+
+  // New Google Tag (Unified 2024)
+  googleTag: {
+    id: getEnvironmentVariable('NEXT_PUBLIC_GOOGLE_TAG_ID'),
   },
 }
 
