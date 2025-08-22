@@ -20,12 +20,14 @@ export const HeroSection: React.FC = () => {
 
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', handleScroll);
-      return () => {
-        if (typeof window !== 'undefined') {
-          window.removeEventListener('scroll', handleScroll);
-        }
-      };
     }
+
+    // Always return cleanup function
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
   return (

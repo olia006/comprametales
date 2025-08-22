@@ -26,10 +26,14 @@ export const GTM_CONFIG = {
 // Helper function to push events to dataLayer
 export const pushToDataLayer = (event: string, data?: Record<string, any>) => {
   if (typeof window !== 'undefined' && window.dataLayer) {
-    window.dataLayer.push({
-      event,
-      ...data,
-    });
+    try {
+      window.dataLayer.push({
+        event,
+        ...data,
+      });
+    } catch (error) {
+      console.error('[GTM] Failed to push to dataLayer:', error);
+    }
   }
 };
 

@@ -26,14 +26,14 @@ export const LazyVideo: React.FC<LazyVideoProps> = ({
   useEffect(() => {
     const video = videoRef.current;
     if (!video || typeof window === 'undefined') {
-      return;
+      return () => {}; // Always return cleanup function
     }
 
     // Check if IntersectionObserver is supported
     if (!('IntersectionObserver' in window)) {
       // Fallback for browsers without IntersectionObserver
       setIsInView(true);
-      return;
+      return () => {}; // Always return cleanup function
     }
 
     const observer = new IntersectionObserver(
