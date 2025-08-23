@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
-import { GTM } from '@/components/analytics/GTM/GTM';
+import { GTMScript } from '@/components/analytics/GTM/GTMScript';
+import { GTMNoscript } from '@/components/analytics/GTM/GTMNoscript';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 import './globals.css';
 
@@ -230,10 +231,12 @@ export default function RootLayout({
         
         {/* Google Fonts are handled by Next.js font optimization */}
         
-        {/* Google Tag Manager - Properly placed in head */}
-        <GTM gtmId={process.env.GTM_ID || 'GTM-KRM573BR'} />
+        {/* Google Tag Manager Script - Properly placed in head */}
+        <GTMScript gtmId={process.env.GTM_ID || 'GTM-KRM573BR'} />
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager Noscript - Must be immediately after opening body tag */}
+        <GTMNoscript gtmId={process.env.GTM_ID || 'GTM-KRM573BR'} />
         
         <ErrorBoundary>
           {children}
