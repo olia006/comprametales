@@ -20,7 +20,6 @@ const nextConfig = {
     // Increase cache time for better performance
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: false,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Enable experimental features for better image handling
   experimental: {
@@ -172,101 +171,7 @@ const nextConfig = {
     return config;
   },
   
-  // Security Headers using our professional CSP utility
-  async headers() {
-    
-    // Simple nonce generation that works everywhere
-    const generateNonce = () => {
-      return btoa(Date.now().toString() + Math.random().toString(36)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
-    };
-    
-    // CSP configuration with proper development handling
-    const getCSPWithReporting = (nonce) => {
-      const isDevelopment = process.env.NODE_ENV === 'development';
-      
-      // PERMISSIVE CSP: Prioritize functionality over strict security
-      // This eliminates React errors while maintaining basic protection
-      const cspDirectives = [
-        // Allow everything from self and common CDNs
-        "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: *",
-        
-        // Scripts: Very permissive to avoid React issues
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: *",
-        
-        // Styles: Allow everything to prevent styling issues
-        "style-src 'self' 'unsafe-inline' data: blob: *",
-        
-        // Images: Allow all sources
-        "img-src 'self' data: blob: *",
-        
-        // Fonts: Allow all sources
-        "font-src 'self' data: blob: *",
-        
-        // Connect: Allow all connections
-        "connect-src 'self' data: blob: *",
-        
-        // Frames: Allow trusted services only
-        "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
-        
-        // Objects: Block all (security)
-        "object-src 'none'",
-        
-        // Base: Restrict to self (security)
-        "base-uri 'self'",
-        
-        // Forms: Allow self and communication protocols
-        "form-action 'self' https://wa.me tel: mailto:",
-        
-        // Frame ancestors: Block embedding (security)
-        "frame-ancestors 'none'",
-        
-        // Workers: Allow everything
-        "worker-src 'self' blob: data: *",
-        
-        // Manifest: Allow self
-        "manifest-src 'self'",
-        
-        // Media: Allow everything
-        "media-src 'self' data: blob: *",
-        
-        // Only upgrade insecure requests in production
-        ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
-      ];
 
-      const baseCSP = cspDirectives.join('; ');
-      return isDevelopment ? `${baseCSP}; report-uri /api/csp-violation` : baseCSP;
-    };
-    
-    const SECURITY_HEADERS = {
-      'X-Frame-Options': 'DENY',
-      'X-Content-Type-Options': 'nosniff',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'X-XSS-Protection': '1; mode=block',
-      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self), payment=()',
-      'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload'
-    };
-    
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          // Content Security Policy using our utility
-          {
-            key: 'Content-Security-Policy',
-            value: getCSPWithReporting()
-          },
-          
-          // Additional security headers from our utility (skip HSTS in development)
-          ...Object.entries(SECURITY_HEADERS)
-            .filter(([key]) => !(key === 'Strict-Transport-Security' && process.env.NODE_ENV === 'development'))
-            .map(([key, value]) => ({
-              key,
-              value
-            }))
-        ]
-      }
-    ]
-  },
 }
 
 module.exports = nextConfig

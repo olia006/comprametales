@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
-import { headers } from 'next/headers';
+
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 import './globals.css';
@@ -85,16 +85,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Get nonce from middleware for CSP
-  const headersList = headers();
-  const nonce = headersList.get('x-nonce') || undefined;
-
   return (
     <html lang="es-CL">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        {nonce && <meta name="csp-nonce" content={nonce} />}
+
         <link rel="canonical" href="https://comprametales.cl" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         
@@ -237,7 +233,6 @@ export default function RootLayout({
         <Script
           id="gtm-script"
           strategy="afterInteractive"
-          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -268,7 +263,7 @@ export default function RootLayout({
         <WebVitals debug={false} />
         
         {/* Initialize chunk error handler */}
-        <Script id="chunk-error-handler" strategy="afterInteractive" nonce={nonce}>
+        <Script id="chunk-error-handler" strategy="afterInteractive">
           {`
             // Chunk Error Handler - Initialize before other scripts
             (function() {
@@ -333,7 +328,7 @@ export default function RootLayout({
         </Script>
         
         {/* Initialize scroll reveal animations */}
-        <Script id="scroll-reveal-init" strategy="afterInteractive" nonce={nonce}>
+        <Script id="scroll-reveal-init" strategy="afterInteractive">
           {`
             (function() {
               if (typeof document !== 'undefined') {
