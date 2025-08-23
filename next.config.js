@@ -36,6 +36,8 @@ const nextConfig = {
   compiler: {
     // Remove console.log in production
     removeConsole: process.env.NODE_ENV === 'production',
+    // Remove React DevTools in production
+    reactRemoveProperties: process.env.NODE_ENV === 'production',
   },
   
   // Disable polyfills completely for modern browsers
@@ -137,12 +139,14 @@ const nextConfig = {
         // Improve chunk splitting to prevent loading errors
         splitChunks: {
           chunks: 'all',
+          maxSize: 244000, // 244KB max chunk size for better loading
           cacheGroups: {
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               chunks: 'all',
               priority: 10,
+              maxSize: 244000,
             },
             common: {
               name: 'common',
@@ -150,6 +154,14 @@ const nextConfig = {
               chunks: 'all',
               priority: 5,
               reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+            // Separate React into its own chunk
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+              name: 'react',
+              chunks: 'all',
+              priority: 20,
             },
           },
         },
