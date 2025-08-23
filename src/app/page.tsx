@@ -104,7 +104,7 @@ export default function HomePage() {
         />
       </div>
       
-        <BackToTop />
+      <BackToTop />
     </Layout>
   );
 }

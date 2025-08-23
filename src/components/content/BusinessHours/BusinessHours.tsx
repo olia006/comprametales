@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import { COMPANY_INFO } from '@/config/pricing';
 import styles from './BusinessHours.module.css';
 
@@ -13,13 +14,21 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
   showStatus = true,
   className = '',
 }) => {
+  // Hydration-safe state for business status
+  const [status, setStatus] = useState<{
+    isOpen: boolean;
+    message: string;
+    nextChange: string;
+  } | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
   const containerClasses = [
     styles.businessHours,
     styles[variant],
     className
   ].filter(Boolean).join(' ');
 
-  // Check if business is currently open
+  // Check if business is currently open (client-side only)
   const getCurrentStatus = () => {
     // Get current time in Chilean timezone (GMT-3)
     const now = new Date();
@@ -36,7 +45,11 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
     };
   };
 
-  const status = getCurrentStatus();
+  // Hydration-safe client detection and status calculation
+  useEffect(() => {
+    setIsClient(true);
+    setStatus(getCurrentStatus());
+  }, []);
 
   const weekDays = [
     { day: 'Lunes', hours: '8:00 - 18:00' },
@@ -49,6 +62,9 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
   ];
 
   const getCurrentDay = () => {
+    if (!isClient) {
+      return null; // Return null during SSR to prevent hydration mismatch
+    }
     const today = new Date().getDay();
     const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     return dayNames[today];
@@ -58,7 +74,7 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
     <div className={containerClasses}>
       <div className={styles.header}>
         <h2 className={styles.title}>Horarios de Atención</h2>
-        {showStatus && (
+        {showStatus && status && (
           <div className={`${styles.statusBadge} ${status.isOpen ? styles.open : styles.closed}`}>
             <span className={styles.statusDot}></span>
             <span className={styles.statusText}>{status.message}</span>
@@ -74,7 +90,7 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
           <div className={styles.flexibilityInfo}>
             <span className={styles.flexibilityText}>Horarios flexibles - se pueden coordinar</span>
           </div>
-          {showStatus && (
+          {showStatus && status && (
             <div className={styles.statusInfo}>
               <span className={styles.nextChange}>{status.nextChange}</span>
             </div>
@@ -84,7 +100,8 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
         <div className={styles.detailedView}>
           <div className={styles.hoursGrid}>
             {weekDays.map((item) => {
-              const isToday = item.day === getCurrentDay();
+              const currentDay = getCurrentDay();
+              const isToday = currentDay && item.day === currentDay;
               return (
                 <div 
                   key={item.day} 
@@ -97,7 +114,7 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
             })}
           </div>
           
-          {showStatus && (
+          {showStatus && status && (
             <div className={styles.statusInfo}>
               <p className={styles.statusMessage}>
                 {status.nextChange}
