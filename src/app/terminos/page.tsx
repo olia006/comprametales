@@ -5,6 +5,28 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import styles from './page.module.css';
 
+export const metadata = {
+  title: 'Términos y Condiciones - KONSTANDER Lampa',
+  description: 'Términos y condiciones de servicio de KONSTANDER. Conoce las condiciones para la compra y venta de metales y chatarra en Chile.',
+  keywords: 'términos condiciones, servicio, KONSTANDER, compra metales, Chile',
+  openGraph: {
+    title: 'Términos y Condiciones - KONSTANDER Lampa',
+    description: 'Términos y condiciones de servicio de KONSTANDER. Conoce las condiciones para la compra y venta de metales y chatarra en Chile.',
+    url: 'https://comprametales.cl/terminos',
+    siteName: 'Konstander SpA',
+    locale: 'es_CL',
+    type: 'website',
+    images: [
+      {
+        url: '/images/konstander-chatarra-metales-twittercard.webp',
+        width: 1200,
+        height: 474,
+        alt: 'Términos y Condiciones KONSTANDER',
+      },
+    ],
+  },
+};
+
 export default function TerminosPage() {
   return (
     <Layout>

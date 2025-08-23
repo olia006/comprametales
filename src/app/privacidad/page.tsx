@@ -5,6 +5,28 @@ import { BreadcrumbNav } from '@/components/seo/BreadcrumbNav/BreadcrumbNav';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import styles from './page.module.css';
 
+export const metadata = {
+  title: 'Política de Privacidad - KONSTANDER Lampa',
+  description: 'Política de privacidad de KONSTANDER. Conoce cómo protegemos y utilizamos tus datos personales de acuerdo con la legislación chilena.',
+  keywords: 'política privacidad, protección datos, KONSTANDER, Chile, ley datos personales',
+  openGraph: {
+    title: 'Política de Privacidad - KONSTANDER Lampa',
+    description: 'Política de privacidad de KONSTANDER. Conoce cómo protegemos y utilizamos tus datos personales de acuerdo con la legislación chilena.',
+    url: 'https://comprametales.cl/privacidad',
+    siteName: 'Konstander SpA',
+    locale: 'es_CL',
+    type: 'website',
+    images: [
+      {
+        url: '/images/konstander-chatarra-metales-twittercard.webp',
+        width: 1200,
+        height: 474,
+        alt: 'Política de Privacidad KONSTANDER',
+      },
+    ],
+  },
+};
+
 export default function PrivacidadPage() {
   return (
     <Layout>

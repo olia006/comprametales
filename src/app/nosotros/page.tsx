@@ -12,6 +12,22 @@ import styles from './page.module.css';
 export const metadata = {
   title: 'Acerca de KONSTANDER - Empresa de Metales y Chatarra',
   description: 'Conoce la historia de KONSTANDER, empresa líder en compra y venta de metales en Lampa. Experiencia, confianza y los mejores precios del mercado.',
+  openGraph: {
+    title: 'Acerca de KONSTANDER - Empresa de Metales y Chatarra',
+    description: 'Conoce la historia de KONSTANDER, empresa líder en compra y venta de metales en Lampa. Experiencia, confianza y los mejores precios del mercado.',
+    url: 'https://comprametales.cl/nosotros',
+    siteName: 'Konstander SpA',
+    locale: 'es_CL',
+    type: 'website',
+    images: [
+      {
+        url: '/images/nosotros-konstander-empresa-chatarra-lampa.webp',
+        width: 1200,
+        height: 474,
+        alt: 'Acerca de KONSTANDER - Empresa de chatarra en Lampa',
+      },
+    ],
+  },
 };
 
 export default function NosotrosPage() {

@@ -10,11 +10,24 @@ Allow: /contacto
 
 # Block admin and API routes
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/static/development/
+Disallow: /_next/webpack-hmr
 Disallow: /admin/
 
 # Allow images for better SEO
 Allow: /images/
+Allow: /favicon/
+Allow: /favicon.ico
+
+# Allow CSS and static assets for proper rendering
+Allow: /_next/static/css/
+Allow: /_next/static/media/
+Allow: /_next/static/fonts/
+Allow: /_next/image
+
+# Allow JavaScript files for proper page rendering
+Allow: /_next/static/chunks/
+Allow: /_next/static/js/
 
 # Sitemap location
 Sitemap: https://comprametales.cl/sitemap.xml

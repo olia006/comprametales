@@ -14,6 +14,22 @@ export const metadata = {
   title: 'Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Fierro $450/kg - KONSTANDER',
   description: '📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!',
   keywords: 'precios chatarra hoy, precio cobre 2024, precio fierro kg, precio aluminio, cotización metales, Lampa, Santiago, KONSTANDER',
+  openGraph: {
+    title: 'Precios Chatarra Hoy 2024 - Cobre $7,500/kg, Fierro $450/kg - KONSTANDER',
+    description: '📊 Precios chatarra actualizados HOY: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Mejores precios garantizados en Lampa. ¡Cotiza gratis +56937720208!',
+    url: 'https://comprametales.cl/precios',
+    siteName: 'Konstander SpA',
+    locale: 'es_CL',
+    type: 'website',
+    images: [
+      {
+        url: '/images/precios-chatarra-metales-actualizados-lampa.webp',
+        width: 1200,
+        height: 474,
+        alt: 'Precios actualizados de chatarra y metales en KONSTANDER Lampa',
+      },
+    ],
+  },
 };
 
 export default function PreciosPage() {

@@ -93,7 +93,6 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
 
-        <link rel="canonical" href="https://comprametales.cl" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
         
         {/* Preconnect to critical origins */}
@@ -102,10 +101,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         
         {/* DNS prefetch for faster resource loading */}
-        <link rel="dns-prefetch" href="https://comprametales.vercel.app" />
-        
-        {/* Resource hints for critical CSS - simple approach */}
-        <link rel="preconnect" href="https://comprametales.vercel.app" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://comprametales.cl" />
         
 
         
