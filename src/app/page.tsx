@@ -86,15 +86,6 @@ export default function HomePage() {
         />
         
         <PreviewSection
-          id="materiales-aceptamos"
-          title="Materiales que Aceptamos"
-          subtitle="Compramos Todo Tipo de Metales"
-          description="Recibimos todo tipo de metales ferrosos y no ferrosos: cobre, fierro, aluminio, bronce, acero inoxidable, radiadores y más. Trae tu chatarra y obtén la mejor cotización."
-          href="/materiales-aceptamos"
-          backgroundType="gradient"
-        />
-        
-        <PreviewSection
           id="materiales-vendemos"
           title="Materiales Usados en Venta"
           subtitle="Metales Reciclados de Calidad"
