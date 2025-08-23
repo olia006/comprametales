@@ -186,16 +186,24 @@ const nextConfig = {
       
       const cspDirectives = [
         "default-src 'self'",
-        `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com 'unsafe-eval'`,
+        // Fixed: Removed duplicate 'unsafe-eval' and added Next.js required domains
+        `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com https://vercel.live https://vercel.com`,
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-        "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
+        "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com https://vercel.live https://vercel.com",
         "font-src 'self' https://fonts.gstatic.com",
-        "connect-src 'self' https://www.comprametales.cl https://comprametales.cl https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+        // Enhanced: Added more domains for React/Next.js functionality
+        "connect-src 'self' https://www.comprametales.cl https://comprametales.cl https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com https://vercel.live https://vercel.com https://api.vercel.com",
         "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self' https://wa.me tel: mailto:",
         "frame-ancestors 'none'",
+        // Workers: Allow self for web workers
+        "worker-src 'self' blob:",
+        // Manifest: Allow self for PWA
+        "manifest-src 'self'",
+        // Media: Allow self for media content
+        "media-src 'self'",
         // Only upgrade insecure requests in production
         ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
       ];

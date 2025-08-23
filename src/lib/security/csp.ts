@@ -23,19 +23,21 @@ export function getCSPHeader(nonce?: string): string {
     "default-src 'self'",
     
     // Scripts: Allow self, nonce, and required external services
-    `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com 'unsafe-eval'`,
+    // Fixed: Removed duplicate 'unsafe-eval' and added Next.js required domains
+    `script-src 'self' ${nonce ? `'nonce-${nonce}'` : "'unsafe-inline'"} 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://maps.googleapis.com https://maps.google.com https://www.google.com https://vercel.live https://vercel.com`,
     
     // Styles: Allow self, inline styles, and Google Fonts
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     
     // Images: Allow self, data, and required external services
-    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com",
+    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://maps.google.com https://www.google.com https://vercel.live https://vercel.com",
     
     // Fonts: Allow self and Google Fonts
     "font-src 'self' https://fonts.gstatic.com",
     
     // Connect: Allow self and analytics services (including production domain for RSC)
-    "connect-src 'self' https://www.comprametales.cl https://comprametales.cl https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+    // Enhanced: Added more domains for React/Next.js functionality
+    "connect-src 'self' https://www.comprametales.cl https://comprametales.cl https://www.google-analytics.com https://ssl.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com https://vercel.live https://vercel.com https://api.vercel.com",
     
     // Frames: Allow Google services
     "frame-src 'self' https://www.googletagmanager.com https://maps.google.com https://www.google.com",
@@ -51,6 +53,15 @@ export function getCSPHeader(nonce?: string): string {
     
     // Frame ancestors: Block embedding
     "frame-ancestors 'none'",
+    
+    // Workers: Allow self for web workers
+    "worker-src 'self' blob:",
+    
+    // Manifest: Allow self for PWA
+    "manifest-src 'self'",
+    
+    // Media: Allow self for media content
+    "media-src 'self'",
     
     // Upgrade insecure requests (only in production)
     ...(isDevelopment ? [] : ["upgrade-insecure-requests"])
