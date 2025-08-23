@@ -88,7 +88,7 @@ export const HeroSection: React.FC = () => {
                 Compra de Chatarra y Metales en Lampa
               </h1>
               <p className={styles.subtitle}>
-                Mejores precios en fierro, cobre, aluminio y más. Cotización rápida y pago al tiro.
+                Mejores precios en fierro, cobre, aluminio y más. Cotización rápida y pago inmediato.
               </p>
             </div>
             

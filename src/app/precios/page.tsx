@@ -81,7 +81,7 @@ export default function PreciosPage() {
       
       <CTASection
         title="¿Quieres Vender tus Metales?"
-        description="Envíanos fotos o detalles por WhatsApp y recibe tu cotización al tiro. Evaluamos cobre, fierro, aluminio, bronce y más, con pago inmediato y balanza certificada."
+        description="Envíanos fotos o detalles por WhatsApp y recibe tu cotización inmediata. Evaluamos cobre, fierro, aluminio, bronce y más, con pago inmediato y balanza certificada."
         actions={[
           {
             type: 'primary',
