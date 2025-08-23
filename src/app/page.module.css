@@ -16,4 +16,120 @@
   /* CTA section has its own spacing */
 }
 
+/* Price Preview Section */
+.pricePreviewSection {
+  padding: var(--space-16) 0;
+  background: transparent;
+}
+
+.pricePreviewHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.pricePreviewSubtitle {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-subtle);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.pricePreviewTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-4);
+}
+
+.pricePreviewDescription {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-gray-800);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pricePreviewTable {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  max-width: 900px;
+  margin: 0 auto var(--space-8);
+}
+
+.pricePreviewItem {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.pricePreviewItem:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.materialInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.materialName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.materialCategory {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.materialPrice {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+}
+
+.priceUnit {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-gray-600);
+}
+
+.pricePreviewAction {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricePreviewTable {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  
+  .pricePreviewItem {
+    padding: var(--space-4);
+  }
+  
+  .pricePreviewTitle {
+    font-size: var(--font-size-2xl);
+  }
+}
+
 /* No additional responsive styles needed - components handle their own */

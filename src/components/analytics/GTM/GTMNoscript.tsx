@@ -1,3 +1,5 @@
+import styles from './GTMNoscript.module.css';
+
 interface GTMNoscriptProps {
   gtmId: string;
 }
@@ -10,7 +12,7 @@ export const GTMNoscript: React.FC<GTMNoscriptProps> = ({ gtmId }) => {
         src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
         height="0"
         width="0"
-        style={{ display: 'none', visibility: 'hidden' }}
+        className={styles.gtmIframe}
         title="Google Tag Manager"
       />
     </noscript>

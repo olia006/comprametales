@@ -4,6 +4,9 @@ import { CTASection } from '@/components/composition/CTASection/CTASection';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { Layout } from '@/components/layout/Layout/Layout';
 import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
+import { ReadMoreButton } from '@/components/buttons/ReadMoreButton/ReadMoreButton';
+import { getPriceUpdateText } from '@/utils/priceUpdateDate';
+import { PRICING_CONFIG, formatPrice } from '@/config/pricing';
 
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
 import styles from './page.module.css';
@@ -15,6 +18,13 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  // Get 3 specific materials from pricing config - connected to price architecture
+  const featuredMaterials = [
+    PRICING_CONFIG.find(m => m.nameEs === 'Cobre 3ra'),
+    PRICING_CONFIG.find(m => m.nameEs === 'Fierro Corto'), 
+    PRICING_CONFIG.find(m => m.nameEs === 'Aluminio Perfil')
+  ].filter((material): material is NonNullable<typeof material> => Boolean(material)); // Remove any undefined materials
+
   return (
     <Layout>
       <SEOHead 
@@ -30,13 +40,49 @@ export default function HomePage() {
       </div>
       
       <div className={styles.previewSections}>
+        {/* Simple Price Preview Section */}
+        <section className={styles.pricePreviewSection}>
+          <div className="container">
+            <div className={styles.pricePreviewHeader}>
+              <span className={styles.pricePreviewSubtitle}>Precios Actualizados</span>
+              <h2 className={styles.pricePreviewTitle}>Nuestros Precios</h2>
+              <p className={styles.pricePreviewDescription}>
+                Precios competitivos y actualizados para los principales metales. {getPriceUpdateText(featuredMaterials)}.
+              </p>
+            </div>
+            
+            <div className={styles.pricePreviewTable}>
+              {featuredMaterials.map((material) => (
+                <div key={material.name} className={styles.pricePreviewItem}>
+                  <div className={styles.materialInfo}>
+                    <span className={styles.materialName}>{material.nameEs}</span>
+                    <span className={styles.materialCategory}>
+                      {material.category === 'ferrosos' ? 'Ferroso' : 'No Ferroso'}
+                    </span>
+                  </div>
+                  <div className={styles.materialPrice}>
+                    {formatPrice(material.pricePerKg)}<span className={styles.priceUnit}>/kg</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className={styles.pricePreviewAction}>
+              <ReadMoreButton 
+                href="/precios" 
+                text="Ver Precios"
+              />
+            </div>
+          </div>
+        </section>
+        
         <PreviewSection
-          id="precios"
-          title="Nuestros Precios"
-          subtitle="Precios Actualizados"
-          description="Precios actualizados y competitivos para cobre, fierro, aluminio, bronce y más. Cotiza hoy y recibe pago inmediato al mejor valor del mercado."
-          href="/precios"
-          backgroundType="transparent"
+          id="materiales-aceptamos"
+          title="Materiales que Aceptamos"
+          subtitle="Compramos Todo Tipo de Metales"
+          description="Recibimos todo tipo de metales ferrosos y no ferrosos: cobre, fierro, aluminio, bronce, acero inoxidable, radiadores y más. Trae tu chatarra y obtén la mejor cotización."
+          href="/materiales-aceptamos"
+          backgroundType="gradient"
         />
         
         <PreviewSection

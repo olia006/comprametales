@@ -18,7 +18,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'ferrosos',
     description: '1 metro de largo y más de 4mm de espesor',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Iron Long',
@@ -27,7 +27,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'ferrosos',
     description: 'Hasta 2 metros y más de 4mm de espesor',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Iron Mixed',
@@ -35,7 +35,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 195,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Tinplate Steel',
@@ -43,7 +43,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 175,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Cast Iron',
@@ -51,7 +51,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 130,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Iron Turnings',
@@ -59,7 +59,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 60,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
 
   // Materiales No Ferrosos (COBRE)
@@ -69,7 +69,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 7000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Copper Tube',
@@ -77,7 +77,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 7000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Copper Heating',
@@ -86,7 +86,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'no-ferrosos',
     description: 'Cobre de calefacción',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Copper Radiator',
@@ -94,7 +94,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 3700,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
 
   // Materiales No Ferrosos (BRONCE)
@@ -104,7 +104,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 4400,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Bronze Red',
@@ -112,7 +112,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 5500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Bronze Contaminated',
@@ -120,7 +120,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 3000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
 
   // Materiales No Ferrosos (ALUMINIO)
@@ -130,7 +130,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 1200,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Aluminum Profile',
@@ -138,7 +138,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 1400,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Aluminum Beverage Cans',
@@ -147,7 +147,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'no-ferrosos',
     description: 'Latas de bebida de aluminio',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Aluminum Offset',
@@ -155,7 +155,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 1000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Aluminum Radiator',
@@ -163,7 +163,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Al/Cu Radiator',
@@ -172,7 +172,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'no-ferrosos',
     description: 'Rango referencial $2.500 – $3.000 / kg',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
 
   // Materiales Especiales
@@ -183,7 +183,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'especiales',
     description: 'Precio a consultar según tipo y estado del equipo',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Electrical Scrap',
@@ -192,7 +192,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'especiales',
     description: 'Precio a consultar según componentes y materiales',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   },
   {
     name: 'Machinery Scrap',
@@ -201,7 +201,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     currency: 'CLP',
     category: 'especiales',
     description: 'Precio a consultar según tipo de maquinaria y materiales',
-    lastUpdated: '2025-08-14'
+    lastUpdated: '2025-08-23'
   }
 ];
 
