@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
+import { GTM } from '@/components/analytics/GTM/GTM';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 import './globals.css';
 
@@ -229,33 +230,10 @@ export default function RootLayout({
         
         {/* Google Fonts are handled by Next.js font optimization */}
         
-        {/* Google Tag Manager - Using Next.js Script component */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${process.env.GTM_ID || 'GTM-KRM573BR'}');
-            `,
-          }}
-        />
+        {/* Google Tag Manager - Properly placed in head */}
+        <GTM gtmId={process.env.GTM_ID || 'GTM-KRM573BR'} />
       </head>
       <body className={inter.className}>
-        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${process.env.GTM_ID || 'GTM-KRM573BR'}`}
-            height="0"
-            width="0"
-            className="gtm-noscript"
-            title="Google Tag Manager"
-          />
-        </noscript>
         
         <ErrorBoundary>
           {children}
