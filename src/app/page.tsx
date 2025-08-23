@@ -1,13 +1,11 @@
 import { HeroSection } from '@/components/sections/HeroSection/HeroSection';
 import { PreviewSection } from '@/components/sections/PreviewSection/PreviewSection';
 import { CTASection } from '@/components/composition/CTASection/CTASection';
-import { getPriceUpdateText } from '@/utils/priceUpdateDate';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { Layout } from '@/components/layout/Layout/Layout';
 import { SEOHead } from '@/components/seo/SEOHead/SEOHead';
 
 import { PerformanceMonitor } from '@/components/ui/PerformanceMonitor/PerformanceMonitor';
-import { getFeaturedPrices } from '@/config/pricing';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -17,8 +15,6 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  const topPrices = getFeaturedPrices();
-
   return (
     <Layout>
       <SEOHead 
@@ -38,10 +34,9 @@ export default function HomePage() {
           id="precios"
           title="Nuestros Precios"
           subtitle="Precios Actualizados"
-          description={`${getPriceUpdateText(topPrices)} y competitivos para cobre, fierro, aluminio, bronce y más. Cotiza hoy y recibe pago inmediato al mejor valor del mercado.`}
+          description="Precios actualizados y competitivos para cobre, fierro, aluminio, bronce y más. Cotiza hoy y recibe pago inmediato al mejor valor del mercado."
           href="/precios"
           backgroundType="transparent"
-          topPrices={topPrices}
         />
         
         <PreviewSection

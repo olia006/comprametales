@@ -7,25 +7,27 @@
 import { MaterialPrice } from '@/config/pricing';
 
 export function getPriceUpdateDate(materials?: MaterialPrice[]): string {
+  // Use fixed string to prevent hydration mismatch
+  // toLocaleDateString() can produce different results between server and client
   if (!materials || materials.length === 0) {
-    // Use fixed date to prevent hydration mismatch
-    const fixedDate = new Date('2024-01-15');
-    return fixedDate.toLocaleDateString('es-CL', { 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
-    });
+    return '15 de enero de 2024';
   }
 
   // Calculate the latest update date from actual material data
   const dates = materials.map(m => new Date(m.lastUpdated || '2024-01-15').getTime());
   const latestDate = new Date(Math.max(...dates));
   
-  return latestDate.toLocaleDateString('es-CL', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  });
+  // Use fixed string format to ensure server/client consistency
+  const day = latestDate.getDate();
+  const month = latestDate.getMonth();
+  const year = latestDate.getFullYear();
+  
+  const monthNames = [
+    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+  ];
+  
+  return `${day} de ${monthNames[month]} de ${year}`;
 }
 
 export function getPriceUpdateText(materials?: MaterialPrice[]): string {
