@@ -55,7 +55,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   },
   {
     name: 'Iron Turnings',
-    nameEs: 'Fierro Viruta',
+    nameEs: 'Viruta',
     pricePerKg: 60,
     currency: 'CLP',
     category: 'ferrosos',
@@ -142,7 +142,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   },
   {
     name: 'Aluminum Beverage Cans',
-    nameEs: 'Aluminio Bebida',
+    nameEs: 'Aluminio Lata',
     pricePerKg: 1000,
     currency: 'CLP',
     category: 'no-ferrosos',

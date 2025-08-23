@@ -95,7 +95,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
       case 'Cast Iron':
         return `${baseAlt} fundido industrial - ${locationKeywords}`;
       case 'Iron Turnings':
-        return `${baseAlt} viruta de torno - ${locationKeywords}`;
+        return `${baseAlt} viruta - ${locationKeywords}`;
       default:
         return `${baseAlt} - ${locationKeywords}`;
     }
