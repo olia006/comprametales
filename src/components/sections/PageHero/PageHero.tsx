@@ -29,7 +29,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
   ].filter(Boolean).join(' ');
 
   return (
-    <section className={heroClasses}>
+    <section className={heroClasses} data-hero="page">
       <div className="container">
         <div className={styles.heroContent}>
           {subtitle && (

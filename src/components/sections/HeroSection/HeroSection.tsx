@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
   }, [isClient]);
 
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} data-hero="main">
       <div className={styles.heroBackground}>
         {/* Background Hero Image with Parallax Effect */}
         <Image

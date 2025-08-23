@@ -28,9 +28,12 @@ export const FloatingButtons: React.FC = () => {
     let lastScrollY: number = 0;
     
     const initializeHeroSection = () => {
-      // Check for both main hero section and page hero sections
-      const mainHeroSection = document.querySelector('.heroSection');
-      const pageHeroSection = document.querySelector('.pageHero');
+      // Check for hero sections using data attributes instead of CSS classes
+      // CSS modules generate hashed class names, so we need a different approach
+      const mainHeroSection = document.querySelector('[data-hero="main"]') || 
+                             document.querySelector('section[class*="heroSection"]');
+      const pageHeroSection = document.querySelector('[data-hero="page"]') || 
+                             document.querySelector('section[class*="pageHero"]');
       
       // Use whichever hero section is present
       heroSection = mainHeroSection || pageHeroSection;
