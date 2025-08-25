@@ -5,6 +5,7 @@ import Script from 'next/script';
 import { WebVitals } from '@/components/analytics/WebVitals/WebVitals';
 import { GTMScript } from '@/components/analytics/GTM/GTMScript';
 import { GTMNoscript } from '@/components/analytics/GTM/GTMNoscript';
+import { GoogleTag } from '@/components/analytics/GoogleTag/GoogleTag';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary/ErrorBoundary';
 import './globals.css';
 
@@ -229,6 +230,9 @@ export default function RootLayout({
         
         {/* Google Tag Manager Script - Properly placed in head */}
         <GTMScript gtmId={process.env.GTM_ID || 'GTM-KRM573BR'} />
+        
+        {/* Google Tag (gtag.js) for Google Ads Conversion Tracking */}
+        <GoogleTag googleAdsId={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-11446856920'} />
       </head>
       <body className={inter.className}>
         {/* Google Tag Manager Noscript - Must be immediately after opening body tag */}

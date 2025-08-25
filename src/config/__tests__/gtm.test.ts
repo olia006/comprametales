@@ -36,7 +36,7 @@ describe('GTM Configuration', () => {
 
       expectedEvents.forEach(event => {
         expect(GTM_CONFIG.EVENTS).toHaveProperty(event);
-        expect(typeof GTM_CONFIG.EVENTS[event]).toBe('string');
+        expect(typeof GTM_CONFIG.EVENTS[event as keyof typeof GTM_CONFIG.EVENTS]).toBe('string');
       });
     });
 
@@ -50,7 +50,7 @@ describe('GTM Configuration', () => {
 
       expectedDimensions.forEach(dimension => {
         expect(GTM_CONFIG.CUSTOM_DIMENSIONS).toHaveProperty(dimension);
-        expect(typeof GTM_CONFIG.CUSTOM_DIMENSIONS[dimension]).toBe('string');
+        expect(typeof GTM_CONFIG.CUSTOM_DIMENSIONS[dimension as keyof typeof GTM_CONFIG.CUSTOM_DIMENSIONS]).toBe('string');
       });
     });
   });
