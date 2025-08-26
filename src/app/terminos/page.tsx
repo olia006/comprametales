@@ -178,7 +178,7 @@ export default function TerminosPage() {
               <strong>Ubicación:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana
             </p>
             <p>
-              <strong>Teléfono:</strong> +56 9 3772 0208
+                              <strong>Teléfono:</strong> +56 9 5514 5437
             </p>
           </section>
 
@@ -211,7 +211,7 @@ export default function TerminosPage() {
             </p>
             <div className={styles.contactInfo}>
               <p><strong>Email:</strong> konstanderspa@gmail.com</p>
-              <p><strong>Teléfono:</strong> +56 9 3772 0208</p>
+              <p><strong>Teléfono:</strong> +56 9 5514 5437</p>
               <p><strong>Dirección:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana</p>
             </div>
             <p>

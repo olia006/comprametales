@@ -227,7 +227,7 @@ export const getFeaturedPrices = (): MaterialPrice[] => {
 // Company information
 export const COMPANY_INFO = {
   name: 'KONSTANDER',
-  phone: '+56 9 3772 0208',
+  phone: '+56 9 5514 5437',
   email: 'konstanderspa@gmail.com',
   address: 'Panamericana Norte 17110, Lampa, Región Metropolitana',
   hours: 'Lunes a Domingo: de 8:00 a 18:00 hs',

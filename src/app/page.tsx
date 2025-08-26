@@ -13,7 +13,7 @@ import styles from './page.module.css';
 
 export const metadata = {
   title: 'KONSTANDER - Compra Chatarra y Metales | Mejores Precios Lampa 2024',
-  description: '🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56937720208!',
+  description: '🥇 Compramos chatarra y metales al MEJOR PRECIO en Lampa: Cobre $7,500/kg, Fierro $450/kg, Aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56955145437!',
   keywords: 'compra chatarra, metales, cobre precio hoy, fierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios',
 };
 
@@ -29,7 +29,7 @@ export default function HomePage() {
     <Layout>
       <SEOHead 
         title="💰 Konstander SpA | Compra & Venta de Chatarra 🇨🇱"
-        description="🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56937720208"
+        description="🔥 Vende tu chatarra hoy y recibe pago inmediato! Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Balanza certificada. Abierto 7 días. Lampa, RM. ¡Llamá ya! 📞+56955145437"
         canonical="https://comprametales.cl"
         keywords="compra chatarra, metales, cobre precio hoy, fierro chatarra, aluminio, Lampa, Santiago, KONSTANDER, mejores precios"
       />
@@ -122,7 +122,7 @@ export default function HomePage() {
             {
               type: 'primary',
               text: 'Llamar Ahora',
-              href: 'tel:+56937720208'
+              href: 'tel:+56955145437'
             },
             {
               type: 'secondary',

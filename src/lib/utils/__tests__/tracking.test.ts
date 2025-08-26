@@ -74,15 +74,15 @@ describe('Tracking Utilities', () => {
 
   describe('trackPhoneClick', () => {
     it('should push phone_click event to dataLayer', () => {
-      trackPhoneClick('+56937720208');
+      trackPhoneClick('+56955145437');
 
       expect(window.dataLayer).toHaveLength(1);
       expect(window.dataLayer[0]).toEqual({
         event: 'phone_click',
-        phone_number: '+56937720208',
+        phone_number: '+56955145437',
         source_page: 'unknown',
         event_category: 'Contact',
-        event_label: '+56937720208',
+        event_label: '+56955145437',
         value: 1
       });
     });

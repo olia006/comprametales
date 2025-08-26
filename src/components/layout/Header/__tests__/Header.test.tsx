@@ -53,13 +53,7 @@ describe('Header', () => {
     expect(screen.getAllByText('Contacto').length).toBeGreaterThan(0)
   })
 
-  it('renders phone contact information', () => {
-    render(<Header />)
-    
-    // Check for phone number in any form
-    const phoneElements = screen.getAllByText(/\+56/)
-    expect(phoneElements.length).toBeGreaterThan(0)
-  })
+
 
   it('toggles mobile menu when hamburger is clicked', async () => {
     const user = userEvent.setup()

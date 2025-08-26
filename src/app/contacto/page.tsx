@@ -15,7 +15,7 @@ export const metadata = {
   description: 'Contáctanos para vender tus metales. Ubicados en Panamericana Norte 17110, Lampa. Teléfono: +56 9 3772 0208. Abierto lunes a domingo.',
   openGraph: {
     title: 'Contacto - KONSTANDER Lampa',
-    description: 'Contáctanos para vender tus metales. Ubicados en Panamericana Norte 17110, Lampa. Teléfono: +56 9 3772 0208. Abierto lunes a domingo.',
+    description: 'Contáctanos para vender tus metales. Ubicados en Panamericana Norte 17110, Lampa. Teléfono: +56 9 5514 5437. Abierto lunes a domingo.',
     url: 'https://comprametales.cl/contacto',
     siteName: 'Konstander SpA',
     locale: 'es_CL',
@@ -36,7 +36,7 @@ export default function ContactoPage() {
     <Layout>
       <SEOHead 
         title="📍 Contacto KONSTANDER | Panamericana Norte 17110, Lampa, RM"
-        description="📞 Contáctanos para vender tus metales: +56937720208. Ubicados en Panamericana Norte 17110, Lampa. Abierto lunes a domingo 8:00-18:00. Cotización gratuita y pago inmediato. ¡Visítanos!"
+        description="📞 Contáctanos para vender tus metales: +56955145437. Ubicados en Panamericana Norte 17110, Lampa. Abierto lunes a domingo 8:00-18:00. Cotización gratuita y pago inmediato. ¡Visítanos!"
         canonical="https://comprametales.cl/contacto"
         keywords="contacto KONSTANDER, dirección Lampa metales, teléfono chatarra Santiago, ubicación compra metales, horarios KONSTANDER, Panamericana Norte 17110"
       />
@@ -123,7 +123,7 @@ export default function ContactoPage() {
           {
             type: 'primary',
             text: 'Llamar Ahora',
-            href: 'tel:+56937720208'
+            href: 'tel:+56955145437'
           },
           {
             type: 'secondary',

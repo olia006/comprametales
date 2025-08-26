@@ -65,7 +65,7 @@ export default function MaterialesVendemosPage() {
     <Layout>
       <SEOHead 
         title="🏗️ Materiales de Construcción Usados en Venta | KONSTANDER Lampa"
-        description="🔨 Venta de materiales metálicos reciclados: barras de refuerzo, fierro construcción, tubería acero, tornillos y pernos. Hasta 60% más económicos que nuevos. Panamericana Norte 17110, Lampa, RM. 📞+56937720208"
+        description="🔨 Venta de materiales metálicos reciclados: barras de refuerzo, fierro construcción, tubería acero, tornillos y pernos. Hasta 60% más económicos que nuevos. Panamericana Norte 17110, Lampa, RM. 📞+56955145437"
         canonical="https://comprametales.cl/materiales-vendemos"
         keywords="materiales construcción usados, fierro reciclado, barras refuerzo usadas, tubería acero reciclada, tornillos construcción, pernos anclaje, materiales metálicos Lampa, KONSTANDER"
       />
@@ -301,7 +301,7 @@ export default function MaterialesVendemosPage() {
           {
             type: 'secondary',
             text: 'Consultar Stock',
-            href: 'tel:+56937720208'
+            href: 'tel:+56955145437'
           }
         ]}
         backgroundType="gradient"

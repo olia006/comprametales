@@ -173,7 +173,7 @@ export default function PrivacidadPage() {
             </p>
             <div className={styles.contactInfo}>
               <p><strong>Email:</strong> info@comprametales.cl</p>
-              <p><strong>Teléfono:</strong> +56 9 3772 0208</p>
+              <p><strong>Teléfono:</strong> +56 9 5514 5437</p>
               <p><strong>Dirección:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana</p>
             </div>
             <p className={styles.lastUpdated}>

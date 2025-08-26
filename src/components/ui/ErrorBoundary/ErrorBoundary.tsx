@@ -186,7 +186,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp: +56 9 3772 0208
+                WhatsApp: +56 9 5514 5437
               </a>
             </div>
           </div>

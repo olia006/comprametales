@@ -116,7 +116,7 @@ export default function NosotrosPage() {
     <Layout>
       <SEOHead 
         title="🏢 Acerca de KONSTANDER | Empresa de Metales y Chatarra Lampa, RM"
-        description="🤝 Conoce la historia de KONSTANDER: +10 años experiencia internacional, +3 años en Chile. Empresa líder en compra y venta de metales en Lampa. Confianza, mejores precios y pago inmediato. 📞+56937720208"
+        description="🤝 Conoce la historia de KONSTANDER: +10 años experiencia internacional, +3 años en Chile. Empresa líder en compra y venta de metales en Lampa. Confianza, mejores precios y pago inmediato. 📞+56955145437"
         canonical="https://comprametales.cl/nosotros"
         keywords="KONSTANDER empresa, historia empresa metales, compra chatarra Lampa, empresa familiar metales, experiencia metales Chile, confianza chatarra Santiago"
       />

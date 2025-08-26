@@ -102,40 +102,7 @@
   text-decoration: none;
 }
 
-/* Contact Info - Desktop */
-.contactInfo {
-  display: none !important;
-}
 
-.phoneLink {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-primary-subtle);
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  color: var(--color-primary-dark);
-  font-weight: var(--font-weight-semibold);
-  transition: all var(--transition-fast);
-}
-
-.phoneLink:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.phoneIcon {
-  width: 18px;
-  height: 18px;
-}
-
-.phoneNumber {
-  font-size: var(--font-size-base);
-  white-space: nowrap;
-}
 
 /* Mobile Menu Button */
 .menuButton {
@@ -348,10 +315,6 @@
 
 /* Tablet Styles */
 @media (min-width: 768px) {
-  .contactInfo {
-    display: none !important;
-  }
-  
   .headerContent {
     padding: var(--space-5) 0;
   }

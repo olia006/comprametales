@@ -87,7 +87,7 @@ export const env: EnvironmentConfig = {
   // Company Information
   company: {
     name: getEnvironmentVariable('NEXT_PUBLIC_COMPANY_NAME', 'KONSTANDER'),
-    phone: getEnvironmentVariable('NEXT_PUBLIC_COMPANY_PHONE', '+56937720208'),
+    phone: getEnvironmentVariable('NEXT_PUBLIC_COMPANY_PHONE', '+56955145437'),
     email: getEnvironmentVariable('NEXT_PUBLIC_COMPANY_EMAIL', 'konstanderspa@gmail.com'),
     address: getEnvironmentVariable(
       'NEXT_PUBLIC_COMPANY_ADDRESS',

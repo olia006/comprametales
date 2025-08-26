@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
-import { Phone, Home, DollarSign, Package, ShoppingCart, Users, Contact } from 'lucide-react';
+import { Home, DollarSign, Package, ShoppingCart, Users, Contact } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { COMPANY_INFO } from '@/config/pricing';
 import { useInteractionTracking } from '@/hooks/useInteractionTracking';
@@ -87,13 +87,7 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
 
-          {/* Contact Info - Desktop Only */}
-          <div className={styles.contactInfo}>
-            <a href={`tel:${COMPANY_INFO.phone}`} className={styles.phoneLink}>
-              <Phone className={styles.phoneIcon} aria-hidden="true" />
-              <span className={styles.phoneNumber}>{COMPANY_INFO.phone}</span>
-            </a>
-          </div>
+
 
           {/* Mobile Menu Button */}
           <button
