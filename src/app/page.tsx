@@ -47,7 +47,7 @@ export default function HomePage() {
               <span className={styles.pricePreviewSubtitle}>Precios Actualizados</span>
               <h2 className={styles.pricePreviewTitle}>Nuestros Precios</h2>
               <p className={styles.pricePreviewDescription}>
-                Precios competitivos y actualizados para los principales metales. {getPriceUpdateText(featuredMaterials)}.
+                Precios competitivos y actualizados para los principales metales. {getPriceUpdateText()}.
               </p>
             </div>
             
@@ -107,7 +107,7 @@ export default function HomePage() {
           id="contacto"
           title="Contáctanos"
           subtitle="Estamos Aquí para Ayudarte"
-          description="Estamos en Lampa y atendemos toda la Región Metropolitana. Escríbenos por WhatsApp o llámanos y recibe respuesta al tiro. Abierto de lunes a domingo, de 8:00 a 18:00 hrs"
+          description="Estamos en Lampa y atendemos toda la Región Metropolitana. Escríbenos por WhatsApp o llámanos y recibe respuesta al tiro. Abierto de lunes a domingo, de 8:00 a 21:00 hrs"
           href="/contacto"
           backgroundType="transparent"
         />

@@ -32,18 +32,18 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Iron Mixed',
     nameEs: 'Fierro Mixto',
-    pricePerKg: 195,
+    pricePerKg: 200,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Tinplate Steel',
-    nameEs: 'Fierro Lata',
-    pricePerKg: 175,
+    nameEs: 'Lata Chatarra',
+    pricePerKg: 195,
     currency: 'CLP',
     category: 'ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Cast Iron',
@@ -66,104 +66,104 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Copper Grade 3',
     nameEs: 'Cobre 3ra',
-    pricePerKg: 7000,
+    pricePerKg: 7500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Copper Tube',
     nameEs: 'Cobre Tubo',
-    pricePerKg: 7000,
+    pricePerKg: 7500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Copper Heating',
     nameEs: 'Cobre Calef',
-    pricePerKg: 5500,
+    pricePerKg: 6300,
     currency: 'CLP',
     category: 'no-ferrosos',
     description: 'Cobre de calefacción',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Copper Radiator',
     nameEs: 'Cobre Radiadora',
-    pricePerKg: 3700,
+    pricePerKg: 4200,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
 
   // Materiales No Ferrosos (BRONCE)
   {
     name: 'Bronze Yellow',
     nameEs: 'Bronce Amarillo',
-    pricePerKg: 4400,
+    pricePerKg: 5000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Bronze Red',
     nameEs: 'Bronce Colorado',
-    pricePerKg: 5500,
+    pricePerKg: 6000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Bronze Contaminated',
     nameEs: 'Bronce Contaminado',
-    pricePerKg: 3000,
+    pricePerKg: 3500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
 
   // Materiales No Ferrosos (ALUMINIO)
   {
     name: 'Aluminum Hard',
     nameEs: 'Aluminio Duro',
-    pricePerKg: 1200,
+    pricePerKg: 1400,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Aluminum Profile',
     nameEs: 'Aluminio Perfil',
-    pricePerKg: 1400,
+    pricePerKg: 1600,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Aluminum Beverage Cans',
     nameEs: 'Aluminio Lata',
-    pricePerKg: 1000,
+    pricePerKg: 1300,
     currency: 'CLP',
     category: 'no-ferrosos',
     description: 'Latas de bebida de aluminio',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Aluminum Offset',
     nameEs: 'Aluminio Offset',
-    pricePerKg: 1000,
+    pricePerKg: 1500,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Aluminum Radiator',
     nameEs: 'Aluminio Radiadora',
-    pricePerKg: 500,
+    pricePerKg: 700,
     currency: 'CLP',
     category: 'no-ferrosos',
-    lastUpdated: '2025-08-23'
+    lastUpdated: '2025-01-25'
   },
   {
     name: 'Al/Cu Radiator',
@@ -171,8 +171,8 @@ export const PRICING_CONFIG: MaterialPrice[] = [
     pricePerKg: 3000,
     currency: 'CLP',
     category: 'no-ferrosos',
-    description: 'Rango referencial $2.500 – $3.000 / kg',
-    lastUpdated: '2025-08-23'
+    description: 'Rango referencial $3.000 – $3.500 / kg',
+    lastUpdated: '2025-01-25'
   },
 
   // Materiales Especiales
@@ -230,7 +230,7 @@ export const COMPANY_INFO = {
   phone: '+56 9 5514 5437',
   email: 'konstanderspa@gmail.com',
   address: 'Panamericana Norte 17110, Lampa, Región Metropolitana',
-  hours: 'Lunes a Domingo: de 8:00 a 18:00 hs',
+  hours: 'Lunes a Domingo: de 8:00 a 21:00 hs',
   hoursFlexible: 'Horarios flexibles - se pueden coordinar horarios convenientes',
   coordinates: {
     lat: -33.2948,

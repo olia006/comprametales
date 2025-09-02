@@ -94,7 +94,7 @@ export const PreviewSection: React.FC<PreviewSectionProps> = ({
                   ))}
                 </div>
                 <div className={`${styles.pricesNote} scroll-reveal delay-3`}>
-                  <small>{getPriceUpdateText(topPrices)}</small>
+                  <small>{getPriceUpdateText()}</small>
                 </div>
               </div>
             </div>

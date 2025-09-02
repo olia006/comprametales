@@ -55,7 +55,7 @@ export default function PreciosPage() {
       <PageHero
         title="Precios de Metales y Chatarra"
         subtitle="Cotizaciones Actualizadas"
-        description={getPriceUpdateDescription([...ferrosoMaterials, ...noFerrosoMaterials, ...especialesMaterials])}
+        description={getPriceUpdateDescription()}
         backgroundImage="/images/precios-chatarra-metales-actualizados-lampa.webp"
       />
       

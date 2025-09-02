@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { MaterialPrice, formatPrice } from '@/config/pricing';
+import { MANUAL_UPDATE_DATE } from '@/utils/priceUpdateDate';
 import { Search, ChevronUp, ChevronDown, ChevronsUpDown, AlertCircle } from 'lucide-react';
 import styles from './PriceTable.module.css';
 
@@ -79,13 +80,8 @@ export const PriceTable: React.FC<PriceTableProps> = ({
   };
 
   const getLastUpdateDate = () => {
-    const dates = materials.map(m => new Date(m.lastUpdated).getTime());
-    const latestDate = new Date(Math.max(...dates));
-    return latestDate.toLocaleDateString('es-CL', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+    // Use manual date system for consistency
+    return MANUAL_UPDATE_DATE;
   };
 
 

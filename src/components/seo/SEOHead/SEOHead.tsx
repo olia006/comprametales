@@ -45,7 +45,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       latitude: COMPANY_INFO.coordinates.lat,
       longitude: COMPANY_INFO.coordinates.lng
     },
-    openingHours: 'Mo-Su 08:00-18:00',
+    openingHours: 'Mo-Su 08:00-21:00',
     serviceArea: {
       '@type': 'AdministrativeArea',
       name: 'Región Metropolitana, Chile'
@@ -173,7 +173,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:label1" content="Ubicación" />
       <meta name="twitter:data1" content="Lampa, Región Metropolitana" />
       <meta name="twitter:label2" content="Horarios" />
-      <meta name="twitter:data2" content="Lun-Dom 8:00-18:00" />
+      <meta name="twitter:data2" content="Lun-Dom 8:00-21:00" />
       
       {/* Business Specific */}
       <meta name="geo.region" content="CL-RM" />

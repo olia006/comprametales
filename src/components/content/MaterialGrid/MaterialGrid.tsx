@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { MaterialPrice, formatPrice } from '@/config/pricing';
+import { MANUAL_UPDATE_DATE } from '@/utils/priceUpdateDate';
 import styles from './MaterialGrid.module.css';
 
 interface MaterialGridProps {
@@ -91,7 +92,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
       case 'Iron Mixed':
         return `${baseAlt} clasificado y limpio - ${locationKeywords}`;
       case 'Tinplate Steel':
-        return `${baseAlt} de latas y envases - ${locationKeywords}`;
+        return `${baseAlt} de chatarra - ${locationKeywords}`;
       case 'Cast Iron':
         return `${baseAlt} fundido industrial - ${locationKeywords}`;
       case 'Iron Turnings':
@@ -158,7 +159,7 @@ export const MaterialGrid: React.FC<MaterialGridProps> = ({
                 
                 <div className={styles.materialMeta}>
                   <span className={styles.lastUpdated}>
-                    Actualizado: {material.lastUpdated}
+                    Actualizado: {MANUAL_UPDATE_DATE}
                   </span>
                 </div>
               </div>

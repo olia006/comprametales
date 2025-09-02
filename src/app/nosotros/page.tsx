@@ -67,7 +67,7 @@ export default function NosotrosPage() {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           "opens": "08:00",
-          "closes": "18:00"
+          "closes": "21:00"
         }
       }
     ],

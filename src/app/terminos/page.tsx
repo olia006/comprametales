@@ -172,7 +172,7 @@ export default function TerminosPage() {
           <section className={styles.section}>
             <h2>9. Horarios y Ubicación</h2>
             <p>
-              <strong>Horarios de Atención:</strong> Lunes a Domingo de 8:00 a 18:00 hrs.
+              <strong>Horarios de Atención:</strong> Lunes a Domingo de 8:00 a 21:00 hrs.
             </p>
             <p>
               <strong>Ubicación:</strong> Panamericana Norte 17110, Lampa, Región Metropolitana

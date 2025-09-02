@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
                 <Clock size={20} className={styles.clockIcon} aria-hidden="true" />
                 <div className={styles.hoursInfo}>
                   <span className={styles.hoursLabel}>Lunes a Domingo</span>
-                  <time className={styles.hoursTime}>8:00 - 18:00</time>
+                  <time className={styles.hoursTime}>8:00 - 21:00</time>
                 </div>
               </div>
             </div>

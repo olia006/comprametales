@@ -35,13 +35,13 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
     const chileanTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Santiago"}));
     const currentHour = chileanTime.getHours();
     
-    // Business is open Monday-Sunday 8:00-18:00 (Chilean time)
-    const isOpen = currentHour >= 8 && currentHour < 18;
+    // Business is open Monday-Sunday 8:00-21:00 (Chilean time)
+    const isOpen = currentHour >= 8 && currentHour < 21;
     
     return {
       isOpen,
       message: isOpen ? 'Abierto ahora' : 'Cerrado ahora',
-      nextChange: isOpen ? 'Cierra a las 18:00' : 'Abre a las 8:00'
+      nextChange: isOpen ? 'Cierra a las 21:00' : 'Abre a las 8:00'
     };
   };
 
@@ -52,13 +52,13 @@ export const BusinessHours: React.FC<BusinessHoursProps> = ({
   }, []);
 
   const weekDays = [
-    { day: 'Lunes', hours: '8:00 - 18:00' },
-    { day: 'Martes', hours: '8:00 - 18:00' },
-    { day: 'Miércoles', hours: '8:00 - 18:00' },
-    { day: 'Jueves', hours: '8:00 - 18:00' },
-    { day: 'Viernes', hours: '8:00 - 18:00' },
-    { day: 'Sábado', hours: '8:00 - 18:00' },
-    { day: 'Domingo', hours: '8:00 - 18:00' }
+    { day: 'Lunes', hours: '8:00 - 21:00' },
+    { day: 'Martes', hours: '8:00 - 21:00' },
+    { day: 'Miércoles', hours: '8:00 - 21:00' },
+    { day: 'Jueves', hours: '8:00 - 21:00' },
+    { day: 'Viernes', hours: '8:00 - 21:00' },
+    { day: 'Sábado', hours: '8:00 - 21:00' },
+    { day: 'Domingo', hours: '8:00 - 21:00' }
   ];
 
   const getCurrentDay = () => {
