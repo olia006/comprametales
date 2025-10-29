@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { PrimaryButton } from '@/components/buttons/PrimaryButton/PrimaryButton';
 import { Home, DollarSign, Package, ShoppingCart, Users, Contact } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -12,6 +13,7 @@ import styles from './Header.module.css';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
   const { trackClick } = useInteractionTracking({ pageName: 'Header' });
 
   // Prevent body scrolling when menu is open
@@ -73,17 +75,21 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className={styles.desktopNavigation} aria-label="Navegación principal">
             <ul className={styles.desktopNavigationList} role="list">
-              {navigationItems.map((item) => (
-                <li key={item.href} className={styles.desktopNavigationItem} role="listitem">
-                  <Link 
-                    href={item.href} 
-                    className={styles.desktopNavigationLink}
-                    aria-label={`${item.name}: ${item.description}`}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              {navigationItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <li key={item.href} className={styles.desktopNavigationItem} role="listitem">
+                    <Link 
+                      href={item.href} 
+                      className={`${styles.desktopNavigationLink} ${isActive ? styles.active : ''}`}
+                      aria-label={`${item.name}: ${item.description}`}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -111,13 +117,15 @@ export const Header: React.FC = () => {
           <ul className={styles.navigationList} role="list">
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
+              const isActive = pathname === item.href;
               return (
                 <li key={item.href} className={styles.navigationItem} role="listitem">
                   <Link 
                     href={item.href} 
-                    className={styles.navigationLink}
+                    className={`${styles.navigationLink} ${isActive ? styles.active : ''}`}
                     onClick={closeMenu}
                     aria-label={`${item.name}: ${item.description}`}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     <IconComponent 
                       size={20} 

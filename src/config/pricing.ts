@@ -66,7 +66,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Copper Grade 3',
     nameEs: 'Cobre 3ra',
-    pricePerKg: 7500,
+    pricePerKg: 8000,
     currency: 'CLP',
     category: 'no-ferrosos',
     lastUpdated: '2025-01-25'
@@ -127,7 +127,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Aluminum Hard',
     nameEs: 'Aluminio Duro',
-    pricePerKg: 1400,
+    pricePerKg: 1350,
     currency: 'CLP',
     category: 'no-ferrosos',
     lastUpdated: '2025-01-25'
@@ -135,7 +135,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Aluminum Profile',
     nameEs: 'Aluminio Perfil',
-    pricePerKg: 1600,
+    pricePerKg: 1500,
     currency: 'CLP',
     category: 'no-ferrosos',
     lastUpdated: '2025-01-25'
@@ -152,7 +152,7 @@ export const PRICING_CONFIG: MaterialPrice[] = [
   {
     name: 'Aluminum Offset',
     nameEs: 'Aluminio Offset',
-    pricePerKg: 1500,
+    pricePerKg: 1800,
     currency: 'CLP',
     category: 'no-ferrosos',
     lastUpdated: '2025-01-25'

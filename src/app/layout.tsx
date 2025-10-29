@@ -21,11 +21,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://comprametales.cl'),
   title: 'Konstander SpA | Compra & Venta de Chatarra',
-  description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
+  description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $8.000/kg; fierro $230/kg; aluminio desde $1.350/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
   keywords: 'chatarra, metales, fierro, cobre, aluminio, compra metales, Lampa, Chile, KONSTANDER',
   openGraph: {
     title: 'Konstander SpA | Compra & Venta de Chatarra | Lampa, RM',
-    description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $7.000/kg; fierro $230/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
+    description: 'Vende tu chatarra hoy y recibe pago inmediato. Cobre $8.000/kg; fierro $230/kg; aluminio desde $1.350/kg. Balanza certificada. Abierto 7 días. Lampa, RM.',
     url: 'https://comprametales.cl',
     siteName: 'Konstander SpA',
     locale: 'es_CL',

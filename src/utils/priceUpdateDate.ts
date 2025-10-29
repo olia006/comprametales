@@ -7,7 +7,7 @@
 
 
 // ⚠️ MANUAL DATE CONTROL - Change this date to update across entire website
-export const MANUAL_UPDATE_DATE = '2 de septiembre de 2025';
+export const MANUAL_UPDATE_DATE = '29 de octubre de 2025';
 
 export function getPriceUpdateDate(): string {
   // Return the manually set date - consistent across all components

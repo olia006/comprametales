@@ -101,7 +101,7 @@ const nextConfig = {
   },
   
   // Webpack configuration to handle module loading issues and optimize CSS
-  webpack: (config, { isServer, dev }) => {
+  webpack: (config, { isServer }) => {
     // Handle web-vitals module loading
     config.resolve.fallback = {
       ...config.resolve.fallback,

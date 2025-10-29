@@ -11,11 +11,11 @@ import styles from './page.module.css';
 
 export const metadata = {
   title: 'Compramos Chatarra y Metales - Cobre, Fierro, Aluminio - KONSTANDER Lampa',
-  description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, fierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56955145437!',
+  description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $8,000/kg, fierro $230/kg, aluminio desde $1,350/kg. Pago inmediato, balanza certificada. ¡Llama +56955145437!',
   keywords: 'compra chatarra, venta metales, cobre precio, fierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales',
   openGraph: {
     title: 'Compramos Chatarra y Metales - Cobre, Fierro, Aluminio - KONSTANDER Lampa',
-    description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $7,500/kg, fierro $450/kg, aluminio $2,800/kg. Pago inmediato, balanza certificada. ¡Llama +56955145437!',
+    description: '💰 Compramos chatarra y metales al mejor precio en Lampa: cobre $8,000/kg, fierro $230/kg, aluminio desde $1,350/kg. Pago inmediato, balanza certificada. ¡Llama +56955145437!',
     url: 'https://comprametales.cl/materiales-aceptamos',
     siteName: 'Konstander SpA',
     locale: 'es_CL',
@@ -99,7 +99,7 @@ export default function MaterialesAceptamosPage() {
     <Layout>
       <SEOHead 
         title="🏭 Compramos Chatarra y Metales | KONSTANDER Lampa, RM"
-        description="💰 Compramos chatarra y metales al MEJOR PRECIO: Cobre $7.500/kg • Fierro $450/kg • Aluminio $2.800/kg. Pago inmediato, balanza certificada. Panamericana Norte 17110, Lampa. ¡Llama ya! 📞+56955145437"
+        description="💰 Compramos chatarra y metales al MEJOR PRECIO: Cobre $8.000/kg • Fierro $230/kg • Aluminio desde $1.350/kg. Pago inmediato, balanza certificada. Panamericana Norte 17110, Lampa. ¡Llama ya! 📞+56955145437"
         canonical="https://comprametales.cl/materiales-aceptamos"
         keywords="compra chatarra, venta metales, cobre precio, fierro chatarra, aluminio reciclaje, Lampa, Santiago, KONSTANDER, mejores precios metales"
       />
